@@ -1,12 +1,11 @@
-
 :root{
-  --bg:#f7f8fa;
+  --bg:#f4f6fa;
   --surface:#ffffff;
-  --text:#111827;
-  --muted:#667085;
-  --line:#e5e7eb;
-  --accent:#111827;
-  --accent2:#374151;
+  --text:#0f172a;
+  --muted:#5b6475;
+  --line:#e2e6ee;
+  --ink:#0a1020;
+  --gold:#f5b83d;
   --soft:#eef2f7;
   --max:1080px;
 }
@@ -15,42 +14,69 @@ html{scroll-behavior:smooth}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.8}
 a{color:inherit;text-decoration:none}
 .container{width:min(var(--max),calc(100% - 36px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-weight:800;letter-spacing:-.04em;font-size:18px}
-.navlinks{display:flex;gap:20px;font-size:13px;font-weight:600;color:#4b5563}
-.navlinks a:hover{color:#111827}
-.hero{padding:92px 0 72px;background:#fff;border-bottom:1px solid var(--line)}
+
+/* ヘッダー */
+header{position:sticky;top:0;z-index:20;background:rgba(10,16,32,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);color:#fff}
+.nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:8px 0}
+.logo{font-weight:900;letter-spacing:-.02em;font-size:19px;white-space:nowrap;color:var(--gold)}
+.navlinks{display:flex;gap:18px;font-size:13px;font-weight:600;color:#cbd2e0}
+.navlinks a:hover{color:#fff}
+
+/* トップのヒーロー(写真は hero.jpg をアップすると自動で背景になる) */
+.hero{padding:110px 0 96px;color:#fff;border-bottom:1px solid var(--line);
+  background-color:var(--ink);
+  background-image:
+    linear-gradient(180deg,rgba(10,16,32,.55),rgba(10,16,32,.88)),
+    url("hero.jpg"),
+    radial-gradient(circle at 80% 15%,rgba(245,184,61,.35),transparent 45%),
+    linear-gradient(135deg,#0a1020,#1b2a4a);
+  background-size:cover;background-position:center}
+.page-hero{padding:72px 0 54px;color:#fff;border-bottom:1px solid var(--line);
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(circle at 85% 0%,rgba(245,184,61,.28),transparent 50%),
+    linear-gradient(135deg,#0a1020,#1b2a4a)}
+.hero .eyebrow,.page-hero .eyebrow{color:var(--gold)}
+.hero .lead,.page-hero .lead{color:#dbe1ee}
 .eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#6b7280}
-h1{font-size:clamp(38px,7vw,68px);line-height:1.12;letter-spacing:-.055em;margin:14px 0 20px}
-h2{font-size:clamp(26px,4vw,40px);line-height:1.25;letter-spacing:-.04em;margin:0 0 14px}
+h1{font-size:clamp(38px,8vw,72px);line-height:1.12;letter-spacing:-.04em;margin:14px 0 20px;font-weight:900}
+.hero h1,.page-hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+h2{font-size:clamp(26px,4vw,40px);line-height:1.25;letter-spacing:-.03em;margin:0 0 14px;font-weight:900}
 h3{line-height:1.4}
 .lead{font-size:17px;color:#4b5563;max-width:720px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-weight:700;font-size:14px;border:1px solid var(--text)}
-.btn.primary{background:var(--text);color:white}
-.btn.secondary{background:white;color:var(--text);border-color:var(--line)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;font-weight:800;font-size:14px;border:1px solid var(--text)}
+.btn.primary{background:var(--text);color:#fff}
+.btn.secondary{background:#fff;color:var(--text);border-color:var(--line)}
+.hero .btn.primary,.page-hero .btn.primary{background:var(--gold);color:#1a1300;border-color:var(--gold)}
+.hero .btn.secondary,.page-hero .btn.secondary{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.45)}
+
+/* セクションとカード */
 .section{padding:72px 0}
 .section-head{margin-bottom:28px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:26px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
 .card p{color:var(--muted);margin-bottom:0}
-.number{font-size:12px;font-weight:800;color:#6b7280}
+.number{font-size:12px;font-weight:800;color:#b07d10}
 .product{min-height:235px;display:flex;flex-direction:column}
-.product .status{display:inline-block;width:max-content;padding:5px 9px;border-radius:999px;background:var(--soft);font-size:11px;font-weight:800;margin-bottom:14px}
+.product .status{display:inline-block;width:max-content;padding:5px 10px;border-radius:999px;background:#fff4d6;color:#7a5200;font-size:11px;font-weight:800;margin-bottom:14px}
 .product .bottom{margin-top:auto;padding-top:20px;color:#6b7280;font-size:13px}
-.page-hero{padding:72px 0 54px;background:white;border-bottom:1px solid var(--line)}
-.notice{background:#111827;color:white;border-radius:18px;padding:28px;margin-top:30px}
+.notice{background:var(--ink);color:#fff;border-radius:14px;padding:28px;margin-top:30px;border-left:4px solid var(--gold)}
 .notice p{color:#d1d5db;margin:5px 0 0}
 .profile{display:flex;gap:18px;align-items:center}
-.avatar{width:64px;height:64px;border-radius:50%;background:#111827;color:white;display:grid;place-items:center;font-weight:800}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-weight:800}
 ul.clean{padding-left:20px}
 ul.clean li{margin:8px 0}
-footer{padding:34px 0;border-top:1px solid var(--line);background:#fff;color:#6b7280;font-size:12px}
+footer{padding:34px 0;background:var(--ink);color:#9aa4b8;font-size:12px}
+
+/* スマホ */
 @media(max-width:760px){
- .nav{height:auto;min-height:68px;padding:10px 0;align-items:flex-start}
- .navlinks{gap:10px;flex-wrap:wrap;justify-content:flex-end;font-size:11px;max-width:65%}
- .hero{padding:66px 0 54px}
+ .nav{padding:10px 0 8px;gap:6px}
+ .logo{font-size:18px}
+ .navlinks{width:100%;gap:16px;font-size:12px;overflow-x:auto;white-space:nowrap}
+ .hero{padding:80px 0 64px}
  .section{padding:54px 0}
  .grid{grid-template-columns:1fr}
  .card{padding:22px}
