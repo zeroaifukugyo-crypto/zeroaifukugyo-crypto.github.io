@@ -119,3 +119,50 @@ a[href*="px.a8.net"] {
 a[href*="px.a8.net"]:hover {
   opacity: .85;
 }
+
+/* A8広告専用エリア */
+.ad-box {
+  margin: 24px 0;
+  padding: 22px;
+  border: 2px solid #2563eb;
+  border-radius: 14px;
+  background: #f5f9ff;
+}
+
+.ad-box .ad-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.ad-box h3 {
+  margin: 8px 0 12px;
+  font-size: 20px;
+}
+
+.ad-box p {
+  margin: 8px 0;
+}
+
+.ad-box a[href*="px.a8.net"] {
+  display: block;
+  margin-top: 18px;
+  padding: 15px 18px;
+  background: #2563eb;
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.18);
+}
+
+.ad-box a[href*="px.a8.net"]:hover {
+  opacity: .85;
+}
