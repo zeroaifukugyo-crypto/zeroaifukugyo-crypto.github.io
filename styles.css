@@ -81,3 +81,24 @@ footer{padding:34px 0;background:var(--ink);color:#9aa4b8;font-size:12px}
  .grid{grid-template-columns:1fr}
  .card{padding:22px}
 }
+
+/* 広告・紹介リンクを見やすいボタンにする */
+.card a,
+main a[href*="aiarty"],
+main a[href*="valueaiwriter"] {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: #2563eb;
+  color: #fff !important;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.card a:hover,
+main a[href*="aiarty"]:hover,
+main a[href*="valueaiwriter"]:hover {
+  opacity: .85;
+}
