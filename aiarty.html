@@ -11,10 +11,25 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-782ZG589TK');
+
+  function trackAffiliateClick(name){
+    if(typeof gtag === 'function'){
+      gtag('event','affiliate_click',{
+        event_category:'affiliate',
+        event_label:name,
+        tool_name:name
+      });
+    }
+  }
 </script>
 
 <title>Aiarty Image Enhancer｜AIで画像を高画質化 | ゼロからAI副業</title>
-<meta name="description" content="Aiarty Image Enhancerを初心者向けに紹介。AIを使った画像の高画質化や拡大に興味がある人向けの情報をまとめています。">
+
+<meta
+  name="description"
+  content="Aiarty Image Enhancerを初心者向けに紹介。AIを使った画像の高画質化や拡大に興味がある人向けに、特徴や向いている人、確認しておきたいポイントをまとめています。"
+>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,10 +38,12 @@
 <header>
   <div class="container nav">
     <a class="logo" href="index.html">ゼロからAI副業</a>
+
     <nav class="navlinks">
-      <a href="products.html">デジタル商品</a>
+      <a href="products.html">無料AI素材</a>
       <a href="tools.html">AIツール</a>
-      <a href="services.html">サービス</a>
+      <a href="services.html">AIを使った仕事</a>
+      <a href="ai-learning.html">AIを学ぶ</a>
       <a href="about.html">このサイトについて</a>
     </nav>
   </div>
@@ -36,32 +53,52 @@
 
 <section class="hero">
   <div class="container">
+
     <p class="eyebrow">PR / 広告</p>
+
     <h1>Aiarty Image Enhancer</h1>
-    <p class="lead">AIを使って、写真や画像をもっときれいに。</p>
-    <p>
-      画像の高画質化や拡大をAIで行いたい人向けの
-      「Aiarty Image Enhancer」を紹介します。
+
+    <p class="lead">
+      AIを使って、画像や写真をもっときれいに。
     </p>
+
+    <p>
+      Aiarty Image Enhancerは、
+      AIを利用して画像の高画質化や拡大などを行いたい人向けのツールです。
+    </p>
+
   </div>
 </section>
 
+
 <section class="section">
   <div class="container">
+
     <h2>Aiarty Image Enhancerとは？</h2>
+
     <p>
-      Aiarty Image Enhancerは、AIを利用して画像や写真などの
-      高画質化・拡大を行えるソフトです。
+      Aiarty Image Enhancerは、
+      AIを利用して画像や写真の高画質化・拡大を行えるソフトです。
     </p>
+
     <p>
-      画像を大きくしたときのぼやけや、細部の見えにくさが気になる場合などに、
+      小さな画像を大きくしたときの粗さや、
+      画像のぼやけ・細部の見えにくさなどが気になる場合に、
       AIによる画像処理を試したい人に向いています。
     </p>
+
+    <p class="small">
+      ※実際に利用できる機能、対応形式、料金、無料利用の条件などは変更される場合があります。
+      利用前に公式サイトで最新情報をご確認ください。
+    </p>
+
   </div>
 </section>
 
+
 <section class="section">
   <div class="container">
+
     <h2>こんな人におすすめ</h2>
 
     <div class="cards">
@@ -70,14 +107,15 @@
         <h3>画像をきれいにしたい</h3>
         <p>
           古い写真や低解像度の画像などを、
-          AIで高画質化してみたい人。
+          AIを使って高画質化してみたい人。
         </p>
       </article>
 
       <article class="card">
         <h3>画像を大きくしたい</h3>
         <p>
-          小さい画像を拡大したときの粗さが気になる人。
+          小さい画像を拡大したときの粗さや
+          細部の見え方が気になる人。
         </p>
       </article>
 
@@ -90,24 +128,68 @@
       </article>
 
     </div>
+
   </div>
 </section>
 
+
 <section class="section">
   <div class="container">
-    <h2>主な特徴</h2>
+
+    <h2>主な用途</h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <h3>画像の高画質化</h3>
+        <p>
+          低解像度の画像などを、
+          AIによってより見やすい状態にしたい場合に使えます。
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>画像の拡大</h3>
+        <p>
+          小さい画像を大きくしたい場合に、
+          AIによる画像処理を利用できます。
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>写真・イラストの補正</h3>
+        <p>
+          写真やイラストなど、
+          画像の見え方を改善したい場合に活用できます。
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <h2>利用前に確認したいこと</h2>
 
     <ul>
-      <li>AIによる画像の高画質化</li>
-      <li>画像の拡大処理</li>
-      <li>ノイズやぼやけの改善をサポート</li>
-      <li>写真・イラストなどの画像に利用可能</li>
+      <li>利用できる機能はプランやバージョンによって異なる場合があります。</li>
+      <li>料金や無料利用の条件は公式サイトで最新情報を確認してください。</li>
+      <li>画像によっては期待した結果にならない場合があります。</li>
+      <li>仕事で利用する場合は、元画像の著作権や利用許諾も確認しましょう。</li>
+      <li>個人情報や第三者の画像を扱う場合は、利用規約やプライバシーにも注意してください。</li>
     </ul>
+
   </div>
 </section>
 
+
 <section class="section">
   <div class="container">
+
     <h2>詳しく見る</h2>
 
     <div class="ad-box">
@@ -117,13 +199,22 @@
       <h3>Aiarty Image Enhancer</h3>
 
       <p>
-        Aiarty Image Enhancerの詳しい機能や料金、利用条件などは
-        公式サイトで確認してください。
+        Aiarty Image Enhancerの詳しい機能、
+        最新の料金、対応環境、利用条件などは公式サイトで確認できます。
       </p>
 
       <p>
-        <a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1VVGII+428G+HWPVM" rel="nofollow">
-          画像高画質化AIツール【Aiarty Image Enhancer】
+        「実際に使ってみたい」「料金や機能を詳しく知りたい」という場合は、
+        以下から確認してください。
+      </p>
+
+      <p>
+        <a
+          href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1VVGII+428G+HWPVM"
+          rel="nofollow"
+          onclick="trackAffiliateClick('Aiarty Image Enhancer');"
+        >
+          Aiarty Image Enhancerの詳細を確認する
         </a>
       </p>
 
@@ -139,7 +230,100 @@
 
     <p class="small">
       ※このページには広告リンクが含まれています。
-      リンク経由で購入された場合、当サイトに報酬が発生することがあります。
+      リンク経由で購入・申し込み等が行われた場合、
+      当サイトに報酬が発生することがあります。
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <h2>ゼロからAI副業の考え方</h2>
+
+    <p>
+      AIツールは「使えば稼げる」というものではありません。
+      大切なのは、AIを使って作業時間を短縮したり、
+      自分が提供できるサービスの品質を高めたりすることです。
+    </p>
+
+    <p>
+      例えば画像制作、SNS用素材、資料作成など、
+      実際の仕事と組み合わせることで活用できる可能性があります。
+    </p>
+
+    <p>
+      まずは無料で試せる範囲や公式情報を確認し、
+      自分の用途に合っているか判断するのがおすすめです。
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <h2>他のページも見る</h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <h3>AIツールを比較する</h3>
+        <p>
+          ChatGPT、Claude、Geminiなど、
+          さまざまなAIツールを初心者向けに紹介しています。
+        </p>
+        <p>
+          <a href="tools.html">AIツール一覧を見る →</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>無料AI素材を使う</h3>
+        <p>
+          AI副業を始めるときに使える
+          無料のプロンプトやチェックリストをまとめています。
+        </p>
+        <p>
+          <a href="products.html">無料AI素材を見る →</a>
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>AIを使った仕事を見る</h3>
+        <p>
+          AIを使ってできる仕事や、
+          小さく始めるための考え方を紹介しています。
+        </p>
+        <p>
+          <a href="services.html">AIを使った仕事を見る →</a>
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <h2>広告・情報について</h2>
+
+    <p class="small">
+      当サイトでは、広告・アフィリエイトプログラムを利用して
+      サービスやツールを紹介する場合があります。
+      広告であることが分かるように表示し、
+      読者にとって役立つ情報を優先して掲載しています。
+    </p>
+
+    <p class="small">
+      サービスの料金・機能・提供条件などは変更される可能性があります。
+      契約や購入を行う場合は、必ず提供元の公式情報をご確認ください。
     </p>
 
   </div>
@@ -147,9 +331,18 @@
 
 </main>
 
+
 <footer>
   <div class="container">
-    <p>© ゼロからAI副業</p>
+
+    <p>© 2026 ゼロからAI副業</p>
+
+    <p>
+      <a href="privacy.html">プライバシーポリシー</a> |
+      <a href="disclaimer.html">免責事項</a> |
+      <a href="contact.html">お問い合わせ</a>
+    </p>
+
   </div>
 </footer>
 
