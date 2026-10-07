@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>無料AI副業素材｜無料プロンプト・チェックリスト｜ゼロからAI副業</title>
+
+<meta name="description" content="無料で使えるAI副業素材を公開。AI副業アイデア整理プロンプト、AI初心者向け基本プロンプト、7日間スタートチェック、AI副業アイデア質問集などを無料で利用できます。">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-782ZG589TK"></script>
 <script>
@@ -14,30 +18,25 @@
   gtag('config', 'G-782ZG589TK');
 </script>
 
-<meta name="description" content="無料で使えるAI副業素材。ChatGPTなどで使えるプロンプト、AI副業スタートチェック、アイデア整理などを初心者向けに無料公開しています。">
-
-<title>無料AI副業素材｜ゼロからAI副業</title>
-
 <link rel="stylesheet" href="styles.css">
 
 <style>
-
-/* =========================
-   ページ内目次
-   ========================= */
+/* ========================================
+   PRODUCTS PAGE
+======================================== */
 
 .page-toc{
   background:#fff;
   border:1px solid var(--line);
-  border-radius:14px;
-  padding:24px;
-  margin-bottom:34px;
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:32px;
   box-shadow:0 8px 24px rgba(15,23,42,.05);
 }
 
 .page-toc h2{
-  font-size:20px;
   margin:0 0 16px;
+  font-size:20px;
 }
 
 .page-toc ul{
@@ -51,11 +50,11 @@
 
 .page-toc a{
   display:block;
-  padding:12px 14px;
+  padding:13px 14px;
   border:1px solid var(--line);
-  border-radius:9px;
+  border-radius:10px;
   background:#f8fafc;
-  font-weight:700;
+  font-weight:800;
   font-size:14px;
 }
 
@@ -63,10 +62,9 @@
   background:#eef2f7;
 }
 
-
-/* =========================
-   無料素材カード
-   ========================= */
+.resource-anchor{
+  scroll-margin-top:90px;
+}
 
 .free-resource-card{
   display:block;
@@ -91,126 +89,6 @@
   font-weight:800;
 }
 
-.card-link{
-  display:inline-block;
-  margin-top:14px;
-  font-weight:800;
-  color:#2563eb;
-}
-
-
-/* =========================
-   無料素材本体
-   ========================= */
-
-.free-resource{
-  position:relative;
-  overflow:hidden;
-}
-
-.resource-box{
-  margin-top:18px;
-  padding:16px;
-  background:#f8fafc;
-  border:1px solid var(--line);
-  border-radius:10px;
-}
-
-.resource-box textarea{
-  width:100%;
-  min-height:150px;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:#fff;
-  color:var(--text);
-  font-size:14px;
-  line-height:1.7;
-  resize:vertical;
-  font-family:inherit;
-}
-
-.copy-btn{
-  width:100%;
-  margin-top:10px;
-  padding:12px 16px;
-  border:0;
-  border-radius:8px;
-  background:var(--ink);
-  color:#fff;
-  font-weight:800;
-  font-size:14px;
-  cursor:pointer;
-}
-
-.copy-btn:hover{
-  opacity:.85;
-}
-
-.copy-message{
-  display:block;
-  margin-top:8px;
-  font-size:12px;
-  color:#187a43;
-  font-weight:700;
-  min-height:18px;
-}
-
-
-/* =========================
-   チェックリスト
-   ========================= */
-
-.step-list{
-  counter-reset:step;
-  padding:0;
-  list-style:none;
-}
-
-.step-list li{
-  position:relative;
-  padding:16px 16px 16px 48px;
-  margin:10px 0;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:10px;
-}
-
-.step-list li::before{
-  counter-increment:step;
-  content:counter(step);
-  position:absolute;
-  left:14px;
-  top:15px;
-  width:24px;
-  height:24px;
-  border-radius:50%;
-  background:var(--gold);
-  color:#1a1300;
-  display:grid;
-  place-items:center;
-  font-size:12px;
-  font-weight:900;
-}
-
-
-/* =========================
-   ページ内リンク移動位置
-   ========================= */
-
-.resource-anchor{
-  scroll-margin-top:90px;
-}
-
-
-/* =========================
-   今後追加予定
-   ========================= */
-
-.future-card{
-  opacity:.82;
-}
-
 .future-label{
   display:inline-block;
   padding:5px 10px;
@@ -222,62 +100,179 @@
   font-weight:800;
 }
 
+.resource-box{
+  margin-top:18px;
+  padding:16px;
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:12px;
+}
 
-/* =========================
-   スマホ
-   ========================= */
+.resource-box textarea{
+  width:100%;
+  min-height:180px;
+  box-sizing:border-box;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#fff;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.75;
+  resize:vertical;
+  font-family:inherit;
+}
+
+.copy-btn{
+  width:100%;
+  margin-top:10px;
+  padding:13px 16px;
+  border:0;
+  border-radius:9px;
+  background:var(--ink);
+  color:#fff;
+  font-weight:800;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{
+  opacity:.86;
+}
+
+.copy-message{
+  display:block;
+  margin-top:8px;
+  min-height:18px;
+  font-size:12px;
+  color:#187a43;
+  font-weight:700;
+}
+
+.step-list{
+  counter-reset:step;
+  padding:0;
+  list-style:none;
+}
+
+.step-list li{
+  position:relative;
+  padding:17px 16px 17px 52px;
+  margin:10px 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:11px;
+}
+
+.step-list li::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;
+  left:14px;
+  top:15px;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#1a1300;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.resource-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
+
+.resource-meta span{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#f1f5f9;
+  font-size:11px;
+  font-weight:800;
+}
+
+.resource-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.resource-actions a{
+  text-decoration:none;
+}
+
+.future-card{
+  opacity:.9;
+}
+
+.info-list{
+  margin:14px 0 0;
+  padding-left:20px;
+}
+
+.info-list li{
+  margin:7px 0;
+}
 
 @media(max-width:760px){
+
+  .page-toc{
+    padding:18px;
+  }
 
   .page-toc ul{
     grid-template-columns:1fr;
   }
 
-  .page-toc{
-    padding:20px;
+  .resource-box{
+    padding:12px;
+  }
+
+  .resource-box textarea{
+    min-height:220px;
+    font-size:13px;
+  }
+
+  .step-list li{
+    padding-left:50px;
   }
 
 }
-
 </style>
-
 </head>
 
 
 <body>
 
-
 <header>
-
 <div class="container nav">
 
 <a class="logo" href="index.html">ゼロからAI副業</a>
 
 <nav class="navlinks">
-
 <a href="products.html">無料AI素材</a>
-
 <a href="tools.html">AIツール</a>
-
-<a href="services.html">サービス</a>
-
+<a href="services.html">AIを使った仕事</a>
 <a href="ai-learning.html">AIを学ぶ</a>
-
 <a href="about.html">このサイトについて</a>
-
 </nav>
 
 </div>
-
 </header>
 
 
 <main>
 
-
-<!-- =========================
+<!-- ========================================
      HERO
-     ========================= -->
+======================================== -->
 
 <section class="page-hero">
 
@@ -288,31 +283,61 @@
 <h1>無料AI副業素材</h1>
 
 <p class="lead">
-AI副業を始めたい人が、今日から実際に使える無料素材を公開しています。
+AI副業を始めたい人が、今日から実際に使える無料素材をまとめています。
 </p>
 
 <p>
 「情報を見るだけ」で終わらず、
-そのままコピーしてAIに入力できるものを中心に追加していきます。
+そのままコピーしてAIに入力したり、チェックリストとして使ったりできる素材を中心に掲載しています。
 </p>
+
+<div class="resource-meta">
+<span>無料</span>
+<span>コピペOK</span>
+<span>初心者向け</span>
+<span>スマホOK</span>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     CONTENT
-     ========================= -->
+<!-- ========================================
+     INTRO
+======================================== -->
 
 <section class="section">
 
 <div class="container">
 
+<div class="notice">
 
-<!-- =========================
-     目次
-     ========================= -->
+<strong>このページの素材は無料で利用できます。</strong>
+
+<p>
+まずは1つ使ってみてください。
+AIを使い始めるために、最初から有料サービスを契約する必要はありません。
+</p>
+
+<p>
+ただし、外部AIサービスそのものの料金・利用回数・機能については、それぞれの公式サイトをご確認ください。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================================
+     TOC
+======================================== -->
+
+<section class="section">
+
+<div class="container">
 
 <nav class="page-toc" aria-label="このページの目次">
 
@@ -328,31 +353,37 @@ AI副業を始めたい人が、今日から実際に使える無料素材を公
 
 <li>
 <a href="#resource1">
-AI副業アイデア整理プロンプト
+① AI副業アイデア整理プロンプト
 </a>
 </li>
 
 <li>
 <a href="#resource2">
-AI初心者向け基本プロンプト
+② AI初心者向け基本プロンプト
 </a>
 </li>
 
 <li>
 <a href="#resource3">
-7日間スタートチェック
+③ 7日間スタートチェック
 </a>
 </li>
 
 <li>
 <a href="#resource4">
-AI副業アイデア質問集
+④ AI副業アイデア質問集
+</a>
+</li>
+
+<li>
+<a href="#how-to-use">
+素材の使い方
 </a>
 </li>
 
 <li>
 <a href="#future">
-今後追加するもの
+今後追加する素材
 </a>
 </li>
 
@@ -360,20 +391,27 @@ AI副業アイデア質問集
 
 </nav>
 
+</div>
 
-<!-- =========================
-     無料素材一覧
-     ========================= -->
+</section>
 
-<div id="free-list" class="resource-anchor">
+
+<!-- ========================================
+     FREE LIST
+======================================== -->
+
+<section id="free-list" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
+
+<div class="eyebrow">FREE RESOURCES</div>
 
 <h2>まずは無料で使ってみる</h2>
 
 <p class="lead">
-このページにある素材は、基本的に無料で利用できます。
-気になるものをタップして、実際に使ってみてください。
+気になる素材を選んで、そのまま使ってください。
 </p>
 
 </div>
@@ -382,8 +420,6 @@ AI副業アイデア質問集
 <div class="grid">
 
 
-<!-- 1 -->
-
 <a href="#resource1" class="card free-resource-card">
 
 <span class="free-badge">FREE</span>
@@ -391,36 +427,38 @@ AI副業アイデア質問集
 <h3>AI副業アイデア整理</h3>
 
 <p>
-自分の状況から、始めやすいAI副業のアイデアを整理するためのプロンプトです。
+自分の状況から、始めやすいAI副業の候補を整理するためのプロンプトです。
 </p>
 
-<span class="card-link">
+<strong>おすすめ：</strong>
+AI副業を何から始めるか決められない人
+
+<p class="card-link">
 この素材を使う →
-</span>
+</p>
 
 </a>
 
-
-<!-- 2 -->
 
 <a href="#resource2" class="card free-resource-card">
 
 <span class="free-badge">FREE</span>
 
-<h3>AI初心者向けプロンプト</h3>
+<h3>AI初心者向け基本プロンプト</h3>
 
 <p>
-ChatGPTなどの生成AIに、より具体的な回答をしてもらうための基本プロンプトです。
+AIに質問するときの「役割・目的・条件・欲しい回答」を整理した汎用テンプレートです。
 </p>
 
-<span class="card-link">
+<strong>おすすめ：</strong>
+AIから欲しい回答を引き出せない人
+
+<p class="card-link">
 この素材を使う →
-</span>
+</p>
 
 </a>
 
-
-<!-- 3 -->
 
 <a href="#resource3" class="card free-resource-card">
 
@@ -429,12 +467,35 @@ ChatGPTなどの生成AIに、より具体的な回答をしてもらうため�
 <h3>7日間スタートチェック</h3>
 
 <p>
-AIを使って何か1つ作るところまで進むための、初心者向け7日間チェックリストです。
+AIを触るだけで終わらせず、7日間で小さな成果物を1つ作るためのチェックリストです。
 </p>
 
-<span class="card-link">
+<strong>おすすめ：</strong>
+何から始めればいいか分からない人
+
+<p class="card-link">
 チェックリストを見る →
-</span>
+</p>
+
+</a>
+
+
+<a href="#resource4" class="card free-resource-card">
+
+<span class="free-badge">FREE</span>
+
+<h3>AI副業アイデア質問集</h3>
+
+<p>
+自分の経験・得意なこと・相手の困りごとから、AIを使った仕事の可能性を考える質問集です。
+</p>
+
+<strong>おすすめ：</strong>
+自分にできることを整理したい人
+
+<p class="card-link">
+質問集を見る →
+</p>
 
 </a>
 
@@ -443,12 +504,16 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 
 </div>
 
+</section>
 
-<!-- =========================
+
+<!-- ========================================
      RESOURCE 1
-     ========================= -->
+======================================== -->
 
 <section id="resource1" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
 
@@ -457,7 +522,7 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 <h2>AI副業アイデア整理プロンプト</h2>
 
 <p class="lead">
-「AI副業をやってみたいけど、自分に何ができるかわからない」という人向け。
+「AI副業をやってみたいけど、自分に何ができるか分からない」という人向けです。
 </p>
 
 </div>
@@ -470,9 +535,8 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 <h3>このプロンプトをAIに入力してください</h3>
 
 <p>
-自分の状況をAIに伝えて、できそうな選択肢を整理してもらいます。
+自分の条件をAIに伝えて、実際に始められそうな選択肢を整理してもらいます。
 </p>
-
 
 <div class="resource-box">
 
@@ -488,16 +552,21 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 ・実際に誰かに提供したり販売したりできる可能性がある
 
 それぞれについて、
+
 1. 何をするのか
 2. AIをどう使うのか
 3. 誰に提供するのか
 4. 最初の一歩
 5. 難易度
+
 を簡潔に説明してください。
 
-最後に、初心者が最初に試すならどれが現実的か、理由と一緒に3つ選んでください。</textarea>
+最後に、初心者が最初に試すならどれが現実的か、理由と一緒に3つ選んでください。
 
-<button class="copy-btn" onclick="copyText('prompt1','message1')">
+また、収益化までに必要な作業・費用・注意点があれば、それも説明してください。</textarea>
+
+<button class="copy-btn"
+onclick="copyText('prompt1','message1','AI副業アイデア整理')">
 プロンプトをコピーする
 </button>
 
@@ -507,14 +576,18 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- =========================
+<!-- ========================================
      RESOURCE 2
-     ========================= -->
+======================================== -->
 
 <section id="resource2" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
 
@@ -523,7 +596,7 @@ AIを使って何か1つ作るところまで進むための、初心者向け7�
 <h2>AI初心者向け基本プロンプト</h2>
 
 <p class="lead">
-AIへの質問がうまくいかないときに使える、汎用的な型です。
+AIへの質問がうまくいかないときに使える、汎用的な質問テンプレートです。
 </p>
 
 </div>
@@ -536,9 +609,8 @@ AIへの質問がうまくいかないときに使える、汎用的な型です
 <h3>まずはこの形で質問する</h3>
 
 <p>
-目的・条件・欲しい形式を伝えることで、AIから必要な回答を得やすくなります。
+「何をしてほしいのか」「条件は何か」「どんな回答が欲しいのか」をAIに伝えます。
 </p>
-
 
 <div class="resource-box">
 
@@ -562,14 +634,18 @@ AIへの質問がうまくいかないときに使える、汎用的な型です
 ・
 
 【欲しい回答】
-・初心者にもわかるように説明してください
+・初心者にも分かるように説明してください
 ・具体例を入れてください
 ・実際に行動できる手順にしてください
 ・重要な順番に並べてください
+・必要ならメリットとデメリットも説明してください
 
-情報が足りない場合は、必要な質問を先にしてください。</textarea>
+情報が足りない場合は、回答を始める前に必要な質問をしてください。
 
-<button class="copy-btn" onclick="copyText('prompt2','message2')">
+最後に「今すぐやること」を3つに絞ってください。</textarea>
+
+<button class="copy-btn"
+onclick="copyText('prompt2','message2','AI初心者向け基本プロンプト')">
 プロンプトをコピーする
 </button>
 
@@ -579,14 +655,18 @@ AIへの質問がうまくいかないときに使える、汎用的な型です
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- =========================
+<!-- ========================================
      RESOURCE 3
-     ========================= -->
+======================================== -->
 
 <section id="resource3" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
 
@@ -595,7 +675,7 @@ AIへの質問がうまくいかないときに使える、汎用的な型です
 <h2>AI副業を始める7日間チェックリスト</h2>
 
 <p class="lead">
-いきなり大きく始めず、まず1週間で「AIを使って何か1つ作る」ことを目標にします。
+いきなり大きく始めず、1週間で「AIを使って何か1つ作る」ことを目標にします。
 </p>
 
 </div>
@@ -640,14 +720,30 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 
 </ol>
 
+
+<div class="notice">
+
+<strong>7日で収益化することが目的ではありません。</strong>
+
+<p>
+まず「AIを使って実際に何かを作れる状態」になることを目標にします。
+その後、需要があるかを確認してから収益化を考えます。
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- =========================
+<!-- ========================================
      RESOURCE 4
-     ========================= -->
+======================================== -->
 
 <section id="resource4" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
 
@@ -664,17 +760,19 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 
 <div class="grid">
 
+
 <div class="card">
 
 <h3>自分について</h3>
 
-<p>
-・今までやった仕事は？<br>
-・人より少し得意なことは？<br>
-・普段よく使うスマホアプリは？<br>
-・人から頼まれることは？<br>
-・興味がある分野は？
-</p>
+<ul class="info-list">
+<li>今までやった仕事は？</li>
+<li>人より少し得意なことは？</li>
+<li>普段よく使うスマホアプリは？</li>
+<li>人から頼まれることは？</li>
+<li>興味がある分野は？</li>
+<li>過去にお金を払ってでも解決したかったことは？</li>
+</ul>
 
 </div>
 
@@ -683,13 +781,14 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 
 <h3>AIについて</h3>
 
-<p>
-・文章を作るのに使えないか？<br>
-・画像作成に使えないか？<br>
-・調査や整理に使えないか？<br>
-・面倒な作業を効率化できないか？<br>
-・アイデア出しに使えないか？
-</p>
+<ul class="info-list">
+<li>文章を作るのに使えないか？</li>
+<li>画像作成に使えないか？</li>
+<li>調査や整理に使えないか？</li>
+<li>面倒な作業を効率化できないか？</li>
+<li>アイデア出しに使えないか？</li>
+<li>今まで時間がかかっていた作業を短縮できないか？</li>
+</ul>
 
 </div>
 
@@ -698,12 +797,113 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 
 <h3>相手について</h3>
 
+<ul class="info-list">
+<li>誰が困っている？</li>
+<li>何に時間を使っている？</li>
+<li>何を面倒だと感じている？</li>
+<li>何を代わりにやってほしい？</li>
+<li>AIを使えば楽にできることは？</li>
+<li>その人は今、どうやって解決している？</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>お金につなげる</h3>
+
+<ul class="info-list">
+<li>その作業を代わりにやったら価値がある？</li>
+<li>成果物として販売できる？</li>
+<li>継続して依頼してもらえる？</li>
+<li>無料で試してもらって有料化できる？</li>
+<li>同じ作業を複数人に提供できる？</li>
+<li>AIを使っても人間の確認・編集に価値を付けられる？</li>
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================================
+     HOW TO USE
+======================================== -->
+
+<section id="how-to-use" class="section resource-anchor">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">HOW TO USE</div>
+
+<h2>無料素材の使い方</h2>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>STEP 1</h3>
+
 <p>
-・誰が困っている？<br>
-・何に時間を使っている？<br>
-・何を面倒だと感じている？<br>
-・何を代わりにやってほしい？<br>
-・AIを使えば楽にできることは？
+使いたい素材を選びます。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>STEP 2</h3>
+
+<p>
+「プロンプトをコピーする」を押します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>STEP 3</h3>
+
+<p>
+ChatGPTなどのAIを開いて貼り付けます。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>STEP 4</h3>
+
+<p>
+自分の状況に合わせて内容を変更して使います。
+</p>
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<strong>そのまま使うだけでなく、自分用に変えるのがおすすめです。</strong>
+
+<p>
+AIへの指示は、自分の目的・条件・経験などを具体的に入れるほど使いやすくなります。
 </p>
 
 </div>
@@ -713,55 +913,59 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 </section>
 
 
-<!-- =========================
-     NOTICE
-     ========================= -->
+<!-- ========================================
+     TOOLS CROSS LINK
+======================================== -->
 
 <section class="section">
 
 <div class="container">
 
-<div class="notice">
+<div class="card">
 
-<div class="eyebrow">IMPORTANT</div>
+<div class="eyebrow">NEXT STEP</div>
 
-<h2>無料だからこそ、まず使ってみる</h2>
-
-<p>
-AIは実際に触ってみないと、自分に合う使い方が分かりません。
-このページの素材も、すべてを完璧に使う必要はありません。
-</p>
+<h2>使うAIを決めたら、次はツールを選ぶ</h2>
 
 <p>
-まず1つコピーしてAIに入力する。
-そこから自分に合う使い方を見つけていきましょう。
+無料素材を使ってみたら、次は実際に使えるAIツールを探してみましょう。
 </p>
+
+<div class="resource-actions">
 
 <a class="btn primary" href="tools.html">
-おすすめAIツールを見る →
+AIツールを見る →
+</a>
+
+<a class="btn secondary" href="services.html">
+AIを使った仕事を見る →
 </a>
 
 </div>
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- =========================
+<!-- ========================================
      FUTURE
-     ========================= -->
+======================================== -->
 
 <section id="future" class="section resource-anchor">
+
+<div class="container">
 
 <div class="section-head">
 
 <div class="eyebrow">COMING NEXT</div>
 
-<h2>今後追加するもの</h2>
+<h2>今後追加する無料素材</h2>
 
 <p class="lead">
-今後も実際に使って役立つ無料素材を追加していきます。
+今後も「実際に使えるもの」を優先して追加していきます。
 </p>
 
 </div>
@@ -777,7 +981,7 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 <h3>SNS投稿作成プロンプト</h3>
 
 <p>
-投稿テーマ、構成、文章作成などをAIに手伝ってもらうためのテンプレートを追加予定です。
+投稿テーマ、構成、文章作成などをAIに手伝ってもらうためのテンプレート。
 </p>
 
 </div>
@@ -790,7 +994,7 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 <h3>文章作成プロンプト</h3>
 
 <p>
-ブログ、メール、説明文など、文章作成に使えるプロンプトを追加予定です。
+ブログ、メール、商品説明など、文章作成に使えるプロンプト。
 </p>
 
 </div>
@@ -803,7 +1007,20 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 <h3>AI副業チェックシート</h3>
 
 <p>
-自分に合うAI副業を整理するためのチェックシートを追加予定です。
+自分の経験や使える時間などから、AI副業の方向性を整理するチェックシート。
+</p>
+
+</div>
+
+
+<div class="card future-card">
+
+<span class="future-label">追加予定</span>
+
+<h3>営業・提案文テンプレート</h3>
+
+<p>
+AIを使った仕事を提案するときに使える、初心者向けの文章テンプレート。
 </p>
 
 </div>
@@ -811,8 +1028,40 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 
 </div>
 
+</div>
+
 </section>
 
+
+<!-- ========================================
+     IMPORTANT
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="notice">
+
+<div class="eyebrow">IMPORTANT</div>
+
+<h2>無料素材を使うときの注意</h2>
+
+<p>
+このページのプロンプトやテンプレートは、AIから必ず正しい回答が得られることを保証するものではありません。
+</p>
+
+<p>
+AIが生成した文章・情報・画像などを実際に使用する場合は、自分で内容を確認してください。
+特に仕事として納品する場合は、誤情報・著作権・個人情報・各サービスの利用規約などを確認することが重要です。
+</p>
+
+<p>
+また、外部AIサービスの料金・無料利用範囲・機能・利用規約は変更される場合があります。
+利用前に公式情報をご確認ください。
+</p>
+
+</div>
 
 </div>
 
@@ -822,51 +1071,96 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 </main>
 
 
+<!-- ========================================
+     FOOTER
+======================================== -->
+
 <footer>
 
 <div class="container">
 
-© 2026 ゼロからAI副業
+<p>© 2026 ゼロからAI副業</p>
+
+<p>
+<a href="privacy.html">プライバシーポリシー</a> |
+<a href="disclaimer.html">免責事項</a> |
+<a href="contact.html">お問い合わせ</a>
+</p>
 
 </div>
 
 </footer>
 
 
+<!-- ========================================
+     COPY FUNCTION
+======================================== -->
+
 <script>
 
-function copyText(textareaId,messageId){
+function copyText(textareaId,messageId,resourceName){
 
   const textarea = document.getElementById(textareaId);
   const message = document.getElementById(messageId);
 
-  navigator.clipboard.writeText(textarea.value)
+  if(!textarea || !message){
+    return;
+  }
 
-    .then(function(){
+  function successMessage(){
 
-      message.textContent =
-        "コピーしました。AIに貼り付けて使えます。";
+    message.textContent =
+      "コピーしました。AIに貼り付けて使えます。";
 
-      setTimeout(function(){
-        message.textContent = "";
-      },3000);
+    if(typeof gtag === "function"){
 
-    })
+      gtag("event","free_resource_copy",{
+        event_category:"free_resource",
+        event_label:resourceName,
+        resource_name:resourceName
+      });
 
-    .catch(function(){
+    }
 
-      textarea.select();
+    setTimeout(function(){
+      message.textContent = "";
+    },3000);
 
+  }
+
+  if(navigator.clipboard && window.isSecureContext){
+
+    navigator.clipboard.writeText(textarea.value)
+      .then(successMessage)
+      .catch(function(){
+
+        textarea.focus();
+        textarea.select();
+
+        try{
+          document.execCommand("copy");
+          successMessage();
+        }catch(e){
+          message.textContent =
+            "コピーできませんでした。長押ししてコピーしてください。";
+        }
+
+      });
+
+  }else{
+
+    textarea.focus();
+    textarea.select();
+
+    try{
       document.execCommand("copy");
-
+      successMessage();
+    }catch(e){
       message.textContent =
-        "コピーしました。";
+        "コピーできませんでした。長押ししてコピーしてください。";
+    }
 
-      setTimeout(function(){
-        message.textContent = "";
-      },3000);
-
-    });
+  }
 
 }
 
