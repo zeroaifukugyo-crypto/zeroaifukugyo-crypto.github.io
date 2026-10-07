@@ -4,16 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="description" content="無料で使えるAI副業素材。ChatGPTなどで使えるプロンプト、AI副業スタートチェックリスト、アイデア整理シートを初心者向けに無料公開しています。">
+<meta name="description" content="無料で使えるAI副業素材。ChatGPTなどで使えるプロンプト、AI副業スタートチェック、アイデア整理などを初心者向けに無料公開しています。">
 
 <title>無料AI副業素材｜ゼロからAI副業</title>
 
 <link rel="stylesheet" href="styles.css">
 
 <style>
-.free-resource{
-  position:relative;
-  overflow:hidden;
+
+/* =========================
+   ページ内目次
+   ========================= */
+
+.page-toc{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+  margin-bottom:34px;
+  box-shadow:0 8px 24px rgba(15,23,42,.05);
+}
+
+.page-toc h2{
+  font-size:20px;
+  margin:0 0 16px;
+}
+
+.page-toc ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.page-toc a{
+  display:block;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#f8fafc;
+  font-weight:700;
+  font-size:14px;
+}
+
+.page-toc a:hover{
+  background:#eef2f7;
+}
+
+
+/* =========================
+   無料素材カード
+   ========================= */
+
+.free-resource-card{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.free-resource-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(15,23,42,.10);
 }
 
 .free-badge{
@@ -25,6 +79,23 @@
   color:#187a43;
   font-size:11px;
   font-weight:800;
+}
+
+.card-link{
+  display:inline-block;
+  margin-top:14px;
+  font-weight:800;
+  color:#2563eb;
+}
+
+
+/* =========================
+   無料素材本体
+   ========================= */
+
+.free-resource{
+  position:relative;
+  overflow:hidden;
 }
 
 .resource-box{
@@ -75,6 +146,11 @@
   min-height:18px;
 }
 
+
+/* =========================
+   チェックリスト
+   ========================= */
+
 .step-list{
   counter-reset:step;
   padding:0;
@@ -107,16 +183,59 @@
   font-weight:900;
 }
 
-.small-note{
-  margin-top:10px;
-  font-size:12px;
-  color:var(--muted);
+
+/* =========================
+   ページ内リンク移動位置
+   ========================= */
+
+.resource-anchor{
+  scroll-margin-top:90px;
 }
+
+
+/* =========================
+   今後追加予定
+   ========================= */
+
+.future-card{
+  opacity:.82;
+}
+
+.future-label{
+  display:inline-block;
+  padding:5px 10px;
+  margin-bottom:12px;
+  border-radius:999px;
+  background:#eef2f7;
+  color:#5b6475;
+  font-size:11px;
+  font-weight:800;
+}
+
+
+/* =========================
+   スマホ
+   ========================= */
+
+@media(max-width:760px){
+
+  .page-toc ul{
+    grid-template-columns:1fr;
+  }
+
+  .page-toc{
+    padding:20px;
+  }
+
+}
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -125,11 +244,17 @@
 <a class="logo" href="index.html">ゼロからAI副業</a>
 
 <nav class="navlinks">
+
 <a href="products.html">無料AI素材</a>
+
 <a href="tools.html">AIツール</a>
+
 <a href="services.html">サービス</a>
+
 <a href="ai-learning.html">AIを学ぶ</a>
+
 <a href="about.html">このサイトについて</a>
+
 </nav>
 
 </div>
@@ -167,12 +292,70 @@ AI副業を始めたい人が、今日から実際に使える無料素材を公
 
 
 <!-- =========================
-     INTRO
+     CONTENT
      ========================= -->
 
 <section class="section">
 
 <div class="container">
+
+
+<!-- =========================
+     目次
+     ========================= -->
+
+<nav class="page-toc" aria-label="このページの目次">
+
+<h2>このページの内容</h2>
+
+<ul>
+
+<li>
+<a href="#free-list">
+無料素材一覧
+</a>
+</li>
+
+<li>
+<a href="#resource1">
+AI副業アイデア整理プロンプト
+</a>
+</li>
+
+<li>
+<a href="#resource2">
+AI初心者向け基本プロンプト
+</a>
+</li>
+
+<li>
+<a href="#resource3">
+7日間スタートチェック
+</a>
+</li>
+
+<li>
+<a href="#resource4">
+AI副業アイデア質問集
+</a>
+</li>
+
+<li>
+<a href="#future">
+今後追加するもの
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =========================
+     無料素材一覧
+     ========================= -->
+
+<div id="free-list" class="resource-anchor">
 
 <div class="section-head">
 
@@ -180,7 +363,7 @@ AI副業を始めたい人が、今日から実際に使える無料素材を公
 
 <p class="lead">
 このページにある素材は、基本的に無料で利用できます。
-まずは1つ使って、AIが自分の作業にどう役立つのか試してみてください。
+気になるものをタップして、実際に使ってみてください。
 </p>
 
 </div>
@@ -188,61 +371,74 @@ AI副業を始めたい人が、今日から実際に使える無料素材を公
 
 <div class="grid">
 
-<div class="card">
+
+<!-- 1 -->
+
+<a href="#resource1" class="card free-resource-card">
 
 <span class="free-badge">FREE</span>
 
 <h3>AI副業アイデア整理</h3>
 
 <p>
-自分にできそうなAI副業を考えるためのプロンプトです。
-「何をすればいいかわからない」という状態から整理できます。
+自分の状況から、始めやすいAI副業のアイデアを整理するためのプロンプトです。
 </p>
 
-</div>
+<span class="card-link">
+この素材を使う →
+</span>
+
+</a>
 
 
-<div class="card">
+<!-- 2 -->
+
+<a href="#resource2" class="card free-resource-card">
 
 <span class="free-badge">FREE</span>
 
 <h3>AI初心者向けプロンプト</h3>
 
 <p>
-ChatGPTなどの生成AIに、
-自分の目的に合った回答をしてもらうための基本プロンプトです。
+ChatGPTなどの生成AIに、より具体的な回答をしてもらうための基本プロンプトです。
 </p>
 
-</div>
+<span class="card-link">
+この素材を使う →
+</span>
+
+</a>
 
 
-<div class="card">
+<!-- 3 -->
+
+<a href="#resource3" class="card free-resource-card">
 
 <span class="free-badge">FREE</span>
 
 <h3>7日間スタートチェック</h3>
 
 <p>
-AIを使って何か1つ作るところまで進むための、
-初心者向け7日間チェックリストです。
+AIを使って何か1つ作るところまで進むための、初心者向け7日間チェックリストです。
 </p>
 
-</div>
+<span class="card-link">
+チェックリストを見る →
+</span>
+
+</a>
+
 
 </div>
 
 </div>
-
-</section>
 
 
 <!-- =========================
      RESOURCE 1
      ========================= -->
 
-<section class="section">
-
-<div class="container">
+<section id="resource1" class="section resource-anchor">
 
 <div class="section-head">
 
@@ -301,8 +497,6 @@ AIを使って何か1つ作るところまで進むための、
 
 </div>
 
-</div>
-
 </section>
 
 
@@ -310,15 +504,13 @@ AIを使って何か1つ作るところまで進むための、
      RESOURCE 2
      ========================= -->
 
-<section class="section">
-
-<div class="container">
+<section id="resource2" class="section resource-anchor">
 
 <div class="section-head">
 
 <div class="eyebrow">RESOURCE 02</div>
 
-<h2>AIに良い回答をしてもらう基本プロンプト</h2>
+<h2>AI初心者向け基本プロンプト</h2>
 
 <p class="lead">
 AIへの質問がうまくいかないときに使える、汎用的な型です。
@@ -334,8 +526,7 @@ AIへの質問がうまくいかないときに使える、汎用的な型です
 <h3>まずはこの形で質問する</h3>
 
 <p>
-「何となく質問する」よりも、目的・条件・欲しい形式を伝えることで、
-AIから必要な回答を得やすくなります。
+目的・条件・欲しい形式を伝えることで、AIから必要な回答を得やすくなります。
 </p>
 
 
@@ -378,8 +569,6 @@ AIから必要な回答を得やすくなります。
 
 </div>
 
-</div>
-
 </section>
 
 
@@ -387,9 +576,7 @@ AIから必要な回答を得やすくなります。
      RESOURCE 3
      ========================= -->
 
-<section class="section">
-
-<div class="container">
+<section id="resource3" class="section resource-anchor">
 
 <div class="section-head">
 
@@ -428,7 +615,7 @@ ChatGPTなど、まずは1つのAIを使ってみる。
 
 <li>
 <strong>無料で人に見せる</strong><br>
-友人、SNS、コミュニティなど、規約に沿った場所で反応を確認する。
+SNSやコミュニティなど、各サービスの規約に沿った場所で反応を確認する。
 </li>
 
 <li>
@@ -443,8 +630,6 @@ ChatGPTなど、まずは1つのAIを使ってみる。
 
 </ol>
 
-</div>
-
 </section>
 
 
@@ -452,9 +637,7 @@ ChatGPTなど、まずは1つのAIを使ってみる。
      RESOURCE 4
      ========================= -->
 
-<section class="section">
-
-<div class="container">
+<section id="resource4" class="section resource-anchor">
 
 <div class="section-head">
 
@@ -463,7 +646,7 @@ ChatGPTなど、まずは1つのAIを使ってみる。
 <h2>AI副業アイデアを考えるための質問集</h2>
 
 <p class="lead">
-AI副業を探すときは、「何をしたいか」だけでなく「何ができるか」から考えるのもおすすめです。
+「何をしたいか」だけでなく、「何ができるか」から考えるための質問集です。
 </p>
 
 </div>
@@ -494,7 +677,7 @@ AI副業を探すときは、「何をしたいか」だけでなく「何がで
 ・文章を作るのに使えないか？<br>
 ・画像作成に使えないか？<br>
 ・調査や整理に使えないか？<br>
-・面倒な作業を自動化できないか？<br>
+・面倒な作業を効率化できないか？<br>
 ・アイデア出しに使えないか？
 </p>
 
@@ -512,8 +695,6 @@ AI副業を探すときは、「何をしたいか」だけでなく「何がで
 ・何を代わりにやってほしい？<br>
 ・AIを使えば楽にできることは？
 </p>
-
-</div>
 
 </div>
 
@@ -561,21 +742,27 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
      FUTURE
      ========================= -->
 
-<section class="section">
+<section id="future" class="section resource-anchor">
 
-<div class="container">
+<div class="section-head">
+
+<div class="eyebrow">COMING NEXT</div>
 
 <h2>今後追加するもの</h2>
 
 <p class="lead">
-このページでは、実際に使って役立つものを優先して無料素材を追加していきます。
+今後も実際に使って役立つ無料素材を追加していきます。
 </p>
+
+</div>
+
 
 <div class="grid">
 
-<div class="card">
 
-<span class="free-badge">COMING NEXT</span>
+<div class="card future-card">
+
+<span class="future-label">追加予定</span>
 
 <h3>SNS投稿作成プロンプト</h3>
 
@@ -586,9 +773,9 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 </div>
 
 
-<div class="card">
+<div class="card future-card">
 
-<span class="free-badge">COMING NEXT</span>
+<span class="future-label">追加予定</span>
 
 <h3>文章作成プロンプト</h3>
 
@@ -599,9 +786,9 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 </div>
 
 
-<div class="card">
+<div class="card future-card">
 
-<span class="free-badge">COMING NEXT</span>
+<span class="future-label">追加予定</span>
 
 <h3>AI副業チェックシート</h3>
 
@@ -611,7 +798,11 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 
 </div>
 
+
 </div>
+
+</section>
+
 
 </div>
 
@@ -633,27 +824,33 @@ AIは実際に触ってみないと、自分に合う使い方が分かりませ
 
 
 <script>
-function copyText(textareaId, messageId){
+
+function copyText(textareaId,messageId){
 
   const textarea = document.getElementById(textareaId);
   const message = document.getElementById(messageId);
 
   navigator.clipboard.writeText(textarea.value)
+
     .then(function(){
 
-      message.textContent = "コピーしました。AIに貼り付けて使えます。";
+      message.textContent =
+        "コピーしました。AIに貼り付けて使えます。";
 
       setTimeout(function(){
         message.textContent = "";
       },3000);
 
     })
+
     .catch(function(){
 
       textarea.select();
+
       document.execCommand("copy");
 
-      message.textContent = "コピーしました。";
+      message.textContent =
+        "コピーしました。";
 
       setTimeout(function(){
         message.textContent = "";
@@ -662,7 +859,9 @@ function copyText(textareaId, messageId){
     });
 
 }
+
 </script>
+
 
 </body>
 </html>
