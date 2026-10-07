@@ -3,182 +3,666 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="ゼロからAI副業のデジタル商品。AIを使って副業を始めたい初心者向けの実践コンテンツを紹介しています。">
-<title>デジタル商品｜ゼロからAI副業</title>
+
+<meta name="description" content="無料で使えるAI副業素材。ChatGPTなどで使えるプロンプト、AI副業スタートチェックリスト、アイデア整理シートを初心者向けに無料公開しています。">
+
+<title>無料AI副業素材｜ゼロからAI副業</title>
+
 <link rel="stylesheet" href="styles.css">
+
+<style>
+.free-resource{
+  position:relative;
+  overflow:hidden;
+}
+
+.free-badge{
+  display:inline-block;
+  padding:5px 10px;
+  margin-bottom:12px;
+  border-radius:999px;
+  background:#e8f7ee;
+  color:#187a43;
+  font-size:11px;
+  font-weight:800;
+}
+
+.resource-box{
+  margin-top:18px;
+  padding:16px;
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:10px;
+}
+
+.resource-box textarea{
+  width:100%;
+  min-height:150px;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+  color:var(--text);
+  font-size:14px;
+  line-height:1.7;
+  resize:vertical;
+  font-family:inherit;
+}
+
+.copy-btn{
+  width:100%;
+  margin-top:10px;
+  padding:12px 16px;
+  border:0;
+  border-radius:8px;
+  background:var(--ink);
+  color:#fff;
+  font-weight:800;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.copy-btn:hover{
+  opacity:.85;
+}
+
+.copy-message{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  color:#187a43;
+  font-weight:700;
+  min-height:18px;
+}
+
+.step-list{
+  counter-reset:step;
+  padding:0;
+  list-style:none;
+}
+
+.step-list li{
+  position:relative;
+  padding:16px 16px 16px 48px;
+  margin:10px 0;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:10px;
+}
+
+.step-list li::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;
+  left:14px;
+  top:15px;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#1a1300;
+  display:grid;
+  place-items:center;
+  font-size:12px;
+  font-weight:900;
+}
+
+.small-note{
+  margin-top:10px;
+  font-size:12px;
+  color:var(--muted);
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="container nav">
+
 <a class="logo" href="index.html">ゼロからAI副業</a>
 
 <nav class="navlinks">
-<a href="products.html">デジタル商品</a>
+<a href="products.html">無料AI素材</a>
 <a href="tools.html">AIツール</a>
 <a href="services.html">サービス</a>
+<a href="ai-learning.html">AIを学ぶ</a>
 <a href="about.html">このサイトについて</a>
 </nav>
+
 </div>
+
 </header>
+
 
 <main>
 
-<section class="page-hero">
-<div class="container">
-<div class="eyebrow">DIGITAL PRODUCTS</div>
 
-<h1>デジタル商品</h1>
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="page-hero">
+
+<div class="container">
+
+<div class="eyebrow">FREE AI RESOURCES</div>
+
+<h1>無料AI副業素材</h1>
 
 <p class="lead">
-AIを使って、実際の副業や作業に役立つデジタルコンテンツを作っています。<br>
-「読むだけ」で終わらず、実際に手を動かせることを重視しています。
+AI副業を始めたい人が、今日から実際に使える無料素材を公開しています。
 </p>
+
+<p>
+「情報を見るだけ」で終わらず、
+そのままコピーしてAIに入力できるものを中心に追加していきます。
+</p>
+
 </div>
+
 </section>
 
 
+<!-- =========================
+     INTRO
+     ========================= -->
+
 <section class="section">
+
 <div class="container">
 
 <div class="section-head">
-<h2>これから公開する商品</h2>
+
+<h2>まずは無料で使ってみる</h2>
 
 <p class="lead">
-現在は商品を準備しています。完成したものから順次公開します。
+このページにある素材は、基本的に無料で利用できます。
+まずは1つ使って、AIが自分の作業にどう役立つのか試してみてください。
 </p>
+
 </div>
 
 
 <div class="grid">
 
+<div class="card">
 
-<div class="card product">
-<span class="status">COMING SOON</span>
+<span class="free-badge">FREE</span>
 
-<h3>副業初心者向け ChatGPTプロンプト集</h3>
-
-<p>
-AI初心者でも使いやすいように、
-文章作成・アイデア出し・リサーチなど、
-目的別にすぐ使えるプロンプトをまとめる予定です。
-</p>
-
-<div class="bottom">
-公開準備中
-</div>
-</div>
-
-
-<div class="card product">
-<span class="status">COMING SOON</span>
-
-<h3>AIを使ったSNS運用テンプレート</h3>
+<h3>AI副業アイデア整理</h3>
 
 <p>
-投稿テーマの考え方、構成、文章作成など、
-SNS運用で繰り返し使えるテンプレートをまとめる予定です。
+自分にできそうなAI副業を考えるためのプロンプトです。
+「何をすればいいかわからない」という状態から整理できます。
 </p>
 
-<div class="bottom">
-公開準備中
-</div>
 </div>
 
 
-<div class="card product">
-<span class="status">COMING SOON</span>
+<div class="card">
 
-<h3>小さく始めるAI副業スタートキット</h3>
+<span class="free-badge">FREE</span>
+
+<h3>AI初心者向けプロンプト</h3>
 
 <p>
-AI副業を始めたいけれど何から始めればいいかわからない人向けに、
-最初の一歩から実践までを整理したガイドを作成する予定です。
+ChatGPTなどの生成AIに、
+自分の目的に合った回答をしてもらうための基本プロンプトです。
 </p>
 
-<div class="bottom">
-公開準備中
-</div>
 </div>
 
 
+<div class="card">
+
+<span class="free-badge">FREE</span>
+
+<h3>7日間スタートチェック</h3>
+
+<p>
+AIを使って何か1つ作るところまで進むための、
+初心者向け7日間チェックリストです。
+</p>
+
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESOURCE 1
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">RESOURCE 01</div>
+
+<h2>AI副業アイデア整理プロンプト</h2>
+
+<p class="lead">
+「AI副業をやってみたいけど、自分に何ができるかわからない」という人向け。
+</p>
+
+</div>
+
+
+<div class="card free-resource">
+
+<span class="free-badge">無料・コピペOK</span>
+
+<h3>このプロンプトをAIに入力してください</h3>
+
+<p>
+自分の状況をAIに伝えて、できそうな選択肢を整理してもらいます。
+</p>
+
+
+<div class="resource-box">
+
+<textarea id="prompt1" readonly>あなたはAI副業の相談役です。
+
+以下の条件をもとに、私が今の状況から始めやすいAIを活用した仕事・副業のアイデアを10個考えてください。
+
+【条件】
+・初期費用はできるだけかけない
+・初心者でも始めやすい
+・特別な資格や学歴を必要としない
+・AIを活用して作業効率を上げられる
+・実際に誰かに提供したり販売したりできる可能性がある
+
+それぞれについて、
+1. 何をするのか
+2. AIをどう使うのか
+3. 誰に提供するのか
+4. 最初の一歩
+5. 難易度
+を簡潔に説明してください。
+
+最後に、初心者が最初に試すならどれが現実的か、理由と一緒に3つ選んでください。</textarea>
+
+<button class="copy-btn" onclick="copyText('prompt1','message1')">
+プロンプトをコピーする
+</button>
+
+<span id="message1" class="copy-message"></span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESOURCE 2
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">RESOURCE 02</div>
+
+<h2>AIに良い回答をしてもらう基本プロンプト</h2>
+
+<p class="lead">
+AIへの質問がうまくいかないときに使える、汎用的な型です。
+</p>
+
+</div>
+
+
+<div class="card free-resource">
+
+<span class="free-badge">無料・コピペOK</span>
+
+<h3>まずはこの形で質問する</h3>
+
+<p>
+「何となく質問する」よりも、目的・条件・欲しい形式を伝えることで、
+AIから必要な回答を得やすくなります。
+</p>
+
+
+<div class="resource-box">
+
+<textarea id="prompt2" readonly>あなたは【役割】です。
+
+私は【目的】を達成したいです。
+
+【現在の状況】
+・
+・
+・
+
+【条件】
+・
+・
+・
+
+【避けたいこと】
+・
+・
+・
+
+【欲しい回答】
+・初心者にもわかるように説明してください
+・具体例を入れてください
+・実際に行動できる手順にしてください
+・重要な順番に並べてください
+
+情報が足りない場合は、必要な質問を先にしてください。</textarea>
+
+<button class="copy-btn" onclick="copyText('prompt2','message2')">
+プロンプトをコピーする
+</button>
+
+<span id="message2" class="copy-message"></span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESOURCE 3
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">RESOURCE 03</div>
+
+<h2>AI副業を始める7日間チェックリスト</h2>
+
+<p class="lead">
+いきなり大きく始めず、まず1週間で「AIを使って何か1つ作る」ことを目標にします。
+</p>
+
+</div>
+
+
+<ol class="step-list">
+
+<li>
+<strong>AIを1つ選ぶ</strong><br>
+ChatGPTなど、まずは1つのAIを使ってみる。
+</li>
+
+<li>
+<strong>自分ができそうなことを10個書く</strong><br>
+文章、画像、リサーチ、資料作成など、得意・経験のあることを整理する。
+</li>
+
+<li>
+<strong>AIを使って1つ作る</strong><br>
+文章、画像、テンプレートなど、小さなものを実際に作る。
+</li>
+
+<li>
+<strong>誰の役に立つか考える</strong><br>
+「誰がこれを使ったら便利なのか」を考える。
+</li>
+
+<li>
+<strong>無料で人に見せる</strong><br>
+友人、SNS、コミュニティなど、規約に沿った場所で反応を確認する。
+</li>
+
+<li>
+<strong>改善する</strong><br>
+使った人の反応をもとに内容を修正する。
+</li>
+
+<li>
+<strong>次の行動を決める</strong><br>
+無料提供を続ける、仕事として提供する、商品化するなど次の方向を決める。
+</li>
+
+</ol>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESOURCE 4
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">RESOURCE 04</div>
+
+<h2>AI副業アイデアを考えるための質問集</h2>
+
+<p class="lead">
+AI副業を探すときは、「何をしたいか」だけでなく「何ができるか」から考えるのもおすすめです。
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<div class="card">
+
+<h3>自分について</h3>
+
+<p>
+・今までやった仕事は？<br>
+・人より少し得意なことは？<br>
+・普段よく使うスマホアプリは？<br>
+・人から頼まれることは？<br>
+・興味がある分野は？
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>AIについて</h3>
+
+<p>
+・文章を作るのに使えないか？<br>
+・画像作成に使えないか？<br>
+・調査や整理に使えないか？<br>
+・面倒な作業を自動化できないか？<br>
+・アイデア出しに使えないか？
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>相手について</h3>
+
+<p>
+・誰が困っている？<br>
+・何に時間を使っている？<br>
+・何を面倒だと感じている？<br>
+・何を代わりにやってほしい？<br>
+・AIを使えば楽にできることは？
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NOTICE
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
 
 <div class="notice">
 
-<strong>商品は現在準備中です。</strong>
+<div class="eyebrow">IMPORTANT</div>
+
+<h2>無料だからこそ、まず使ってみる</h2>
 
 <p>
-このサイトでは、実際に使えること・初心者でも取り組みやすいことを重視して、
-商品を少しずつ追加していきます。
+AIは実際に触ってみないと、自分に合う使い方が分かりません。
+このページの素材も、すべてを完璧に使う必要はありません。
 </p>
 
 <p>
-販売を開始した商品については、このページから購入できるようにします。
+まず1つコピーしてAIに入力する。
+そこから自分に合う使い方を見つけていきましょう。
 </p>
+
+<a class="btn primary" href="tools.html">
+おすすめAIツールを見る →
+</a>
 
 </div>
 
+</div>
 
-<div class="section-head" style="margin-top:48px;">
+</section>
 
-<h2>商品を作る理由</h2>
+
+<!-- =========================
+     FUTURE
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2>今後追加するもの</h2>
 
 <p class="lead">
-AIを使えば、知識や作業を整理して、
-自分で使えるテンプレートや資料に変えることができます。
+このページでは、実際に使って役立つものを優先して無料素材を追加していきます。
 </p>
-
-<p>
-このサイトでは、単にAIについて説明するだけではなく、
-実際に使ってみて役立った方法を整理し、
-「自分でも使える形」にして届けることを目指しています。
-</p>
-
-</div>
-
 
 <div class="grid">
 
 <div class="card">
-<h3>初心者向け</h3>
+
+<span class="free-badge">COMING NEXT</span>
+
+<h3>SNS投稿作成プロンプト</h3>
+
 <p>
-専門的な知識がなくても理解しやすいように、
-できるだけ難しい言葉を使わずにまとめます。
+投稿テーマ、構成、文章作成などをAIに手伝ってもらうためのテンプレートを追加予定です。
 </p>
+
 </div>
+
 
 <div class="card">
-<h3>実践重視</h3>
+
+<span class="free-badge">COMING NEXT</span>
+
+<h3>文章作成プロンプト</h3>
+
 <p>
-読むだけの情報ではなく、
-実際の作業で使えるテンプレートや手順を重視します。
+ブログ、メール、説明文など、文章作成に使えるプロンプトを追加予定です。
 </p>
+
 </div>
+
 
 <div class="card">
-<h3>小さく始める</h3>
+
+<span class="free-badge">COMING NEXT</span>
+
+<h3>AI副業チェックシート</h3>
+
 <p>
-最初から大きな費用をかけるのではなく、
-できることから少しずつ試せる方法を紹介します。
+自分に合うAI副業を整理するためのチェックシートを追加予定です。
 </p>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
+
 
 </main>
 
 
 <footer>
+
 <div class="container">
+
 © 2026 ゼロからAI副業
+
 </div>
+
 </footer>
+
+
+<script>
+function copyText(textareaId, messageId){
+
+  const textarea = document.getElementById(textareaId);
+  const message = document.getElementById(messageId);
+
+  navigator.clipboard.writeText(textarea.value)
+    .then(function(){
+
+      message.textContent = "コピーしました。AIに貼り付けて使えます。";
+
+      setTimeout(function(){
+        message.textContent = "";
+      },3000);
+
+    })
+    .catch(function(){
+
+      textarea.select();
+      document.execCommand("copy");
+
+      message.textContent = "コピーしました。";
+
+      setTimeout(function(){
+        message.textContent = "";
+      },3000);
+
+    });
+
+}
+</script>
 
 </body>
 </html>
