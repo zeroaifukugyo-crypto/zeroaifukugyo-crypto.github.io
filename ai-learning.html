@@ -1,1 +1,623 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>AIを学ぶ｜ゼロからAI副業</title>
+
+<meta name="description" content="生成AIを仕事で活用したい人向けに、AIの学び方や学習サービスを紹介します。DMM 生成AI CAMP 学び放題など、生成AIを体系的に学ぶための選択肢を紹介しています。">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+
+/* =========================
+   AIを学ぶページ専用
+   ========================= */
+
+.learning-intro{
+  max-width:760px;
+}
+
+.ad-disclosure{
+  margin:28px 0 0;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+  color:#4b5563;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.ad-disclosure strong{
+  color:#111827;
+}
+
+.learning-ad{
+  max-width:760px;
+  margin:34px auto 0;
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(15,23,42,.06);
+}
+
+.learning-ad-label{
+  display:inline-block;
+  margin-bottom:16px;
+  padding:5px 10px;
+  border-radius:5px;
+  background:#111827;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.learning-ad h3{
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.4;
+}
+
+.learning-ad p{
+  color:var(--muted);
+}
+
+.learning-ad-banner{
+  margin:24px auto 8px;
+  text-align:center;
+}
+
+.learning-ad-banner a{
+  display:inline-block;
+  margin:0;
+  padding:0;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+
+.learning-ad-banner a:hover{
+  opacity:.9;
+}
+
+.learning-ad-banner img{
+  display:block;
+  width:300px;
+  height:250px;
+  max-width:100%;
+  margin:0 auto;
+  border:0;
+}
+
+.learning-ad-note{
+  margin-top:18px;
+  font-size:12px;
+  color:#6b7280;
+  line-height:1.7;
+}
+
+.learning-ad-cta{
+  display:block;
+  width:100%;
+  margin-top:20px;
+  padding:14px 20px;
+  border-radius:10px;
+  background:var(--text);
+  color:#fff !important;
+  text-align:center;
+  font-size:15px;
+  font-weight:800;
+  box-shadow:none;
+}
+
+.learning-ad-cta:hover{
+  opacity:.85;
+}
+
+.learning-points{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:28px;
+}
+
+.learning-point{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:24px;
+}
+
+.learning-point h3{
+  margin-top:0;
+}
+
+.learning-point p{
+  margin-bottom:0;
+  color:var(--muted);
+}
+
+.learning-check{
+  margin-top:28px;
+  padding:28px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.learning-check ul{
+  margin:0;
+  padding-left:22px;
+}
+
+.learning-check li{
+  margin:10px 0;
+}
+
+.learning-bottom{
+  margin-top:20px;
+  padding:24px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:14px;
+}
+
+.learning-bottom p{
+  color:#d1d5db;
+}
+
+.learning-bottom a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:10px;
+  padding:13px 20px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#1a1300 !important;
+  font-weight:800;
+}
+
+@media(max-width:760px){
+
+  .learning-ad{
+    padding:22px 18px;
+    margin-top:26px;
+  }
+
+  .learning-ad h3{
+    font-size:21px;
+  }
+
+  .learning-points{
+    grid-template-columns:1fr;
+  }
+
+  .learning-ad-banner img{
+    width:300px;
+    height:250px;
+    max-width:100%;
+    object-fit:contain;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<a class="logo" href="index.html">ゼロからAI副業</a>
+
+<nav class="navlinks">
+<a href="products.html">デジタル商品</a>
+<a href="tools.html">AIツール</a>
+<a href="services.html">サービス</a>
+<a href="ai-learning.html">AIを学ぶ</a>
+<a href="about.html">このサイトについて</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     ヒーロー
+     ========================= -->
+
+<section class="page-hero">
+
+<div class="container learning-intro">
+
+<div class="eyebrow">AI LEARNING</div>
+
+<h1>AIを学ぶ</h1>
+
+<p class="lead">
+AIを「知る」だけで終わらせず、<br>
+仕事で活用するための学び方を考える。
+</p>
+
+<p>
+生成AIは、実際に使ってみることで分かることがたくさんあります。
+このページでは、生成AIをこれから学びたい人に向けて、
+学習の考え方やサービスを紹介します。
+</p>
+
+<!-- 広告であることをファーストビュー内で明示 -->
+
+<div class="ad-disclosure">
+<strong>PR・広告について</strong><br>
+このページにはアフィリエイト広告が含まれています。
+広告・紹介リンクを通じて、当サイトが紹介料を受け取る場合があります。
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     最初の広告
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">RECOMMENDED LEARNING</div>
+
+<h2>生成AIを仕事で活用したい人へ</h2>
+
+<p class="lead">
+独学でAIを試す方法もありますが、
+体系的に学ぶという選択肢もあります。
+</p>
+
+</div>
+
+
+<div class="learning-ad">
+
+<div class="learning-ad-label">
+PR｜広告
+</div>
+
+<h3>DMM 生成AI CAMP 学び放題</h3>
+
+<p>
+ChatGPTなどの生成AIを、仕事で活用するための
+学習サービスを探している人向けの選択肢です。
+</p>
+
+<div class="learning-ad-banner">
+
+<!-- A8公式広告コード：変更せず使用 -->
+
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www20.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1">
+</a>
+
+<img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" alt="">
+
+</div>
+
+<a
+class="learning-ad-cta"
+href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
+rel="nofollow">
+公式サイトで詳細を見る
+</a>
+
+<p class="learning-ad-note">
+※サービス内容、料金、利用条件などは変更される場合があります。
+利用前に公式サイトで最新情報をご確認ください。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AIを学ぶ理由
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">WHY LEARN AI?</div>
+
+<h2>AIを学ぶときに大切なこと</h2>
+
+<p class="lead">
+ツールの名前を覚えることだけが、AIを学ぶことではありません。
+</p>
+
+</div>
+
+
+<div class="learning-points">
+
+<div class="learning-point">
+
+<span class="number">01</span>
+
+<h3>まず使ってみる</h3>
+
+<p>
+実際にAIへ質問したり、文章を作ったりすることで、
+できることと苦手なことが見えてきます。
+</p>
+
+</div>
+
+
+<div class="learning-point">
+
+<span class="number">02</span>
+
+<h3>目的から考える</h3>
+
+<p>
+「AIを使う」こと自体を目的にせず、
+どんな作業を効率化したいのかを考えることが大切です。
+</p>
+
+</div>
+
+
+<div class="learning-point">
+
+<span class="number">03</span>
+
+<h3>実際の作業に使う</h3>
+
+<p>
+文章、資料作成、アイデア整理など、
+自分の作業の中で使うことで理解を深められます。
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     どんな人向けか
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">WHO IS IT FOR?</div>
+
+<h2>こんな人に向いています</h2>
+
+</div>
+
+
+<div class="learning-check">
+
+<ul>
+
+<li>生成AIをこれから本格的に使ってみたい</li>
+
+<li>ChatGPTなどを仕事で活用する方法を知りたい</li>
+
+<li>独学だけでは何から学べばいいか分からない</li>
+
+<li>AIについて体系的に学ぶ選択肢を探している</li>
+
+<li>AIを実際の作業に取り入れてみたい</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     学習サービス紹介
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">AI LEARNING SERVICE</div>
+
+<h2>DMM 生成AI CAMP 学び放題</h2>
+
+<p class="lead">
+生成AIを学ぶためのサービスの一つとして紹介します。
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>学習サービスを選ぶときに確認したいこと</h3>
+
+<p>
+AIの学習サービスを選ぶときは、
+自分が何を学びたいのかを先に整理しておくと比較しやすくなります。
+</p>
+
+<ul class="clean">
+
+<li>自分が使いたいAIツールを学べるか</li>
+
+<li>仕事で使う場面を想定した内容になっているか</li>
+
+<li>自分の学習スタイルに合っているか</li>
+
+<li>料金や利用期間が自分の予算に合っているか</li>
+
+<li>公式サイトで最新のサービス内容を確認できるか</li>
+
+</ul>
+
+</div>
+
+
+<div class="learning-bottom">
+
+<h3>
+DMM 生成AI CAMP 学び放題を詳しく見る
+</h3>
+
+<p>
+サービス内容や料金、利用条件などを確認したうえで、
+自分に合った学習方法かどうかを検討できます。
+</p>
+
+<a
+href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
+rel="nofollow">
+公式サイトで詳細を見る →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     もう一度広告
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="learning-ad">
+
+<div class="learning-ad-label">
+PR｜広告
+</div>
+
+<h3>DMM 生成AI CAMP 学び放題</h3>
+
+<p>
+生成AIを仕事で活用するための学習サービスを
+検討している方は、公式サイトで詳細を確認できます。
+</p>
+
+
+<div class="learning-ad-banner">
+
+<!-- A8公式広告コード：変更せず使用 -->
+
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" rel="nofollow">
+<img border="0" width="300" height="250" alt="" src="https://www20.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1">
+</a>
+
+<img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5YZ75" alt="">
+
+</div>
+
+<a
+class="learning-ad-cta"
+href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5YZ75"
+rel="nofollow">
+公式サイトで詳細を見る
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     広告について
+     ========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<h2>広告・アフィリエイトについて</h2>
+
+<div class="card">
+
+<p>
+このページにはアフィリエイト広告が含まれています。
+</p>
+
+<p>
+当サイトでは、サービスや商品の紹介を通じて
+紹介料を受け取る場合があります。
+</p>
+
+<p>
+広告・紹介リンクを掲載する場合は、
+広告であることが分かるように表示しています。
+</p>
+
+<p>
+掲載しているサービスの料金、機能、利用条件などは
+変更される場合があります。
+利用前には各サービスの公式サイトや最新の利用規約をご確認ください。
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="container">
+
+© 2026 ゼロからAI副業
+
+</div>
+
+</footer>
+
+</body>
+</html>
