@@ -1,25 +1,130 @@
 <!doctype html>
 <html lang="ja">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- Google tag (gtag.js) -->
+<title>このサイトについて｜ゼロからAI副業</title>
+
+<meta name="description" content="ゼロからAI副業について。AIを活用して小さく始められる副業や仕事、AIツール、無料素材などを実践的に紹介しています。">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-782ZG589TK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-782ZG589TK');
 </script>
 
-<meta name="description" content="ゼロからAI副業について。AIを活用して小さく始められる副業や仕事、デジタル商品、AIツールについて実践的に発信しています。">
-
-<title>このサイトについて｜ゼロからAI副業</title>
-
 <link rel="stylesheet" href="styles.css">
+
+<style>
+
+.about-profile{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.about-avatar{
+  width:64px;
+  height:64px;
+  flex:0 0 64px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:#fff;
+  font-size:20px;
+  font-weight:900;
+}
+
+.about-profile-name{
+  margin:0 0 4px;
+  font-size:18px;
+}
+
+.about-profile-sub{
+  color:#667085;
+  font-size:14px;
+}
+
+.about-divider{
+  border:0;
+  border-top:1px solid var(--line);
+  margin:26px 0;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.about-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px;
+}
+
+.about-card h3{
+  margin-top:0;
+}
+
+.about-card p{
+  color:var(--muted);
+}
+
+.policy-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.policy-list li{
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.policy-list li:last-child{
+  border-bottom:0;
+}
+
+.policy-list strong{
+  display:block;
+  margin-bottom:7px;
+}
+
+.about-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:22px;
+}
+
+.about-links a{
+  text-decoration:none;
+}
+
+.about-note{
+  margin-top:28px;
+}
+
+@media(max-width:760px){
+
+  .about-profile{
+    align-items:flex-start;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
 </head>
 
 
@@ -32,15 +137,11 @@
 <a class="logo" href="index.html">ゼロからAI副業</a>
 
 <nav class="navlinks">
-
-<a href="products.html">デジタル商品</a>
-
+<a href="products.html">無料AI素材</a>
 <a href="tools.html">AIツール</a>
-
-<a href="services.html">サービス</a>
-
+<a href="services.html">AIを使った仕事</a>
+<a href="ai-learning.html">AIを学ぶ</a>
 <a href="about.html">このサイトについて</a>
-
 </nav>
 
 </div>
@@ -50,6 +151,10 @@
 
 <main>
 
+
+<!-- ========================================
+     HERO
+======================================== -->
 
 <section class="page-hero">
 
@@ -64,28 +169,39 @@ AIを武器に、小さな収益を積み上げる方法を
 実践・発信するサイトです。
 </p>
 
+<p>
+「AIを使って何ができるのか」を、できるだけ具体的に。
+初心者でも実際に試せる情報を中心に発信しています。
+</p>
+
 </div>
 
 </section>
 
 
+<!-- ========================================
+     PROFILE
+======================================== -->
 
 <section class="section">
 
 <div class="container">
 
-
 <div class="card">
 
-<div class="profile">
+<div class="about-profile">
 
-<div class="avatar">AI</div>
+<div class="about-avatar">
+AI
+</div>
 
 <div>
 
-<strong>28歳 / AIクリエイター</strong>
+<h2 class="about-profile-name">
+28歳 / AIクリエイター
+</h2>
 
-<div style="color:#667085;font-size:14px">
+<div class="about-profile-sub">
 ゼロからAI副業
 </div>
 
@@ -94,16 +210,18 @@ AIを武器に、小さな収益を積み上げる方法を
 </div>
 
 
-<hr style="border:0;border-top:1px solid #e5e7eb;margin:26px 0">
+<hr class="about-divider">
 
 
 <p>
 特別な才能や大きな資金がなくても、
 AIの使い方を工夫することで、
 小さな仕事や収益につなげられる。
-そんな考えから、このサイトを運営しています。
 </p>
 
+<p>
+そんな考えから、このサイトを運営しています。
+</p>
 
 <p>
 AIについて何も知らない人でも理解しやすいように、
@@ -111,12 +229,24 @@ AIについて何も知らない人でも理解しやすいように、
 実際に試せる方法を中心に情報を整理しています。
 </p>
 
+</div>
 
 </div>
 
+</section>
 
 
-<div class="section-head" style="margin-top:48px">
+<!-- ========================================
+     WHAT WE PUBLISH
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">WHAT WE PUBLISH</div>
 
 <h2>このサイトで発信すること</h2>
 
@@ -128,115 +258,245 @@ AIを使って「実際に何ができるのか」を、
 </div>
 
 
-<div class="grid">
+<div class="about-grid">
 
 
-<div class="card">
+<div class="about-card">
 
 <h3>AIツール</h3>
 
 <p>
 ChatGPTなどのAIツールについて、
-それぞれの特徴や使い方、
-どんな人に向いているのかを紹介します。
+特徴や使い方、どんな人に向いているのかを紹介します。
 </p>
+
+<div class="about-links">
+
+<a class="btn secondary" href="tools.html">
+AIツールを見る →
+</a>
+
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="about-card">
 
-<h3>デジタル商品</h3>
+<h3>無料AI素材</h3>
 
 <p>
-AIを活用して作成したテンプレート、
-ガイドなどのデジタル商品を制作・紹介します。
+AI副業を始めるために使えるプロンプトやチェックリストなど、
+実際に使える無料素材を公開します。
 </p>
+
+<div class="about-links">
+
+<a class="btn secondary" href="products.html">
+無料素材を見る →
+</a>
+
+</div>
 
 </div>
 
 
-<div class="card">
+<div class="about-card">
 
-<h3>小さな仕事</h3>
+<h3>AIを使った仕事</h3>
 
 <p>
 AIを活用して取り組める仕事や、
 実際にサービスとして提供できる方法を紹介します。
 </p>
 
+<div class="about-links">
+
+<a class="btn secondary" href="services.html">
+仕事を見る →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>AIを学ぶ</h3>
+
+<p>
+AI初心者が何から学べばいいのか、
+無料で試す方法から学習サービスまで整理します。
+</p>
+
+<div class="about-links">
+
+<a class="btn secondary" href="ai-learning.html">
+AIを学ぶ →
+</a>
+
+</div>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>デジタル商品</h3>
+
+<p>
+AIを活用して作成できるテンプレートやガイドなど、
+今後、実用的なデジタル商品も展開していく予定です。
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>小さな収益化</h3>
+
+<p>
+いきなり大きく稼ぐことではなく、
+小さく試して需要を確認しながら収益化する方法を重視します。
+</p>
+
 </div>
 
 
 </div>
 
+</div>
+
+</section>
 
 
-<div class="section-head" style="margin-top:48px">
+<!-- ========================================
+     POLICY
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">EDITORIAL POLICY</div>
 
 <h2>このサイトの方針</h2>
 
 </div>
 
 
-<div class="grid">
-
-
 <div class="card">
 
-<h3>机上の空論を減らす</h3>
+<ul class="policy-list">
 
-<p>
-「AIを使えば簡単に稼げる」といった
-根拠のない情報をそのまま紹介するのではなく、
+<li>
+
+<strong>① 机上の空論を減らす</strong>
+
+<span>
+「AIを使えば簡単に稼げる」といった根拠のない情報を
+そのまま紹介するのではなく、
 実際に試せる内容を重視します。
-</p>
+</span>
 
-</div>
+</li>
 
 
-<div class="card">
+<li>
 
-<h3>小さく始める</h3>
+<strong>② 小さく始める</strong>
 
-<p>
+<span>
 最初から大きな投資や設備を必要とする方法ではなく、
 できるだけ小さく始められる方法を紹介します。
-</p>
+</span>
+
+</li>
+
+
+<li>
+
+<strong>③ 読者にとって分かりやすくする</strong>
+
+<span>
+AI初心者でも理解できるように、
+専門用語をできるだけかみ砕いて説明します。
+</span>
+
+</li>
+
+
+<li>
+
+<strong>④ 情報の更新を意識する</strong>
+
+<span>
+AIツールの機能、料金、利用条件などは変更される可能性があります。
+掲載情報については、できるだけ最新の情報を確認するようにします。
+</span>
+
+</li>
+
+
+<li>
+
+<strong>⑤ 広告・PRを分かりやすく表示する</strong>
+
+<span>
+広告やアフィリエイトを利用する場合は、
+読者が広告であることを理解できるように表示します。
+</span>
+
+</li>
+
+
+<li>
+
+<strong>⑥ 利用規約や法律を尊重する</strong>
+
+<span>
+AIサービスや外部サービスを紹介・利用する際は、
+それぞれの利用規約や関連するルールを確認することを重視します。
+</span>
+
+</li>
+
+</ul>
 
 </div>
 
+</div>
 
-<div class="card">
+</section>
 
-<h3>正確な情報を心がける</h3>
+
+<!-- ========================================
+     MONETIZATION
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="notice">
+
+<div class="eyebrow">MONETIZATION</div>
+
+<h2>このサイトの収益について</h2>
 
 <p>
-サービスやAIツールの仕様、料金など、
-変更される可能性がある情報については、
-できるだけ最新の情報を確認するようにします。
-</p>
-
-</div>
-
-
-</div>
-
-
-
-<div class="notice" style="margin-top:48px">
-
-<strong>収益について</strong>
-
-<p>
-このサイトでは、今後デジタル商品の販売や、
+このサイトでは、今後デジタル商品の販売、
 サービスの提供、広告・アフィリエイトなどを
 利用する場合があります。
 </p>
 
 <p>
 広告やアフィリエイトを利用する場合は、
-読者にわかりやすい形で表示することを心がけます。
+読者に分かりやすい形で表示することを心がけます。
 </p>
 
 <p>
@@ -244,18 +504,40 @@ AIを活用して取り組める仕事や、
 利用・購入による利益が発生する場合があります。
 </p>
 
+<p>
+広告があることだけを理由に、
+読者にとって必要のないサービスを勧めることはせず、
+紹介する価値があるかを考えた上で掲載します。
+</p>
+
 </div>
 
+</div>
+
+</section>
 
 
-<div class="section-head" style="margin-top:48px">
+<!-- ========================================
+     IMPORTANT
+======================================== -->
 
-<h2>最後に</h2>
+<section class="section">
+
+<div class="container">
+
+<div class="card">
+
+<div class="eyebrow">IMPORTANT</div>
+
+<h2>AIだけで収益が保証されるわけではありません</h2>
 
 <p>
 AIは、それだけで収益を保証してくれるものではありません。
+</p>
+
+<p>
 重要なのは、AIを使って何を作るのか、
-誰の役に立つのかを考えて実際に行動することだと考えています。
+誰の役に立つのかを考えて、実際に行動することだと考えています。
 </p>
 
 <p>
@@ -265,19 +547,67 @@ AIは、それだけで収益を保証してくれるものではありません
 
 </div>
 
+</div>
+
+</section>
+
+
+<!-- ========================================
+     FINAL NAVIGATION
+======================================== -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="card">
+
+<div class="eyebrow">START HERE</div>
+
+<h2>まずは無料で試してみる</h2>
+
+<p>
+AI副業に興味があるなら、
+まずは無料素材を使ってAIを実際に触ってみてください。
+</p>
+
+<div class="about-links">
+
+<a class="btn primary" href="products.html">
+無料AI素材を見る →
+</a>
+
+<a class="btn secondary" href="tools.html">
+AIツールを見る →
+</a>
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
+
 </main>
 
+
+<!-- ========================================
+     FOOTER
+======================================== -->
 
 <footer>
 
 <div class="container">
 
-© 2026 ゼロからAI副業
+<p>© 2026 ゼロからAI副業</p>
+
+<p>
+<a href="privacy.html">プライバシーポリシー</a> |
+<a href="disclaimer.html">免責事項</a> |
+<a href="contact.html">お問い合わせ</a>
+</p>
 
 </div>
 
