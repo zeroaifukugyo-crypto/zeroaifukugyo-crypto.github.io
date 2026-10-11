@@ -579,3 +579,40 @@ footer a:hover {
     padding: 18px;
   }
 }
+/* =========================================================
+CTA Buttons - Layout Fix
+========================================================= */
+
+.hero-actions,
+.resource-actions {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 12px;
+margin-top: 24px;
+}
+
+.hero-actions .btn,
+.resource-actions .btn {
+width: auto;
+max-width: 100%;
+margin: 0;
+flex: 0 1 auto;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+.hero-actions,
+.resource-actions {
+flex-direction: column;
+align-items: stretch;
+gap: 12px;
+}
+
+.hero-actions .btn,
+.resource-actions .btn {
+width: 100%;
+max-width: 100%;
+margin: 0;
+}
+}
