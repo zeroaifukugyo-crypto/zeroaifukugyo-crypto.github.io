@@ -1,232 +1,68 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080d1b">
-
 <title>ConoHa AI Canvas｜ブラウザで始めるAI画像生成｜ゼロからAI副業</title>
 <meta name="description" content="ConoHa AI Canvasの特徴、向いている人、利用前に確認したい料金や商用利用の条件を初心者向けに紹介します。">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zeroaifukugyo-crypto-github-io.pages.dev/conoha-ai-canvas.html">
 
 <style>
-:root {
-  color-scheme: dark;
-  --bg: #080d1b;
-  --panel: #101a31;
-  --text: #f4f7ff;
-  --muted: #c4cee2;
-  --cyan: #69e8f5;
-  --blue: #397cff;
-  --line: rgba(170,203,255,.17);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: var(--text);
-  background:
-    radial-gradient(ellipse at 82% 16%, rgba(0,194,220,.22), transparent 31rem),
-    radial-gradient(ellipse at 18% 45%, rgba(49,99,255,.12), transparent 35rem),
-    linear-gradient(145deg,#080d1b 0%,#111a34 56%,#080d1b 100%);
-  font-family: -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-  line-height: 1.85;
-  overflow-wrap: anywhere;
-}
-a { color: #8cecf6; }
-.site-header {
-  background: rgba(5,10,22,.94);
-  border-bottom: 1px solid var(--line);
-}
-.header-inner {
-  width: min(1120px,100%);
-  margin: 0 auto;
-  padding: 22px 24px 18px;
-}
-.brand {
-  display: inline-block;
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -.03em;
-  text-decoration: none;
-  line-height: 1.4;
-}
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 22px;
-  margin-top: 15px;
-}
-.nav a {
-  color: #d9e5ff;
-  text-decoration: none;
-  font-size: .96rem;
-  padding: 2px 0;
-}
-.nav a:hover,.nav a:focus-visible { color: var(--cyan); }
-main {
-  width: min(100%,1120px);
-  margin: 0 auto;
-  padding: 0 24px 64px;
-}
-.hero {
-  position: relative;
-  isolation: isolate;
-  padding: clamp(52px,8vw,96px) 0 56px;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: -24px;
-  width: min(70%,580px);
-  height: 430px;
-  background: radial-gradient(ellipse,rgba(0,203,231,.16),transparent 68%);
-  pointer-events: none;
-}
-.eyebrow {
-  display: inline-block;
-  margin: 0 0 22px;
-  color: var(--cyan);
-  font-size: .98rem;
-  font-weight: 800;
-  letter-spacing: .16em;
-}
-h1 {
-  max-width: 850px;
-  margin: 0 0 26px;
-  color: #f6f8ff;
-  font-size: clamp(2rem,5.2vw,3.6rem);
-  line-height: 1.35;
-  letter-spacing: -.035em;
-  font-weight: 850;
-}
-.lead {
-  max-width: 800px;
-  margin: 0;
-  color: #d4def2;
-  font-size: clamp(1.02rem,2.5vw,1.25rem);
-  line-height: 2;
-}
-.disclosure {
-  margin: 30px 0 32px;
-  max-width: 850px;
-  color: #c5d0e6;
-  font-size: .94rem;
-}
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 64px;
-  max-width: 100%;
-  padding: 17px 26px;
-  border: 1px solid rgba(112,235,255,.38);
-  border-radius: 16px;
-  background: linear-gradient(110deg,#10bed2 0%,#397cff 100%);
-  box-shadow: 0 12px 30px rgba(0,124,255,.16);
-  color: #07142b;
-  font-size: 1.06rem;
-  font-weight: 850;
-  line-height: 1.5;
-  text-decoration: none;
-  text-align: center;
-  transition: transform .18s ease,filter .18s ease;
-}
-.cta:hover { transform: translateY(-2px); filter: brightness(1.08); }
-.cta:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
-section {
-  padding: 34px 0;
-  border-top: 1px solid var(--line);
-}
-h2 {
-  margin: 0 0 18px;
-  color: #f4f7ff;
-  font-size: clamp(1.45rem,3.5vw,2rem);
-  line-height: 1.5;
-}
-h3 {
-  color: #eaf4ff;
-  font-size: 1.12rem;
-  margin: 0 0 8px;
-}
-p { color: var(--muted); margin: 0 0 16px; }
-ul { color: var(--muted); padding-left: 1.35rem; margin: 10px 0 0; }
-li { margin: 8px 0; }
-.panel {
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(145deg,rgba(20,34,61,.78),rgba(10,18,36,.76));
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 16px;
-}
-.small-note { font-size: .9rem; color: #c1cce1; }
-.final-cta { padding: 34px 0 48px; }
-.back-link {
-  display: inline-block;
-  margin-top: 24px;
-  color: #8cecf6;
-  text-decoration: none;
-}
-footer {
-  background: #050a16;
-  border-top: 1px solid var(--line);
-  padding: 26px 24px 34px;
-  text-align: center;
-}
-.footer-inner { max-width: 1120px; margin: 0 auto; }
-footer a {
-  color: #cfe5ff;
-  text-decoration: none;
-  margin: 0 9px;
-  font-size: .92rem;
-}
-footer p { margin: 14px 0 0; font-size: .84rem; color: #aab8d1; }
-@media (max-width:640px) {
-  .header-inner { padding: 22px 20px 18px; }
-  .brand { font-size: 1.22rem; }
-  .nav { gap: 10px 18px; margin-top: 18px; }
-  .nav a { font-size: .93rem; }
-  main { padding: 0 20px 46px; }
-  .hero { padding-top: 56px; padding-bottom: 44px; }
-  .hero::before { right: -20px; width: 100%; height: 390px; }
-  h1 { font-size: clamp(2rem,8.2vw,2.7rem); }
-  .lead { font-size: 1.03rem; }
-  .disclosure { font-size: .88rem; line-height: 1.9; }
-  .cta {
-    width: 100%;
-    min-height: 62px;
-    padding: 16px 18px;
-    font-size: 1rem;
-  }
-  .grid { grid-template-columns: 1fr; }
-  .panel { padding: 18px; }
-  section { padding: 29px 0; }
-}
-@media (prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  *,*::before,*::after { transition: none !important; }
-}
+:root{color-scheme:dark;--bg:#080d1b;--panel:#101a31;--text:#f4f7ff;--muted:#c4cee2;--cyan:#69e8f5;--blue:#397cff;--line:rgba(170,203,255,.17)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);background:radial-gradient(ellipse at 82% 16%,rgba(0,194,220,.22),transparent 31rem),radial-gradient(ellipse at 18% 45%,rgba(49,99,255,.12),transparent 35rem),linear-gradient(145deg,#080d1b 0%,#111a34 56%,#080d1b 100%);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85;overflow-wrap:anywhere}
+a{color:#8cecf6}
+.site-header{background:rgba(5,10,22,.94);border-bottom:1px solid var(--line)}
+.header-inner{width:min(1120px,100%);margin:0 auto;padding:22px 24px 18px}
+.brand{display:inline-block;color:#fff;font-size:1.35rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;line-height:1.4}
+.nav{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:15px}
+.nav a{color:#d9e5ff;text-decoration:none;font-size:.96rem;padding:2px 0}
+.nav a:hover,.nav a:focus-visible{color:var(--cyan)}
+main{width:min(100%,1120px);margin:0 auto;padding:0 24px 64px}
+.hero{position:relative;isolation:isolate;padding:clamp(52px,8vw,96px) 0 56px}
+.hero:before{content:"";position:absolute;z-index:-1;top:0;right:-24px;width:min(70%,580px);height:430px;background:radial-gradient(ellipse,rgba(0,203,231,.16),transparent 68%);pointer-events:none}
+.eyebrow{display:inline-block;margin:0 0 22px;color:var(--cyan);font-size:.98rem;font-weight:800;letter-spacing:.16em}
+h1{max-width:850px;margin:0 0 26px;color:#f6f8ff;font-size:clamp(2rem,5.2vw,3.6rem);line-height:1.35;letter-spacing:-.035em;font-weight:850}
+.lead{max-width:800px;margin:0;color:#d4def2;font-size:clamp(1.02rem,2.5vw,1.25rem);line-height:2}
+.disclosure{margin:30px 0 32px;max-width:850px;color:#c5d0e6;font-size:.94rem}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{margin:0 0 18px;color:#f4f7ff;font-size:clamp(1.45rem,3.5vw,2rem);line-height:1.5}
+h3{color:#eaf4ff;font-size:1.12rem;margin:0 0 8px}
+p{color:var(--muted);margin:0 0 16px}
+ul{color:var(--muted);padding-left:1.35rem;margin:10px 0 0}
+li{margin:8px 0}
+.panel{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(20,34,61,.78),rgba(10,18,36,.76))}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.small-note{font-size:.9rem;color:#c1cce1}
+.final-cta{padding:34px 0 48px}
+.ad-box{margin:22px 0;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(20,34,61,.88),rgba(10,18,36,.86));text-align:center}
+.ad-label{display:block;color:#c1cce1;font-size:.85rem;margin-bottom:12px}
+.a8-text-ad{margin:16px 0;line-height:1.8}
+.a8-text-ad a{color:#8cecf6;font-weight:750;overflow-wrap:anywhere}
+.a8-banner{margin:20px auto 0;max-width:100%;overflow-wrap:anywhere}
+.a8-banner img{max-width:100%;height:auto}
+footer{background:#050a16;border-top:1px solid var(--line);padding:26px 24px 34px;text-align:center}
+.footer-inner{max-width:1120px;margin:0 auto}
+footer a{color:#cfe5ff;text-decoration:none;margin:0 9px;font-size:.92rem}
+footer p{margin:14px 0 0;font-size:.84rem;color:#aab8d1}
+@media(max-width:640px){.header-inner{padding:22px 20px 18px}.brand{font-size:1.22rem}.nav{gap:10px 18px;margin-top:18px}.nav a{font-size:.93rem}main{padding:0 20px 46px}.hero{padding-top:56px;padding-bottom:44px}.hero:before{right:-20px;width:100%;height:390px}h1{font-size:clamp(2rem,8.2vw,2.7rem)}.lead{font-size:1.03rem}.disclosure{font-size:.88rem;line-height:1.9}.grid{grid-template-columns:1fr}.panel{padding:18px}section{padding:29px 0}.ad-box{padding:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-782ZG589TK"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
+window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-782ZG589TK');
-
-function trackConohaClick() {
-  if (typeof gtag === 'function') {
+document.addEventListener('click',function(e){
+  const a=e.target.closest('a[href*="px.a8.net"]');
+  if(a&&typeof gtag==='function'){
     gtag('event','affiliate_click',{
       event_category:'affiliate',
       event_label:'ConoHa AI Canvas',
@@ -234,10 +70,9 @@ function trackConohaClick() {
       page_location:window.location.href
     });
   }
-}
+});
 </script>
 </head>
-
 <body>
 <header class="site-header">
   <div class="header-inner">
@@ -253,143 +88,100 @@ function trackConohaClick() {
 </header>
 
 <main>
-  <article>
-    <header class="hero">
-      <p class="eyebrow">AI IMAGE GENERATION</p>
+<article>
+<header class="hero">
+  <p class="eyebrow">AI IMAGE GENERATION</p>
+  <h1>ブラウザでAI画像生成を始めたい人へ<br>ConoHa AI Canvas</h1>
+  <p class="lead">AI画像生成の環境を自分で準備するのが難しいと感じる人向けに、ConoHa AI Canvasの特徴と、申し込み前に確認したいポイントを紹介します。</p>
+  <p class="disclosure">※本ページにはアフィリエイト広告が含まれます。料金・提供条件・対応機能は変更される場合があるため、申し込み前に公式ページで最新情報をご確認ください。</p>
 
-      <h1>ブラウザでAI画像生成を始めたい人へ<br>ConoHa AI Canvas</h1>
+  <div class="ad-box">
+    <span class="ad-label">広告・PR</span>
+    <h3>ConoHa AI Canvas</h3>
+    <p>ブラウザだけでできる本格的なAI画像生成。サービスの内容や利用条件を公式ページで確認できます。</p>
+    <div class="a8-text-ad">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWZ+56CPWA+50+7RTY1E" rel="nofollow">ブラウザだけでできる 本格的なAI画像生成 【ConoHa AI Canvas】</a>
 
-      <p class="lead">
-        AI画像生成の環境を自分で準備するのが難しいと感じる人向けに、ConoHa AI Canvasの特徴と、申し込み前に確認したいポイントを紹介します。
-      </p>
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4BEAWZ+56CPWA+50+7RTY1E" alt="">
+    </div>
+    <div class="a8-banner">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWZ+56CPWA+50+7S10O1" rel="nofollow">
+<img border="0" width="600" height="500" alt="" src="https://www26.a8.net/svt/bgt?aid=261007811313&wid=002&eno=01&mid=s00000000018047034000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4BEAWZ+56CPWA+50+7S10O1" alt="">
+    </div>
+  </div>
+</header>
 
-      <p class="disclosure">
-        ※本ページにはアフィリエイト広告が含まれます。料金・提供条件・対応機能は変更される場合があるため、申し込み前に公式ページで最新情報をご確認ください。
-      </p>
+<section>
+<h2>ConoHa AI Canvasとは？</h2>
+<p>ConoHa AI Canvasは、ブラウザからAI画像生成環境を利用したい人向けのサービスです。画像生成の環境構築に慣れていない人でも、サービスの案内に沿って利用を始められることが特徴です。</p>
+<p>利用できる機能や必要な費用は、プランや提供条件によって異なる場合があります。契約前に公式情報を確認しましょう。</p>
+</section>
 
-      <a
-        class="cta"
-        href="https://px.a8.net/svt/ejp?a8mat=4BEAWZ+56CPWA+50+7RTY1E"
-        rel="nofollow sponsored"
-        target="_blank"
-        onclick="trackConohaClick()"
-      >公式ページで詳細を確認する ↗</a>
+<section>
+<h2>こんな人に向いています</h2>
+<div class="grid">
+<div class="panel"><h3>環境構築に時間をかけたくない</h3><p>パソコン側の設定を一から調べるより、用意された環境から試したい人。</p></div>
+<div class="panel"><h3>AI画像生成を深く試したい</h3><p>プロンプトや生成設定を工夫しながら、画像制作の方法を探りたい人。</p></div>
+<div class="panel"><h3>画像制作を学びたい</h3><p>生成画像を作りながら、指示の出し方や画像制作の流れを学びたい人。</p></div>
+<div class="panel"><h3>制作を副業につなげたい</h3><p>素材づくりや作品制作の練習を重ね、需要や利用条件を確認しながら活用したい人。</p></div>
+</div>
+</section>
 
-      <img
-        src="https://www15.a8.net/0.gif?a8mat=4BEAWZ+56CPWA+50+7RTY1E"
-        width="1"
-        height="1"
-        alt=""
-        style="border:0;position:absolute;left:-9999px;"
-      >
-    </header>
+<section>
+<h2>申し込み前に確認したいこと</h2>
+<div class="panel">
+<ul>
+<li>初期費用・利用料金・時間単位など、料金の計算方法</li>
+<li>使いたい機能やモデルが対応しているか</li>
+<li>商用利用や生成画像の利用条件</li>
+<li>使わない期間の料金の扱い</li>
+<li>自分の端末や通信環境で操作しやすいか</li>
+</ul>
+</div>
+<p class="small-note">※料金・機能・商用利用条件について、ここでは特定の条件を保証していません。最新の公式案内と利用規約をご確認ください。</p>
+</section>
 
-    <section>
-      <h2>ConoHa AI Canvasとは？</h2>
-      <p>
-        ConoHa AI Canvasは、ブラウザからAI画像生成環境を利用したい人向けのサービスです。画像生成の環境構築に慣れていない人でも、サービスの案内に沿って利用を始められることが特徴です。
-      </p>
-      <p>
-        利用できる機能や必要な費用は、プランや提供条件によって異なる場合があります。契約前に公式情報を確認しましょう。
-      </p>
-    </section>
+<section>
+<h2>無料ツールと比べて選ぼう</h2>
+<p>まず画像生成を体験したいだけなら、無料で使える画像生成・編集サービスから始める方法もあります。一方、より細かな生成設定や専用環境を求める場合は、必要な機能と料金を比べて検討しましょう。</p>
+<p>最初から高額な契約をするのではなく、何を作りたいのか、どれくらい利用するのかを決めてから選ぶのがおすすめです。</p>
+</section>
 
-    <section>
-      <h2>こんな人に向いています</h2>
+<section>
+<h2>AI画像生成を副業に活用するなら</h2>
+<p>画像を生成するだけで収益が発生するわけではありません。利用先の需要、作品の品質、販売先の規約、著作権や商用利用条件などを確認しながら、少しずつ試すことが大切です。</p>
+<p>サービスを選ぶときも、料金だけでなく、作りたい作品や利用目的に合っているかを確認しましょう。</p>
+</section>
 
-      <div class="grid">
-        <div class="panel">
-          <h3>環境構築に時間をかけたくない</h3>
-          <p>パソコン側の設定を一から調べるより、用意された環境から試したい人。</p>
-        </div>
+<section class="final-cta">
+<h2>ConoHa AI Canvasの最新情報を確認する</h2>
+<p>機能・料金・利用規約を確認し、自分の用途や予算に合うかを判断してから利用を検討してください。</p>
+<div class="ad-box">
+<span class="ad-label">広告・PR</span>
+<p>サービスの詳細・最新条件は、以下のA8.net広告リンクから確認できます。</p>
+<div class="a8-text-ad">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWZ+56CPWA+50+7RTY1E" rel="nofollow">ブラウザだけでできる 本格的なAI画像生成 【ConoHa AI Canvas】</a>
 
-        <div class="panel">
-          <h3>AI画像生成を深く試したい</h3>
-          <p>プロンプトや生成設定を工夫しながら、画像制作の方法を探りたい人。</p>
-        </div>
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4BEAWZ+56CPWA+50+7RTY1E" alt="">
+</div>
+</div>
+<p class="small-note">リンク先の内容や提供条件は、公式ページでご確認ください。</p>
+</section>
 
-        <div class="panel">
-          <h3>画像制作を学びたい</h3>
-          <p>生成画像を作りながら、指示の出し方や画像制作の流れを学びたい人。</p>
-        </div>
-
-        <div class="panel">
-          <h3>制作を副業につなげたい</h3>
-          <p>素材づくりや作品制作の練習を重ね、需要や利用条件を確認しながら活用したい人。</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>申し込み前に確認したいこと</h2>
-
-      <div class="panel">
-        <ul>
-          <li>初期費用・利用料金・時間単位など、料金の計算方法</li>
-          <li>使いたい機能やモデルが対応しているか</li>
-          <li>商用利用や生成画像の利用条件</li>
-          <li>使わない期間の料金の扱い</li>
-          <li>自分の端末や通信環境で操作しやすいか</li>
-        </ul>
-      </div>
-
-      <p class="small-note">
-        ※料金・機能・商用利用条件について、ここでは特定の条件を保証していません。最新の公式案内と利用規約をご確認ください。
-      </p>
-    </section>
-
-    <section>
-      <h2>無料ツールと比べて選ぼう</h2>
-      <p>
-        まず画像生成を体験したいだけなら、無料で使える画像生成・編集サービスから始める方法もあります。一方、より細かな生成設定や専用環境を求める場合は、必要な機能と料金を比べて検討しましょう。
-      </p>
-      <p>
-        最初から高額な契約をするのではなく、何を作りたいのか、どれくらい利用するのかを決めてから選ぶのがおすすめです。
-      </p>
-    </section>
-
-    <section>
-      <h2>AI画像生成を副業に活用するなら</h2>
-      <p>
-        画像を生成するだけで収益が発生するわけではありません。利用先の需要、作品の品質、販売先の規約、著作権や商用利用条件などを確認しながら、少しずつ試すことが大切です。
-      </p>
-      <p>
-        サービスを選ぶときも、料金だけでなく、作りたい作品や利用目的に合っているかを確認しましょう。
-      </p>
-    </section>
-
-    <section class="final-cta">
-      <h2>ConoHa AI Canvasの最新情報を確認する</h2>
-      <p>
-        機能・料金・利用規約を確認し、自分の用途や予算に合うかを判断してから利用を検討してください。
-      </p>
-
-      <a
-        class="cta"
-        href="https://px.a8.net/svt/ejp?a8mat=4BEAWZ+56CPWA+50+7RTY1E"
-        rel="nofollow sponsored"
-        target="_blank"
-        onclick="trackConohaClick()"
-      >ConoHa AI Canvasの公式ページへ進む ↗</a>
-
-      <p class="small-note" style="margin-top:16px;">
-        リンク先の内容や提供条件は、公式ページでご確認ください。
-      </p>
-    </section>
-
-    <a class="back-link" href="tools.html">← AIツール一覧に戻る</a>
-  </article>
+<a href="tools.html">← AIツール一覧に戻る</a>
+</article>
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <a href="index.html">ホーム</a>
-    <a href="tools.html">AIツール</a>
-    <a href="about.html">このサイトについて</a>
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="contact.html">お問い合わせ</a>
-    <p>© ゼロからAI副業</p>
-  </div>
+<div class="footer-inner">
+<a href="index.html">ホーム</a>
+<a href="tools.html">AIツール</a>
+<a href="about.html">このサイトについて</a>
+<a href="privacy.html">プライバシーポリシー</a>
+<a href="contact.html">お問い合わせ</a>
+<p>© ゼロからAI副業</p>
+</div>
 </footer>
 </body>
 </html>
