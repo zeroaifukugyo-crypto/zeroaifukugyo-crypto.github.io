@@ -9,15 +9,301 @@
 <meta name="description" content="AI副業をこれから始めたい人へ。初心者向けAIツール比較、無料プロンプト、AIを使った仕事の始め方、学習方法を紹介します。">
 <link rel="stylesheet" href="styles.css">
 
-<!-- Google Analytics：既存の測定IDを維持 -->
+<!-- Google Analytics：既存設定を維持 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-782ZG589TK"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-782ZG589TK');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-782ZG589TK');
 </script>
+
+<!-- FUTURISTIC HERO FX：トップページ限定 -->
+<style>
+.home-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#030817;
+}
+.home-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 50% 38%,rgba(0,153,255,.2),transparent 48%),
+    radial-gradient(ellipse at 85% 72%,rgba(105,44,255,.2),transparent 42%),
+    radial-gradient(ellipse at 12% 75%,rgba(0,225,255,.12),transparent 38%),
+    linear-gradient(180deg,#030817 0%,#07152e 52%,#05091b 100%);
+}
+.hero-fx{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+  contain:paint;
+}
+.hero-fx-grid{
+  position:absolute;
+  left:-60%;
+  width:220%;
+  height:66%;
+  bottom:-8%;
+  transform:perspective(330px) rotateX(58deg);
+  transform-origin:center bottom;
+  background-image:
+    linear-gradient(rgba(0,195,255,.32) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,195,255,.32) 1px,transparent 1px);
+  background-size:54px 46px;
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 85%,transparent);
+  mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 85%,transparent);
+  animation:heroGridFlow 5s linear infinite;
+}
+.hero-fx-grid::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 15%,rgba(0,225,255,.36) 48%,transparent 55%);
+  background-size:100% 180%;
+  animation:gridEnergy 3.8s linear infinite;
+}
+.hero-fx-beam{
+  position:absolute;
+  width:150%;
+  height:2px;
+  left:-25%;
+  opacity:0;
+  background:linear-gradient(90deg,transparent,rgba(0,238,255,.95),#fff,rgba(105,90,255,.9),transparent);
+  box-shadow:0 0 8px #00dfff,0 0 24px rgba(0,190,255,.8),0 0 55px rgba(81,67,255,.45);
+  transform:rotate(-17deg);
+  animation:heroBeam 6s ease-in-out infinite;
+}
+.hero-fx-beam.b2{
+  top:60%;
+  animation-delay:2.2s;
+  animation-duration:7s;
+  transform:rotate(13deg);
+  background:linear-gradient(90deg,transparent,#875dff,#00eaff,transparent);
+}
+.hero-fx-beam.b3{
+  top:36%;
+  animation-delay:4s;
+  animation-duration:8s;
+  transform:rotate(-5deg);
+}
+.hero-fx-scan{
+  position:absolute;
+  inset:0;
+  opacity:.22;
+  background:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 4px,
+    rgba(45,174,255,.12) 5px,
+    transparent 6px
+  );
+}
+.hero-fx-particles{
+  position:absolute;
+  inset:0;
+}
+.hero-fx-particles i{
+  position:absolute;
+  display:block;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#7af5ff;
+  box-shadow:0 0 8px #00dfff,0 0 20px #00bfff,0 0 34px rgba(0,120,255,.65);
+  animation:particleFloat 5s ease-in-out infinite alternate;
+}
+.hero-fx-particles i:nth-child(1){left:8%;top:24%;animation-delay:-1s}
+.hero-fx-particles i:nth-child(2){left:22%;top:61%;animation-delay:-3s;width:6px;height:6px}
+.hero-fx-particles i:nth-child(3){left:34%;top:17%;animation-delay:-2s}
+.hero-fx-particles i:nth-child(4){left:48%;top:74%;animation-delay:-4s;width:5px;height:5px}
+.hero-fx-particles i:nth-child(5){left:63%;top:31%;animation-delay:-1.5s}
+.hero-fx-particles i:nth-child(6){left:76%;top:56%;animation-delay:-2.5s;width:6px;height:6px}
+.hero-fx-particles i:nth-child(7){left:89%;top:22%;animation-delay:-3.5s}
+.hero-fx-particles i:nth-child(8){left:94%;top:70%;animation-delay:-.5s}
+.hero-fx-particles i:nth-child(9){left:15%;top:83%;animation-delay:-2s}
+.hero-fx-particles i:nth-child(10){left:55%;top:12%;animation-delay:-4s}
+.hero-fx-particles i:nth-child(11){left:82%;top:86%;animation-delay:-1.7s}
+.hero-fx-particles i:nth-child(12){left:40%;top:46%;animation-delay:-3.2s}
+.hero-fx-shockwave{
+  position:absolute;
+  width:min(76vw,650px);
+  aspect-ratio:1;
+  left:50%;
+  top:44%;
+  border:1px solid rgba(0,225,255,.23);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  box-shadow:0 0 28px rgba(0,195,255,.1),inset 0 0 35px rgba(0,120,255,.08);
+  animation:shockwave 6s ease-out infinite;
+}
+.hero-fx-shockwave.wave2{
+  animation-delay:3s;
+  border-color:rgba(131,75,255,.35);
+}
+.hero-fx-glow{
+  position:absolute;
+  width:55%;
+  height:28%;
+  left:22%;
+  bottom:8%;
+  background:rgba(0,125,255,.18);
+  filter:blur(55px);
+  border-radius:50%;
+  animation:glowPulse 4s ease-in-out infinite alternate;
+}
+.home-hero .hero-layout{
+  position:relative;
+  z-index:2;
+}
+.home-hero .hero-copy,
+.home-hero .hero-visual{
+  position:relative;
+  z-index:2;
+}
+.home-hero .hero-grid{
+  opacity:.2;
+}
+.home-hero .hero-orb{
+  animation:orbFloat 9s ease-in-out infinite alternate,orbGlow 4s ease-in-out infinite alternate;
+}
+.home-hero .orb-b{
+  animation-delay:-4s,-2s;
+}
+.home-hero .hero-network .node{
+  animation:nodePulse 2.5s ease-in-out infinite alternate;
+}
+.home-hero .hero-network .node:nth-child(even){
+  animation-delay:-1.3s;
+}
+.home-hero .visual-ring{
+  animation:visualRingSpin 16s linear infinite;
+}
+.home-hero .ring-two{
+  animation-direction:reverse;
+  animation-duration:22s;
+}
+.home-hero .visual-orbit{
+  animation:visualOrbit 12s linear infinite;
+}
+.home-hero .orbit-two{
+  animation-direction:reverse;
+  animation-duration:17s;
+}
+.home-hero .visual-core{
+  animation:corePulse 3s ease-in-out infinite alternate;
+}
+.home-hero .floating-panel{
+  animation:panelFloat 5s ease-in-out infinite alternate;
+}
+.home-hero .panel-image{animation-delay:-2.2s}
+.home-hero .panel-work{animation-delay:-3.6s}
+.home-hero .hero-bottom-line{
+  position:relative;
+  z-index:2;
+  box-shadow:0 0 14px rgba(0,220,255,.8),0 0 36px rgba(0,100,255,.5);
+}
+.home-hero .eyebrow-pulse{
+  animation:eyebrowPulse 1.5s ease-in-out infinite;
+}
+@keyframes heroGridFlow{
+  from{background-position:0 0}
+  to{background-position:0 46px}
+}
+@keyframes gridEnergy{
+  from{background-position:0 -100%}
+  to{background-position:0 200%}
+}
+@keyframes heroBeam{
+  0%,12%{top:110%;opacity:0}
+  20%{opacity:.95}
+  38%{top:-5%;opacity:0}
+  100%{top:-5%;opacity:0}
+}
+@keyframes particleFloat{
+  from{transform:translate3d(-8px,12px,0) scale(.65);opacity:.3}
+  to{transform:translate3d(12px,-20px,0) scale(1.35);opacity:1}
+}
+@keyframes shockwave{
+  0%{transform:translate(-50%,-50%) scale(.55);opacity:0}
+  20%{opacity:.65}
+  80%{opacity:.18}
+  100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}
+}
+@keyframes glowPulse{
+  from{opacity:.45;transform:scale(.85)}
+  to{opacity:1;transform:scale(1.15)}
+}
+@keyframes orbFloat{
+  from{translate:-8px 10px}
+  to{translate:14px -16px}
+}
+@keyframes orbGlow{
+  from{filter:blur(1px) brightness(.8)}
+  to{filter:blur(2px) brightness(1.35)}
+}
+@keyframes nodePulse{
+  from{opacity:.35;scale:.8}
+  to{opacity:1;scale:1.35}
+}
+@keyframes visualRingSpin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes visualOrbit{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes corePulse{
+  from{filter:brightness(.85);box-shadow:0 0 25px rgba(0,195,255,.3)}
+  to{filter:brightness(1.35);box-shadow:0 0 65px rgba(0,195,255,.8),0 0 110px rgba(95,65,255,.35)}
+}
+@keyframes panelFloat{
+  from{translate:0 0}
+  to{translate:0 -12px}
+}
+@keyframes eyebrowPulse{
+  from{box-shadow:0 0 3px #00eaff}
+  to{box-shadow:0 0 13px #00eaff,0 0 24px rgba(0,190,255,.5)}
+}
+@media(max-width:700px){
+  .hero-fx-grid{
+    height:52%;
+    background-size:38px 34px;
+  }
+  .hero-fx-shockwave{
+    width:100vw;
+    top:37%;
+  }
+  .hero-fx-beam{
+    width:200%;
+  }
+  .hero-fx-glow{
+    filter:blur(38px);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-fx *,
+  .home-hero .hero-orb,
+  .home-hero .hero-network .node,
+  .home-hero .visual-ring,
+  .home-hero .visual-orbit,
+  .home-hero .visual-core,
+  .home-hero .floating-panel,
+  .home-hero .eyebrow-pulse{
+    animation:none!important;
+  }
+}
+</style>
 </head>
+
 <body>
 <div class="ambient ambient-one" aria-hidden="true"></div>
 <div class="ambient ambient-two" aria-hidden="true"></div>
@@ -41,6 +327,22 @@
 
 <main>
 <section class="home-hero">
+  <!-- 動く近未来背景 -->
+  <div class="hero-fx" aria-hidden="true">
+    <div class="hero-fx-grid"></div>
+    <div class="hero-fx-scan"></div>
+    <div class="hero-fx-beam b1"></div>
+    <div class="hero-fx-beam b2"></div>
+    <div class="hero-fx-beam b3"></div>
+    <div class="hero-fx-shockwave"></div>
+    <div class="hero-fx-shockwave wave2"></div>
+    <div class="hero-fx-glow"></div>
+    <div class="hero-fx-particles">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-orb orb-a" aria-hidden="true"></div>
   <div class="hero-orb orb-b" aria-hidden="true"></div>
@@ -49,6 +351,7 @@
     <span class="node node-3"></span><span class="node node-4"></span>
     <span class="node node-5"></span><span class="node node-6"></span>
   </div>
+
   <div class="container hero-layout">
     <div class="hero-copy">
       <p class="eyebrow"><span class="eyebrow-pulse"></span> AI × SIDE BUSINESS</p>
@@ -65,6 +368,7 @@
         <span><i aria-hidden="true">✓</i> 実際に使う</span>
       </div>
     </div>
+
     <div class="hero-visual" aria-label="AIとデジタルネットワークを表現した装飾">
       <div class="visual-ring ring-one"></div>
       <div class="visual-ring ring-two"></div>
@@ -149,62 +453,27 @@
     <div class="cards service-cards">
       <article class="card service-card">
         <div class="service-icon icon-image" aria-hidden="true">✧</div>
-        <div class="service-info">
-          <span class="home-card-label">AI IMAGE</span>
-          <h3>Aiarty Image Enhancer</h3>
-          <p>AIによる画像の高画質化に関心がある人向けの紹介ページです。利用条件や機能を確認してから検討しましょう。</p>
-          <a class="card-link" href="aiarty.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">AI IMAGE</span><h3>Aiarty Image Enhancer</h3><p>AIによる画像の高画質化に関心がある人向けの紹介ページです。利用条件や機能を確認してから検討しましょう。</p><a class="card-link" href="aiarty.html">詳しく見る <span>→</span></a></div>
       </article>
-
       <article class="card service-card">
         <div class="service-icon icon-writing" aria-hidden="true">⌁</div>
-        <div class="service-info">
-          <span class="home-card-label">AI WRITING</span>
-          <h3>Value AI Writer</h3>
-          <p>AIを使った文章作成に関心がある人向け。自分の用途に合うか、機能や料金を確認できます。</p>
-          <a class="card-link" href="valueaiwriter.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">AI WRITING</span><h3>Value AI Writer</h3><p>AIを使った文章作成に関心がある人向け。自分の用途に合うか、機能や料金を確認できます。</p><a class="card-link" href="valueaiwriter.html">詳しく見る <span>→</span></a></div>
       </article>
-
       <article class="card service-card">
         <div class="service-icon icon-vpn" aria-hidden="true">◇</div>
-        <div class="service-info">
-          <span class="home-card-label">VPN GUIDE</span>
-          <h3>ExpressVPNの特徴と注意点</h3>
-          <p>VPNの基本、旅行・出張での利用、料金や契約前に確認したい点をまとめています。</p>
-          <a class="card-link" href="expressvpn.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">VPN GUIDE</span><h3>ExpressVPNの特徴と注意点</h3><p>VPNの基本、旅行・出張での利用、料金や契約前に確認したい点をまとめています。</p><a class="card-link" href="expressvpn.html">詳しく見る <span>→</span></a></div>
       </article>
-
       <article class="card service-card">
         <div class="service-icon icon-writing" aria-hidden="true">✎</div>
-        <div class="service-info">
-          <span class="home-card-label">WRITING SUPPORT</span>
-          <h3>文賢</h3>
-          <p>文章の推敲やチェックをサポートするツール。文章を読みやすく整えたい人向けに、特徴や利用前の確認点を紹介します。</p>
-          <a class="card-link" href="bunken.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">WRITING SUPPORT</span><h3>文賢</h3><p>文章の推敲やチェックをサポートするツール。文章を読みやすく整えたい人向けに、特徴や利用前の確認点を紹介します。</p><a class="card-link" href="bunken.html">詳しく見る <span>→</span></a></div>
       </article>
-
       <article class="card service-card">
         <div class="service-icon icon-image" aria-hidden="true">▧</div>
-        <div class="service-info">
-          <span class="home-card-label">AI IMAGE GENERATION</span>
-          <h3>ConoHa AI Canvas</h3>
-          <p>ブラウザでAI画像生成を始めたい人向け。利用料金や必要な環境、使い始める前の注意点を確認できます。</p>
-          <a class="card-link" href="conoha-ai-canvas.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">AI IMAGE GENERATION</span><h3>ConoHa AI Canvas</h3><p>ブラウザでAI画像生成を始めたい人向け。利用料金や必要な環境、使い始める前の注意点を確認できます。</p><a class="card-link" href="conoha-ai-canvas.html">詳しく見る <span>→</span></a></div>
       </article>
-
       <article class="card service-card">
         <div class="service-icon icon-writing" aria-hidden="true">⌘</div>
-        <div class="service-info">
-          <span class="home-card-label">AI LEARNING</span>
-          <h3>DMM 生成AI CAMP 学び放題</h3>
-          <p>生成AIを学び、仕事に活用したい人向け。学習内容や料金、申し込み前に確認したい条件を紹介します。</p>
-          <a class="card-link" href="ai-learning.html">詳しく見る <span>→</span></a>
-        </div>
+        <div class="service-info"><span class="home-card-label">AI LEARNING</span><h3>DMM 生成AI CAMP 学び放題</h3><p>生成AIを学び、仕事に活用したい人向け。学習内容や料金、申し込み前に確認したい条件を紹介します。</p><a class="card-link" href="ai-learning.html">詳しく見る <span>→</span></a></div>
       </article>
     </div>
     <p class="small disclosure-note">※サービス紹介ページには広告リンクが含まれる場合があります。申し込み前に各公式サイトの最新情報と利用条件をご確認ください。</p>
