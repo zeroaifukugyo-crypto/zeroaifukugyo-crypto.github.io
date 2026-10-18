@@ -13,6 +13,7 @@ window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
 gtag('config','G-782ZG589TK');
+
 function trackAffiliateClick(name){
   if(typeof gtag==='function'){
     gtag('event','affiliate_click',{
@@ -29,6 +30,7 @@ function trackAffiliateClick(name){
 <style>
 /* ダークテーマに合わせたカード表示 */
 .learning-intro{max-width:780px}
+
 .ad-disclosure{
   margin-top:24px;padding:14px 16px;
   border:1px solid var(--line);border-radius:10px;
@@ -36,10 +38,12 @@ function trackAffiliateClick(name){
   font-size:13px;line-height:1.7
 }
 .ad-disclosure strong{color:var(--text)}
+
 .learning-grid{
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;margin-top:28px
 }
+
 .learning-card{
   background:rgba(255,255,255,.04);
   color:var(--text);border:1px solid var(--line);
@@ -47,40 +51,84 @@ function trackAffiliateClick(name){
 }
 .learning-card h3{margin-top:0;color:var(--text)}
 .learning-card p{color:var(--muted)}
+
 .learning-card .number{
   display:inline-flex;width:32px;height:32px;
   align-items:center;justify-content:center;border-radius:50%;
   background:var(--gold);color:#1a1300;
   font-size:12px;font-weight:900;margin-bottom:12px
 }
+
+/* 広告カード */
 .learning-ad{
   max-width:760px;margin:28px auto 0;padding:26px;
   background:rgba(255,255,255,.04);
   color:var(--text);border:1px solid var(--line);
   border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.18)
 }
+
 .learning-ad-label{
   display:inline-block;margin-bottom:14px;padding:5px 10px;
   border-radius:5px;background:#111827;color:#fff;
   font-size:12px;font-weight:800
 }
+
 .learning-ad h3{margin:0 0 10px;font-size:23px;color:var(--text)}
 .learning-ad p{color:var(--muted)}
-.learning-ad-banner{margin:22px auto 8px;text-align:center}
-.learning-ad-banner a{display:inline-block;padding:0;background:none;border:0;box-shadow:none}
-.learning-ad-banner img{
+
+.learning-ad-banner{
+  margin:22px auto 8px;text-align:center
+}
+.learning-ad-banner a{
+  display:inline-block;padding:0;background:none;
+  border:0;box-shadow:none;line-height:0
+}
+
+/* 広告バナー本体だけに適用する
+   A8の1×1計測画像にはサイズ指定を適用しない */
+.learning-ad-banner a img{
   display:block;width:300px;height:250px;max-width:100%;
   margin:0 auto;border:0;object-fit:contain
 }
+
+/* 下部の120×60バナー */
+.learning-ad-banner--small a img{
+  width:120px;height:60px;max-width:100%;
+  object-fit:contain
+}
+
 .learning-ad-cta{
   display:block;width:100%;box-sizing:border-box;margin-top:18px;
   padding:14px 20px;border-radius:10px;background:var(--text);
   color:var(--ink)!important;text-align:center;font-weight:800
 }
 .learning-ad-cta:hover{opacity:.85}
-.learning-note{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.7}
+
+.learning-note{
+  margin-top:14px;color:var(--muted);
+  font-size:12px;line-height:1.7
+}
+
+/* テキスト広告 */
+.learning-ad-text{
+  margin-top:22px;padding:18px;
+  border:1px solid var(--line);border-radius:12px;
+  background:rgba(255,255,255,.025)
+}
+.learning-ad-text p{
+  margin:0 0 12px;color:var(--muted);
+  font-size:14px;line-height:1.8
+}
+.learning-ad-text a{
+  color:#67e8f9;text-decoration:underline;
+  text-underline-offset:4px;font-weight:800;
+  overflow-wrap:anywhere
+}
+.learning-ad-text a:hover{opacity:.8}
+
 .learning-list{margin:0;padding-left:22px}
 .learning-list li{margin:10px 0}
+
 .learning-flow{counter-reset:flow}
 .learning-flow-item{
   position:relative;padding:20px 20px 20px 62px;
@@ -93,12 +141,14 @@ function trackAffiliateClick(name){
   border-radius:50%;background:var(--gold);color:#1a1300;
   display:grid;place-items:center;font-weight:900
 }
+
 .free-label,.paid-label{
   display:inline-block;padding:5px 10px;border-radius:999px;
   font-size:11px;font-weight:800
 }
 .free-label{background:#173d2a;color:#a7f3c4}
 .paid-label{background:#263246;color:#dbeafe}
+
 .learning-bottom{
   margin-top:20px;padding:26px;background:var(--ink);
   color:#fff;border:1px solid var(--line);border-radius:14px
@@ -111,13 +161,24 @@ function trackAffiliateClick(name){
   background:var(--gold);color:#1a1300!important;
   font-weight:800;text-decoration:none
 }
-.resource-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
+.resource-actions{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:18px
+}
 .resource-actions a{text-decoration:none}
+
 @media(max-width:760px){
   .learning-grid{grid-template-columns:1fr}
   .learning-ad{padding:22px 18px}
   .learning-ad h3{font-size:21px}
-  .learning-ad-banner img{width:300px;height:250px;max-width:100%;object-fit:contain}
+  .learning-ad-banner a img{
+    width:300px;height:250px;max-width:100%;
+    object-fit:contain
+  }
+  .learning-ad-banner--small a img{
+    width:120px;height:60px;max-width:100%;
+    object-fit:contain
+  }
   .learning-flow-item{padding-left:58px}
 }
 </style>
@@ -147,6 +208,30 @@ function trackAffiliateClick(name){
 <div class="ad-disclosure">
 <strong>PR・広告について</strong><br>
 このページにはアフィリエイト広告が含まれています。広告・紹介リンクを通じて、当サイトが紹介料を受け取る場合があります。
+</div>
+</div>
+</section>
+
+<!-- 広告1：ページ上部・300×250バナー -->
+<section class="section" aria-label="広告">
+<div class="container">
+<div class="learning-ad">
+<div class="learning-ad-label">PR｜広告</div>
+<h3>DMM 生成AI CAMP 学び放題</h3>
+<p>生成AIを体系的に学びたい方は、学習サービスの内容を確認してみてください。</p>
+
+<div class="learning-ad-banner">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
+rel="nofollow"
+onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">
+<img border="0" width="300" height="250"
+alt="DMM 生成AI CAMP 学び放題の広告"
+src="https://www23.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1">
+</a>
+<img border="0" width="1" height="1"
+src="https://www17.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
+alt="">
+</div>
 </div>
 </div>
 </section>
@@ -193,6 +278,26 @@ function trackAffiliateClick(name){
 </div>
 </section>
 
+<!-- 広告2：ページ中盤・テキスト広告 -->
+<section class="section" aria-label="広告">
+<div class="container">
+<div class="learning-ad">
+<div class="learning-ad-label">PR｜広告</div>
+<h3>生成AIを体系的に学びたい方へ</h3>
+<p>独学に加えて学習サービスも比較したい方は、サービスの内容や利用条件を公式サイトで確認できます。</p>
+<div class="learning-ad-text">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5ZMCI"
+rel="nofollow"
+onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">DMM 生成AI CAMP 学び放題</a>
+<img border="0" width="1" height="1"
+src="https://www14.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5ZMCI"
+alt="">
+</div>
+<p class="learning-note">※サービス内容、料金、利用条件などは変更される場合があります。申し込み前に公式サイトで最新情報をご確認ください。</p>
+</div>
+</div>
+</section>
+
 <section class="section">
 <div class="container">
 <div class="section-head"><div class="eyebrow">LEARNING FLOW</div><h2>AIを仕事で使えるようになるまで</h2></div>
@@ -219,34 +324,12 @@ function trackAffiliateClick(name){
 
 <section id="learning-service" class="section">
 <div class="container">
-<div class="section-head"><div class="eyebrow">PR｜LEARNING SERVICE</div><h2>生成AIを体系的に学びたい人へ</h2><p class="lead">ここでは、AI学習サービスの選択肢の一つとして紹介します。</p></div>
-<div class="learning-ad">
-<div class="learning-ad-label">PR｜広告</div>
-<h3>DMM 生成AI CAMP 学び放題</h3>
-<p>ChatGPTなどの生成AIを、仕事で活用するための学習サービスを探している人向けの選択肢です。</p>
-<div class="learning-ad-banner">
-<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" rel="nofollow" onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">
-<img border="0" width="300" height="250" alt="" src="https://www29.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1">
-</a>
-<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" alt="">
+<div class="section-head"><div class="eyebrow">LEARNING SERVICE</div><h2>学習サービスを選ぶときのポイント</h2><p class="lead">有料サービスを検討するときは、学習内容や料金、利用条件を比較しましょう。</p></div>
+<div class="learning-grid">
+<div class="learning-card"><h3>学習内容</h3><p>学びたいAIツールや職種別の内容が含まれているかを確認します。</p></div>
+<div class="learning-card"><h3>料金・契約条件</h3><p>月額料金、契約期間、解約条件などを公式サイトで確認します。</p></div>
+<div class="learning-card"><h3>サポート体制</h3><p>質問や相談ができるか、自分の学習スタイルに合うかを確認します。</p></div>
 </div>
-<a class="learning-ad-cta" href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM" rel="nofollow" onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">月額16,280円で生成AIを好きなだけ学べる！「DMM 生成AI CAMP 学び放題」</a>
-<img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM" alt="">
-<p class="learning-note">※サービス内容、料金、利用条件などは変更される場合があります。利用前に公式サイトで最新情報をご確認ください。</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<div class="section-head"><div class="eyebrow">HOW TO CHOOSE</div><h2>AI学習サービスを選ぶときの確認項目</h2></div>
-<div class="card"><ul class="learning-list">
-<li><strong>何を学べるのか</strong><br>自分が必要としているAI・スキルが含まれているか確認する。</li>
-<li><strong>仕事で使える内容か</strong><br>実際の業務や副業に応用できる内容か確認する。</li>
-<li><strong>料金はいくらか</strong><br>月額・一括料金・キャンペーンなどを公式サイトで確認する。</li>
-<li><strong>学習期間はどれくらいか</strong><br>自分が継続して学習できるスケジュールか確認する。</li>
-<li><strong>利用条件・解約条件</strong><br>申し込み前に公式サイトの最新情報や利用規約を確認する。</li>
-</ul></div>
 </div>
 </section>
 
@@ -273,6 +356,30 @@ function trackAffiliateClick(name){
 <p>このページにはアフィリエイト広告が含まれています。当サイトでは、サービスや商品の紹介を通じて紹介料を受け取る場合があります。</p>
 <p>広告・紹介リンクを掲載する場合は、広告であることが分かるように表示しています。</p>
 <p>掲載しているサービスの料金、機能、提供内容、利用条件などは変更される場合があります。申し込みや利用を検討する場合は、必ず各サービスの公式サイトで最新情報をご確認ください。</p>
+</div>
+</div>
+</section>
+
+<!-- 広告3：ページ下部・120×60バナー -->
+<section class="section" aria-label="広告">
+<div class="container">
+<div class="learning-ad">
+<div class="learning-ad-label">PR｜広告</div>
+<h3>DMM 生成AI CAMP 学び放題</h3>
+<p>サービスの詳細や利用条件は、公式サイトでご確認ください。</p>
+
+<div class="learning-ad-banner learning-ad-banner--small">
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5Z6WX"
+rel="nofollow"
+onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">
+<img border="0" width="120" height="60"
+alt="DMM 生成AI CAMP 学び放題の広告"
+src="https://www25.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001004000&mc=1">
+</a>
+<img border="0" width="1" height="1"
+src="https://www17.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5Z6WX"
+alt="">
+</div>
 </div>
 </div>
 </section>
