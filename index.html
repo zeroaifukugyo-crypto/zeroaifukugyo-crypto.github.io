@@ -18,8 +18,8 @@ gtag('config', 'G-782ZG589TK');
 
 <style>
 /* ==================================================
-   HOME FUTURE WORLD
-   ホーム上部の背景全体を動かす演出
+   HOME HERO — MOVING GRID FLOOR
+   床面グリッドを主役にした背景演出
    ================================================== */
 
 .home-hero{
@@ -31,6 +31,7 @@ gtag('config', 'G-782ZG589TK');
   min-height:min(900px,100svh);
 }
 
+/* 背景の青い光。文字の読みやすさを優先 */
 .home-hero::before{
   content:"";
   position:absolute;
@@ -38,56 +39,59 @@ gtag('config', 'G-782ZG589TK');
   z-index:0;
   pointer-events:none;
   background:
-    radial-gradient(ellipse at 50% 35%,rgba(0,153,255,.32),transparent 48%),
-    radial-gradient(ellipse at 15% 55%,rgba(0,225,255,.18),transparent 42%),
-    radial-gradient(ellipse at 85% 65%,rgba(116,42,255,.27),transparent 45%),
-    linear-gradient(180deg,#020612 0%,#061630 55%,#030817 100%);
+    radial-gradient(ellipse at 50% 38%,rgba(0,153,255,.20),transparent 48%),
+    radial-gradient(ellipse at 15% 55%,rgba(0,225,255,.10),transparent 42%),
+    linear-gradient(180deg,#020612 0%,#061630 65%,#030817 100%);
 }
 
-/* 背景演出はすべてコンテンツの後ろ */
-.future-world{
+/* 背景演出はコンテンツの背後に固定 */
+.home-hero > .future-world{
   position:absolute;
   inset:0;
-  z-index:1;
+  z-index:0;
   overflow:hidden;
   pointer-events:none;
   contain:paint;
 }
 
-/* 広大な遠近グリッド */
+/* 奥から手前へ流れる遠近グリッド床面 */
 .future-floor{
+  display:block !important;
   position:absolute;
   left:-65%;
-  bottom:-18%;
+  bottom:-30%;
   width:230%;
-  height:82%;
-  transform:perspective(480px) rotateX(61deg);
+  height:100%;
+  transform:perspective(420px) rotateX(62deg);
   transform-origin:center bottom;
   background-image:
-    linear-gradient(rgba(0,213,255,.46) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,174,255,.4) 1px,transparent 1px);
-  background-size:70px 55px;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 76%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 76%,transparent 100%);
-  animation:futureFloorMove 2.6s linear infinite;
+    linear-gradient(rgba(0,220,255,.55) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,190,255,.46) 1px,transparent 1px);
+  background-size:52px 38px;
+  background-position:0 0,0 0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 8%,#000 28%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 8%,#000 28%,#000 78%,transparent 100%);
+  animation:futureFloorMove 1.8s linear infinite;
 }
 
+/* 床面を流れるシアンのエネルギー */
 .future-floor::before{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
-    180deg,
+    to bottom,
     transparent 0%,
-    rgba(0,229,255,.05) 20%,
-    rgba(0,190,255,.7) 47%,
-    rgba(100,64,255,.16) 51%,
-    transparent 66%
+    rgba(0,210,255,.02) 20%,
+    rgba(0,220,255,.48) 48%,
+    rgba(0,140,255,.12) 58%,
+    transparent 76%
   );
-  background-size:100% 190%;
+  background-size:100% 200%;
   animation:floorEnergy 3s linear infinite;
 }
 
+/* グリッドの上を走る縦方向の光 */
 .future-floor::after{
   content:"";
   position:absolute;
@@ -95,148 +99,19 @@ gtag('config', 'G-782ZG589TK');
   background:repeating-linear-gradient(
     90deg,
     transparent 0,
-    transparent 90px,
-    rgba(0,220,255,.18) 91px,
-    transparent 93px
+    transparent 100px,
+    rgba(0,225,255,.3) 101px,
+    rgba(0,225,255,.05) 103px,
+    transparent 106px
   );
-  animation:floorColumns 5s linear infinite;
+  animation:floorColumns 4s linear infinite;
 }
 
-/* 背景全体を横切るレーザー */
-.future-laser{
-  position:absolute;
-  left:-35%;
-  width:170%;
-  height:3px;
-  opacity:0;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(0,226,255,.15),
-    #00eaff,
-    #ffffff,
-    #00bfff,
-    rgba(125,69,255,.9),
-    transparent
-  );
-  box-shadow:
-    0 0 8px #00dfff,
-    0 0 22px rgba(0,190,255,.9),
-    0 0 55px rgba(0,112,255,.65);
-  transform:rotate(-13deg);
-  animation:laserSweep 4.8s linear infinite;
-}
-
-.future-laser.laser-two{
-  height:2px;
-  animation-delay:-1.8s;
-  animation-duration:6s;
-  transform:rotate(11deg);
-  background:linear-gradient(90deg,transparent,#9a55ff,#00eaff,#fff,transparent);
-}
-
-.future-laser.laser-three{
-  height:4px;
-  animation-delay:-3.4s;
-  animation-duration:7.5s;
-  transform:rotate(-3deg);
-}
-
-/* 巨大な回転エネルギーリング */
-.future-reactor{
-  position:absolute;
-  left:50%;
-  top:43%;
-  width:min(82vw,820px);
-  aspect-ratio:1;
-  transform:translate(-50%,-50%);
-  border:1px solid rgba(0,224,255,.35);
-  border-radius:50%;
-  box-shadow:
-    0 0 25px rgba(0,174,255,.15),
-    inset 0 0 45px rgba(0,144,255,.1);
-  animation:reactorSpin 24s linear infinite;
-}
-
-.future-reactor::before,
-.future-reactor::after{
-  content:"";
-  position:absolute;
-  inset:8%;
-  border:2px solid transparent;
-  border-top-color:#00eaff;
-  border-right-color:rgba(0,180,255,.45);
-  border-radius:50%;
-  box-shadow:0 0 16px rgba(0,217,255,.45);
-  animation:reactorSpin 8s linear infinite;
-}
-
-.future-reactor::after{
-  inset:19%;
-  border-top-color:#a16bff;
-  border-bottom-color:rgba(119,76,255,.8);
-  border-right-color:transparent;
-  animation-direction:reverse;
-  animation-duration:11s;
-}
-
-.future-reactor.reactor-two{
-  width:min(112vw,1050px);
-  border-color:rgba(131,69,255,.24);
-  animation-direction:reverse;
-  animation-duration:36s;
-}
-
-.future-reactor.reactor-two::before{
-  inset:12%;
-  border-top-color:rgba(112,76,255,.75);
-  border-right-color:transparent;
-  animation-duration:13s;
-}
-
-.future-reactor.reactor-two::after{
-  inset:28%;
-  border-top-color:rgba(0,225,255,.7);
-  border-bottom-color:transparent;
-  animation-duration:17s;
-}
-
-/* 高輝度の光源 */
-.future-energy{
-  position:absolute;
-  left:50%;
-  top:49%;
-  width:min(55vw,530px);
-  aspect-ratio:1;
-  border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(
-    circle,
-    rgba(0,221,255,.19) 0%,
-    rgba(0,132,255,.12) 27%,
-    rgba(106,56,255,.09) 48%,
-    transparent 72%
-  );
-  filter:blur(9px);
-  animation:energyPulse 3s ease-in-out infinite alternate;
-}
-
-.future-flash{
-  position:absolute;
-  left:50%;
-  top:48%;
-  width:min(65vw,600px);
-  height:2px;
-  transform:translate(-50%,-50%);
-  background:linear-gradient(90deg,transparent,#00dfff,#fff,#8c5bff,transparent);
-  box-shadow:0 0 14px #00dfff,0 0 40px #007bff;
-  animation:reactorFlash 2.8s ease-in-out infinite;
-}
-
-/* 浮遊する大量の光粒子 */
+/* タイトル背景を邪魔しない控えめな粒子 */
 .future-particles{
   position:absolute;
   inset:0;
+  opacity:.55;
 }
 
 .future-particles i{
@@ -248,10 +123,7 @@ gtag('config', 'G-782ZG589TK');
   height:var(--s);
   border-radius:50%;
   background:#b8ffff;
-  box-shadow:
-    0 0 6px #00eaff,
-    0 0 15px #00cfff,
-    0 0 34px rgba(0,126,255,.9);
+  box-shadow:0 0 6px #00eaff,0 0 15px #00cfff;
   animation:particleTravel var(--d) ease-in-out infinite alternate;
   animation-delay:var(--delay);
 }
@@ -281,70 +153,92 @@ gtag('config', 'G-782ZG589TK');
 .future-particles i:nth-child(23){--x:15%;--y:31%;--s:3px;--d:4.9s;--delay:-3.1s}
 .future-particles i:nth-child(24){--x:59%;--y:76%;--s:5px;--d:4.2s;--delay:-.9s}
 
-/* 画面に走る走査線 */
+/* 床面の上を時々走る光。リング状演出は使用しない */
+.future-laser{
+  position:absolute;
+  left:-35%;
+  width:170%;
+  height:2px;
+  opacity:0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(0,226,255,.15),
+    #00eaff,
+    #fff,
+    #00bfff,
+    rgba(125,69,255,.55),
+    transparent
+  );
+  box-shadow:0 0 8px #00dfff,0 0 22px rgba(0,190,255,.5);
+  transform:rotate(-13deg);
+  animation:laserSweep 6s linear infinite;
+}
+
+.future-laser.laser-two,
+.future-laser.laser-three{
+  display:none;
+}
+
+/* スキャンラインは薄く */
 .future-scan{
   position:absolute;
   inset:-100% 0;
-  opacity:.6;
+  opacity:.22;
   background:linear-gradient(
     to bottom,
     transparent 0%,
     rgba(0,195,255,.02) 43%,
-    rgba(0,230,255,.22) 49%,
-    rgba(255,255,255,.12) 50%,
+    rgba(0,230,255,.14) 49%,
+    rgba(255,255,255,.08) 50%,
     transparent 56%
   );
-  animation:scanTravel 6s linear infinite;
+  animation:scanTravel 7s linear infinite;
 }
 
-/* コンテンツをエフェクトより手前に */
-.home-hero > .container,
-.home-hero > .hero-grid,
+/* 旧巨大リング・円形エネルギーを背景から除外 */
+.future-reactor,
+.future-energy,
+.future-flash,
 .home-hero > .hero-orb,
 .home-hero > .hero-network,
-.home-hero > .hero-bottom-line{
+.home-hero > .hero-grid{
+  display:none !important;
+}
+
+/* コンテンツを背景より手前に */
+.home-hero > .container{
   position:relative;
   z-index:3;
 }
 
-.home-hero > .hero-grid,
-.home-hero > .hero-orb,
-.home-hero > .hero-network{
-  pointer-events:none;
-}
-
-/* 既存のAIビジュアルも強く動かす */
+/* 既存のAIビジュアルは残すが、動きを控えめにする */
 .home-hero .visual-ring{
-  animation:reactorSpin 12s linear infinite;
-  box-shadow:0 0 22px rgba(0,205,255,.28);
+  animation:reactorSpin 24s linear infinite;
+  box-shadow:0 0 12px rgba(0,205,255,.12);
 }
 
 .home-hero .ring-two{
   animation-direction:reverse;
-  animation-duration:18s;
+  animation-duration:30s;
 }
 
 .home-hero .visual-orbit{
-  animation:reactorSpin 8s linear infinite;
+  animation:reactorSpin 18s linear infinite;
 }
 
 .home-hero .orbit-two{
   animation-direction:reverse;
-  animation-duration:13s;
+  animation-duration:24s;
 }
 
 .home-hero .visual-core{
-  animation:corePower 2s ease-in-out infinite alternate;
+  animation:corePower 3s ease-in-out infinite alternate;
 }
 
 .home-hero .floating-panel{
-  animation:panelHover 3.5s ease-in-out infinite alternate;
-  border-color:rgba(0,220,255,.65);
-  box-shadow:0 0 20px rgba(0,176,255,.16);
+  animation:panelHover 4.5s ease-in-out infinite alternate;
 }
-
-.home-hero .panel-image{animation-delay:-1.2s}
-.home-hero .panel-work{animation-delay:-2.4s}
 
 /* ==================================================
    広告6案件：ホログラム商品パネル
@@ -356,8 +250,12 @@ gtag('config', 'G-782ZG589TK');
   overflow:hidden;
   transform:translateZ(0);
   border:1px solid rgba(0,207,255,.42);
-  background:
-    linear-gradient(135deg,rgba(9,31,62,.96),rgba(6,14,34,.96) 58%,rgba(26,15,66,.93));
+  background:linear-gradient(
+    135deg,
+    rgba(9,31,62,.96),
+    rgba(6,14,34,.96) 58%,
+    rgba(26,15,66,.93)
+  );
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.06),
     inset 0 0 32px rgba(0,138,255,.07),
@@ -365,7 +263,6 @@ gtag('config', 'G-782ZG589TK');
   transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
 }
 
-/* カードの表面を走る光 */
 .services-section .service-card::before{
   content:"";
   position:absolute;
@@ -388,7 +285,6 @@ gtag('config', 'G-782ZG589TK');
   pointer-events:none;
 }
 
-/* ホログラムの微細なライン */
 .services-section .service-card::after{
   content:"";
   position:absolute;
@@ -452,91 +348,66 @@ gtag('config', 'G-782ZG589TK');
 /* アニメーション */
 @keyframes futureFloorMove{
   from{background-position:0 0,0 0}
-  to{background-position:0 55px,70px 0}
+  to{background-position:0 38px,52px 0}
 }
+
 @keyframes floorEnergy{
-  from{background-position:0 -190%}
-  to{background-position:0 190%}
+  from{background-position:0 -200%}
+  to{background-position:0 200%}
 }
+
 @keyframes floorColumns{
   from{background-position:0 0}
-  to{background-position:186px 0}
+  to{background-position:206px 0}
 }
+
 @keyframes laserSweep{
   0%{top:110%;opacity:0}
-  12%{opacity:1}
-  44%{opacity:.9}
+  12%{opacity:.8}
+  44%{opacity:.65}
   57%{opacity:0}
   100%{top:-15%;opacity:0}
 }
+
 @keyframes reactorSpin{
   from{rotate:0deg}
   to{rotate:360deg}
 }
-@keyframes energyPulse{
-  from{opacity:.55;scale:.78}
-  to{opacity:1;scale:1.2}
+
+@keyframes corePower{
+  from{filter:brightness(.85);box-shadow:0 0 24px rgba(0,185,255,.28)}
+  to{filter:brightness(1.2);box-shadow:0 0 35px rgba(0,215,255,.48)}
 }
-@keyframes reactorFlash{
-  0%,100%{opacity:.18;scale:.65}
-  50%{opacity:1;scale:1.25}
+
+@keyframes panelHover{
+  from{translate:0 4px}
+  to{translate:0 -8px}
 }
+
 @keyframes particleTravel{
-  0%{translate:-14px 24px;scale:.55;opacity:.2}
-  50%{opacity:1}
-  100%{translate:20px -32px;scale:1.5;opacity:.9}
+  0%{translate:-10px 16px;scale:.65;opacity:.2}
+  50%{opacity:.8}
+  100%{translate:14px -20px;scale:1.25;opacity:.7}
 }
+
 @keyframes scanTravel{
   from{transform:translateY(-10%)}
   to{transform:translateY(210%)}
 }
-@keyframes corePower{
-  from{filter:brightness(.85);box-shadow:0 0 24px rgba(0,185,255,.28)}
-  to{filter:brightness(1.4);box-shadow:0 0 50px rgba(0,215,255,.7),0 0 90px rgba(108,62,255,.35)}
-}
-@keyframes panelHover{
-  from{translate:0 5px}
-  to{translate:0 -13px}
-}
+
 @keyframes cardLightSweep{
   0%,15%{left:-90%;opacity:0}
   28%{opacity:1}
   62%{left:150%;opacity:.7}
   63%,100%{left:150%;opacity:0}
 }
+
 @keyframes iconHologram{
   from{filter:brightness(.88);box-shadow:0 0 10px rgba(0,186,255,.1)}
   to{filter:brightness(1.22);box-shadow:0 0 24px rgba(0,205,255,.32)}
 }
 
-/* ==================================================
-   背景グリッドの見え方を修正
-   タイトル・ボタン・下のコンテンツ位置は変えない
-   ================================================== */
-
-.home-hero > .future-world{
-  z-index:0;
-}
-
-.future-floor{
-  height:115%;
-  bottom:-20%;
-  -webkit-mask-image:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.28) 0%,
-    #000 10%,
-    #000 76%,
-    transparent 100%
-  );
-  mask-image:linear-gradient(
-    to bottom,
-    rgba(0,0,0,.28) 0%,
-    #000 10%,
-    #000 76%,
-    transparent 100%
-  );
-}
-
+/* スマートフォン表示 */
 @media(max-width:700px){
   .home-hero{
     min-height:0;
@@ -544,58 +415,29 @@ gtag('config', 'G-782ZG589TK');
 
   .future-floor{
     left:-90%;
+    bottom:-18%;
     width:280%;
     height:78%;
-    bottom:-8%;
     transform:perspective(330px) rotateX(60deg);
-    background-size:42px 34px;
-    -webkit-mask-image:linear-gradient(
-      to bottom,
-      rgba(0,0,0,.2) 0%,
-      #000 12%,
-      #000 76%,
-      transparent 100%
-    );
-    mask-image:linear-gradient(
-      to bottom,
-      rgba(0,0,0,.2) 0%,
-      #000 12%,
-      #000 76%,
-      transparent 100%
-    );
+    background-size:38px 30px;
+    animation:futureFloorMove 1.6s linear infinite;
   }
 
-  .future-reactor{
-    width:115vw;
-    top:40%;
+  .future-particles{
+    opacity:.42;
   }
 
-  .future-reactor.reactor-two{
-    width:145vw;
-  }
-
-  .future-energy{
-    width:95vw;
-    top:43%;
-  }
-
-  .future-flash{
-    width:95vw;
-    top:45%;
-  }
-
-  .future-laser{
-    width:230%;
-  }
-
-  .future-particles i{
-    box-shadow:0 0 5px #00eaff,0 0 14px #00bfff;
+  .future-reactor,
+  .future-energy,
+  .future-flash,
+  .home-hero > .hero-orb,
+  .home-hero > .hero-network,
+  .home-hero > .hero-grid{
+    display:none !important;
   }
 
   .services-section .service-card{
-    box-shadow:
-      inset 0 0 22px rgba(0,138,255,.07),
-      0 0 13px rgba(0,142,255,.08);
+    box-shadow:inset 0 0 22px rgba(0,138,255,.07),0 0 13px rgba(0,142,255,.08);
   }
 }
 
@@ -607,7 +449,7 @@ gtag('config', 'G-782ZG589TK');
   .home-hero .floating-panel,
   .services-section .service-card::before,
   .services-section .service-icon{
-    animation:none!important;
+    animation:none !important;
   }
 }
 </style>
