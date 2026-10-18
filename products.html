@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -14,7 +15,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-782ZG589TK');
 </script>
 
@@ -22,238 +22,458 @@
 
 <style>
 /* ========================================
-   PRODUCTS PAGE
+   PRODUCTS PAGE - DARK THEME FIX
+   このページ内の白飛びと枠の見切れを修正
 ======================================== */
 
-.page-toc{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:22px;
-  margin-bottom:32px;
-  box-shadow:0 8px 24px rgba(15,23,42,.05);
+.page-toc,
+.resource-box,
+.step-list li,
+.notice,
+.free-resource,
+.grid > .card,
+main > .section > .container > .card {
+  box-sizing: border-box;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 29, 54, .98),
+    rgba(5, 14, 30, .98)
+  );
+  color: #edf6ff;
+  border: 1px solid rgba(87, 160, 224, .28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
 }
 
-.page-toc h2{
-  margin:0 0 16px;
-  font-size:20px;
+.page-toc {
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 32px;
 }
 
-.page-toc ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+.page-toc h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: #edf6ff;
+  line-height: 1.6;
 }
 
-.page-toc a{
-  display:block;
-  padding:13px 14px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#f8fafc;
-  font-weight:800;
-  font-size:14px;
+.page-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.page-toc a:hover{
-  background:#eef2f7;
+.page-toc a {
+  display: block;
+  box-sizing: border-box;
+  min-width: 0;
+  height: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(87, 160, 224, .28);
+  border-radius: 12px;
+  background: rgba(15, 36, 65, .9);
+  color: #dcecff;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
 }
 
-.resource-anchor{
-  scroll-margin-top:90px;
+.page-toc a:hover {
+  background: rgba(22, 140, 255, .16);
+  border-color: rgba(66, 229, 255, .55);
+  color: #fff;
 }
 
-.free-resource-card{
-  display:block;
-  color:inherit;
-  text-decoration:none;
-  transition:transform .2s ease,box-shadow .2s ease;
+.resource-anchor {
+  scroll-margin-top: 90px;
 }
 
-.free-resource-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 14px 32px rgba(15,23,42,.10);
+/* 素材一覧カード */
+.free-resource-card {
+  display: block;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 24px;
+  color: #edf6ff;
+  text-decoration: none;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 29, 54, .98),
+    rgba(5, 14, 30, .98)
+  );
+  border: 1px solid rgba(87, 160, 224, .28);
+  border-radius: 18px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  overflow-wrap: anywhere;
 }
 
-.free-badge{
-  display:inline-block;
-  padding:5px 10px;
-  margin-bottom:12px;
-  border-radius:999px;
-  background:#e8f7ee;
-  color:#187a43;
-  font-size:11px;
-  font-weight:800;
+.free-resource-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(66, 229, 255, .55);
+  box-shadow: 0 14px 32px rgba(0, 100, 255, .14);
 }
 
-.future-label{
-  display:inline-block;
-  padding:5px 10px;
-  margin-bottom:12px;
-  border-radius:999px;
-  background:#eef2f7;
-  color:#5b6475;
-  font-size:11px;
-  font-weight:800;
+.free-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: rgba(60, 232, 193, .12);
+  border: 1px solid rgba(60, 232, 193, .3);
+  color: #70f0d0;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.resource-box{
-  margin-top:18px;
-  padding:16px;
-  background:#f8fafc;
-  border:1px solid var(--line);
-  border-radius:12px;
+.future-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: rgba(125, 148, 175, .12);
+  border: 1px solid rgba(125, 148, 175, .3);
+  color: #c4d3e5;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.resource-box textarea{
-  width:100%;
-  min-height:180px;
-  box-sizing:border-box;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#fff;
-  color:var(--text);
-  font-size:14px;
-  line-height:1.75;
-  resize:vertical;
-  font-family:inherit;
+/* プロンプトを囲む枠 */
+.resource-box {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin-top: 18px;
+  padding: 18px;
+  background: rgba(4, 13, 28, .88);
+  border: 1px solid rgba(87, 160, 224, .3);
+  border-radius: 14px;
 }
 
-.copy-btn{
-  width:100%;
-  margin-top:10px;
-  padding:13px 16px;
-  border:0;
-  border-radius:9px;
-  background:var(--ink);
-  color:#fff;
-  font-weight:800;
-  font-size:14px;
-  cursor:pointer;
+/* プロンプト入力欄の白背景を解消 */
+.resource-box textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 180px;
+  padding: 16px;
+  border: 1px solid rgba(87, 160, 224, .35);
+  border-radius: 10px;
+  background: #08152a;
+  color: #e7f2ff;
+  -webkit-text-fill-color: #e7f2ff;
+  caret-color: #42e5ff;
+  font-size: 14px;
+  line-height: 1.85;
+  resize: vertical;
+  font-family: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, .15);
 }
 
-.copy-btn:hover{
-  opacity:.86;
+.resource-box textarea:focus {
+  outline: 2px solid rgba(66, 229, 255, .55);
+  outline-offset: 2px;
+  border-color: #42e5ff;
 }
 
-.copy-message{
-  display:block;
-  margin-top:8px;
-  min-height:18px;
-  font-size:12px;
-  color:#187a43;
-  font-weight:700;
+/* コピーするボタン */
+.copy-btn {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 48px;
+  margin-top: 12px;
+  padding: 13px 18px;
+  border: 1px solid rgba(66, 229, 255, .45);
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0870db, #0753a8);
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 5px 16px rgba(0, 90, 200, .18);
 }
 
-.step-list{
-  counter-reset:step;
-  padding:0;
-  list-style:none;
+.copy-btn:hover {
+  background: linear-gradient(135deg, #168cff, #0870db);
+  box-shadow: 0 7px 20px rgba(0, 130, 255, .25);
 }
 
-.step-list li{
-  position:relative;
-  padding:17px 16px 17px 52px;
-  margin:10px 0;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:11px;
+.copy-btn:active {
+  transform: scale(.99);
 }
 
-.step-list li::before{
-  counter-increment:step;
-  content:counter(step);
-  position:absolute;
-  left:14px;
-  top:15px;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  background:var(--gold);
-  color:#1a1300;
-  display:grid;
-  place-items:center;
-  font-size:12px;
-  font-weight:900;
+.copy-btn:focus-visible {
+  outline: 2px solid #42e5ff;
+  outline-offset: 3px;
 }
 
-.resource-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:12px 0;
+.copy-message {
+  display: block;
+  min-height: 22px;
+  margin-top: 10px;
+  color: #70f0d0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
-.resource-meta span{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:999px;
-  background:#f1f5f9;
-  font-size:11px;
-  font-weight:800;
+/* 7日間チェックリスト */
+.step-list {
+  counter-reset: step;
+  padding: 0;
+  list-style: none;
 }
 
-.resource-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
+.step-list li {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 18px 18px 18px 56px;
+  margin: 12px 0;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 29, 54, .98),
+    rgba(5, 14, 30, .98)
+  );
+  border: 1px solid rgba(87, 160, 224, .28);
+  border-radius: 12px;
+  color: #c5d5e8;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
 }
 
-.resource-actions a{
-  text-decoration:none;
+.step-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(66, 229, 255, .14);
+  border: 1px solid rgba(66, 229, 255, .4);
+  color: #70eaff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 900;
 }
 
-.future-card{
-  opacity:.9;
+.resource-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
 }
 
-.info-list{
-  margin:14px 0 0;
-  padding-left:20px;
+.resource-meta span {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 6px 11px;
+  border: 1px solid rgba(87, 160, 224, .28);
+  border-radius: 999px;
+  background: rgba(15, 36, 65, .9);
+  color: #dcecff;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.info-list li{
-  margin:7px 0;
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
 }
 
-@media(max-width:760px){
+.resource-actions a {
+  box-sizing: border-box;
+  max-width: 100%;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
 
-  .page-toc{
-    padding:18px;
+.future-card {
+  opacity: .96;
+}
+
+.info-list {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: #c5d5e8;
+  line-height: 1.85;
+}
+
+.info-list li {
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+/* このページのカードと本文の色を統一 */
+body main .card,
+body main .free-resource {
+  box-sizing: border-box;
+  min-width: 0;
+  color: #c5d5e8;
+  border-color: rgba(87, 160, 224, .28);
+  overflow-wrap: anywhere;
+}
+
+body main .card h2,
+body main .card h3,
+body main .card h4,
+body main .free-resource h2,
+body main .free-resource h3,
+body main .free-resource h4 {
+  color: #edf6ff;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+body main .card p,
+body main .free-resource p,
+body main .notice p {
+  color: #c5d5e8;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+body main .card strong,
+body main .free-resource strong,
+body main .notice strong {
+  color: #edf6ff;
+}
+
+/* 注意書きの枠 */
+body main .notice {
+  box-sizing: border-box;
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    rgba(12, 29, 54, .98),
+    rgba(5, 14, 30, .98)
+  );
+  border: 1px solid rgba(66, 229, 255, .25);
+  color: #c5d5e8;
+}
+
+body main .notice h2 {
+  color: #edf6ff;
+  line-height: 1.6;
+}
+
+/* スマートフォン */
+@media (max-width: 760px) {
+  .page-toc {
+    padding: 18px;
   }
 
-  .page-toc ul{
-    grid-template-columns:1fr;
+  .page-toc ul {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
   }
 
-  .resource-box{
-    padding:12px;
+  .page-toc a {
+    padding: 13px 14px;
   }
 
-  .resource-box textarea{
-    min-height:220px;
-    font-size:13px;
+  .free-resource-card {
+    padding: 20px;
   }
 
-  .step-list li{
-    padding-left:50px;
+  .resource-box {
+    padding: 12px;
   }
 
+  .resource-box textarea {
+    min-height: 220px;
+    padding: 13px;
+    font-size: 13px;
+  }
+
+  .copy-btn {
+    min-height: 48px;
+    padding: 13px 14px;
+    font-size: 14px;
+  }
+
+  .step-list li {
+    padding: 16px 14px 16px 52px;
+  }
+
+  .step-list li::before {
+    left: 12px;
+    top: 16px;
+  }
+
+  body main .notice {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .free-resource-card {
+    padding: 17px;
+  }
+
+  .resource-box {
+    padding: 10px;
+  }
+
+  .resource-box textarea {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .copy-btn {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
 }
 </style>
 </head>
-
 
 <body>
 
 <header>
 <div class="container nav">
-
 <a class="logo" href="index.html">ゼロからAI副業</a>
 
 <nav class="navlinks">
@@ -263,23 +483,14 @@
 <a href="ai-learning.html">AIを学ぶ</a>
 <a href="about.html">このサイトについて</a>
 </nav>
-
 </div>
 </header>
 
-
 <main>
 
-<!-- ========================================
-     HERO
-======================================== -->
-
 <section class="page-hero">
-
 <div class="container">
-
 <div class="eyebrow">FREE AI RESOURCES</div>
-
 <h1>無料AI副業素材</h1>
 
 <p class="lead">
@@ -297,22 +508,12 @@ AI副業を始めたい人が、今日から実際に使える無料素材をま
 <span>初心者向け</span>
 <span>スマホOK</span>
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     INTRO
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="notice">
-
 <strong>このページの素材は無料で利用できます。</strong>
 
 <p>
@@ -323,223 +524,91 @@ AIを使い始めるために、最初から有料サービスを契約する必
 <p>
 ただし、外部AIサービスそのものの料金・利用回数・機能については、それぞれの公式サイトをご確認ください。
 </p>
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     TOC
-======================================== -->
 
 <section class="section">
-
 <div class="container">
-
 <nav class="page-toc" aria-label="このページの目次">
-
 <h2>このページの内容</h2>
-
 <ul>
-
-<li>
-<a href="#free-list">
-無料素材一覧
-</a>
-</li>
-
-<li>
-<a href="#resource1">
-① AI副業アイデア整理プロンプト
-</a>
-</li>
-
-<li>
-<a href="#resource2">
-② AI初心者向け基本プロンプト
-</a>
-</li>
-
-<li>
-<a href="#resource3">
-③ 7日間スタートチェック
-</a>
-</li>
-
-<li>
-<a href="#resource4">
-④ AI副業アイデア質問集
-</a>
-</li>
-
-<li>
-<a href="#how-to-use">
-素材の使い方
-</a>
-</li>
-
-<li>
-<a href="#future">
-今後追加する素材
-</a>
-</li>
-
+<li><a href="#free-list">無料素材一覧</a></li>
+<li><a href="#resource1">① AI副業アイデア整理プロンプト</a></li>
+<li><a href="#resource2">② AI初心者向け基本プロンプト</a></li>
+<li><a href="#resource3">③ 7日間スタートチェック</a></li>
+<li><a href="#resource4">④ AI副業アイデア質問集</a></li>
+<li><a href="#how-to-use">素材の使い方</a></li>
+<li><a href="#future">今後追加する素材</a></li>
 </ul>
-
 </nav>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     FREE LIST
-======================================== -->
-
 <section id="free-list" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">FREE RESOURCES</div>
-
 <h2>まずは無料で使ってみる</h2>
-
-<p class="lead">
-気になる素材を選んで、そのまま使ってください。
-</p>
-
+<p class="lead">気になる素材を選んで、そのまま使ってください。</p>
 </div>
-
 
 <div class="grid">
 
-
 <a href="#resource1" class="card free-resource-card">
-
 <span class="free-badge">FREE</span>
-
 <h3>AI副業アイデア整理</h3>
-
-<p>
-自分の状況から、始めやすいAI副業の候補を整理するためのプロンプトです。
-</p>
-
+<p>自分の状況から、始めやすいAI副業の候補を整理するためのプロンプトです。</p>
 <strong>おすすめ：</strong>
-AI副業を何から始めるか決められない人
-
-<p class="card-link">
-この素材を使う →
-</p>
-
+<p>AI副業を何から始めるか決められない人</p>
+<p class="card-link">この素材を使う →</p>
 </a>
-
 
 <a href="#resource2" class="card free-resource-card">
-
 <span class="free-badge">FREE</span>
-
 <h3>AI初心者向け基本プロンプト</h3>
-
-<p>
-AIに質問するときの「役割・目的・条件・欲しい回答」を整理した汎用テンプレートです。
-</p>
-
+<p>AIに質問するときの「役割・目的・条件・欲しい回答」を整理した汎用テンプレートです。</p>
 <strong>おすすめ：</strong>
-AIから欲しい回答を引き出せない人
-
-<p class="card-link">
-この素材を使う →
-</p>
-
+<p>AIから欲しい回答を引き出せない人</p>
+<p class="card-link">この素材を使う →</p>
 </a>
-
 
 <a href="#resource3" class="card free-resource-card">
-
 <span class="free-badge">FREE</span>
-
 <h3>7日間スタートチェック</h3>
-
-<p>
-AIを触るだけで終わらせず、7日間で小さな成果物を1つ作るためのチェックリストです。
-</p>
-
+<p>AIを触るだけで終わらせず、7日間で小さな成果物を1つ作るためのチェックリストです。</p>
 <strong>おすすめ：</strong>
-何から始めればいいか分からない人
-
-<p class="card-link">
-チェックリストを見る →
-</p>
-
+<p>何から始めればいいか分からない人</p>
+<p class="card-link">チェックリストを見る →</p>
 </a>
-
 
 <a href="#resource4" class="card free-resource-card">
-
 <span class="free-badge">FREE</span>
-
 <h3>AI副業アイデア質問集</h3>
-
-<p>
-自分の経験・得意なこと・相手の困りごとから、AIを使った仕事の可能性を考える質問集です。
-</p>
-
+<p>自分の経験・得意なこと・相手の困りごとから、AIを使った仕事の可能性を考える質問集です。</p>
 <strong>おすすめ：</strong>
-自分にできることを整理したい人
-
-<p class="card-link">
-質問集を見る →
-</p>
-
+<p>自分にできることを整理したい人</p>
+<p class="card-link">質問集を見る →</p>
 </a>
 
-
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     RESOURCE 1
-======================================== -->
-
 <section id="resource1" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">RESOURCE 01</div>
-
 <h2>AI副業アイデア整理プロンプト</h2>
-
-<p class="lead">
-「AI副業をやってみたいけど、自分に何ができるか分からない」という人向けです。
-</p>
-
+<p class="lead">「AI副業をやってみたいけど、自分に何ができるか分からない」という人向けです。</p>
 </div>
 
-
 <div class="card free-resource">
-
 <span class="free-badge">無料・コピペOK</span>
-
 <h3>このプロンプトをAIに入力してください</h3>
-
-<p>
-自分の条件をAIに伝えて、実際に始められそうな選択肢を整理してもらいます。
-</p>
+<p>自分の条件をAIに伝えて、実際に始められそうな選択肢を整理してもらいます。</p>
 
 <div class="resource-box">
-
 <textarea id="prompt1" readonly>あなたはAI副業の相談役です。
 
 以下の条件をもとに、私が今の状況から始めやすいAIを活用した仕事・副業のアイデアを10個考えてください。
@@ -565,55 +634,27 @@ AIを触るだけで終わらせず、7日間で小さな成果物を1つ作る�
 
 また、収益化までに必要な作業・費用・注意点があれば、それも説明してください。</textarea>
 
-<button class="copy-btn"
-onclick="copyText('prompt1','message1','AI副業アイデア整理')">
-プロンプトをコピーする
-</button>
-
-<span id="message1" class="copy-message"></span>
-
+<button type="button" class="copy-btn" onclick="copyText('prompt1','message1','AI副業アイデア整理')">プロンプトをコピーする</button>
+<span id="message1" class="copy-message" aria-live="polite"></span>
 </div>
-
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     RESOURCE 2
-======================================== -->
-
 <section id="resource2" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">RESOURCE 02</div>
-
 <h2>AI初心者向け基本プロンプト</h2>
-
-<p class="lead">
-AIへの質問がうまくいかないときに使える、汎用的な質問テンプレートです。
-</p>
-
+<p class="lead">AIへの質問がうまくいかないときに使える、汎用的な質問テンプレートです。</p>
 </div>
 
-
 <div class="card free-resource">
-
 <span class="free-badge">無料・コピペOK</span>
-
 <h3>まずはこの形で質問する</h3>
-
-<p>
-「何をしてほしいのか」「条件は何か」「どんな回答が欲しいのか」をAIに伝えます。
-</p>
+<p>「何をしてほしいのか」「条件は何か」「どんな回答が欲しいのか」をAIに伝えます。</p>
 
 <div class="resource-box">
-
 <textarea id="prompt2" readonly>あなたは【役割】です。
 
 私は【目的】を達成したいです。
@@ -644,127 +685,50 @@ AIへの質問がうまくいかないときに使える、汎用的な質問テ
 
 最後に「今すぐやること」を3つに絞ってください。</textarea>
 
-<button class="copy-btn"
-onclick="copyText('prompt2','message2','AI初心者向け基本プロンプト')">
-プロンプトをコピーする
-</button>
-
-<span id="message2" class="copy-message"></span>
-
+<button type="button" class="copy-btn" onclick="copyText('prompt2','message2','AI初心者向け基本プロンプト')">プロンプトをコピーする</button>
+<span id="message2" class="copy-message" aria-live="polite"></span>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     RESOURCE 3
-======================================== -->
 
 <section id="resource3" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">RESOURCE 03</div>
-
 <h2>AI副業を始める7日間チェックリスト</h2>
-
-<p class="lead">
-いきなり大きく始めず、1週間で「AIを使って何か1つ作る」ことを目標にします。
-</p>
-
+<p class="lead">いきなり大きく始めず、1週間で「AIを使って何か1つ作る」ことを目標にします。</p>
 </div>
-
 
 <ol class="step-list">
-
-<li>
-<strong>AIを1つ選ぶ</strong><br>
-ChatGPTなど、まずは1つのAIを使ってみる。
-</li>
-
-<li>
-<strong>自分ができそうなことを10個書く</strong><br>
-文章、画像、リサーチ、資料作成など、得意・経験のあることを整理する。
-</li>
-
-<li>
-<strong>AIを使って1つ作る</strong><br>
-文章、画像、テンプレートなど、小さなものを実際に作る。
-</li>
-
-<li>
-<strong>誰の役に立つか考える</strong><br>
-「誰がこれを使ったら便利なのか」を考える。
-</li>
-
-<li>
-<strong>無料で人に見せる</strong><br>
-SNSやコミュニティなど、各サービスの規約に沿った場所で反応を確認する。
-</li>
-
-<li>
-<strong>改善する</strong><br>
-使った人の反応をもとに内容を修正する。
-</li>
-
-<li>
-<strong>次の行動を決める</strong><br>
-無料提供を続ける、仕事として提供する、商品化するなど次の方向を決める。
-</li>
-
+<li><strong>AIを1つ選ぶ</strong><br>ChatGPTなど、まずは1つのAIを使ってみる。</li>
+<li><strong>自分ができそうなことを10個書く</strong><br>文章、画像、リサーチ、資料作成など、得意・経験のあることを整理する。</li>
+<li><strong>AIを使って1つ作る</strong><br>文章、画像、テンプレートなど、小さなものを実際に作る。</li>
+<li><strong>誰の役に立つか考える</strong><br>「誰がこれを使ったら便利なのか」を考える。</li>
+<li><strong>無料で人に見せる</strong><br>SNSやコミュニティなど、各サービスの規約に沿った場所で反応を確認する。</li>
+<li><strong>改善する</strong><br>使った人の反応をもとに内容を修正する。</li>
+<li><strong>次の行動を決める</strong><br>無料提供を続ける、仕事として提供する、商品化するなど次の方向を決める。</li>
 </ol>
 
-
 <div class="notice">
-
 <strong>7日で収益化することが目的ではありません。</strong>
-
-<p>
-まず「AIを使って実際に何かを作れる状態」になることを目標にします。
-その後、需要があるかを確認してから収益化を考えます。
-</p>
-
+<p>まず「AIを使って実際に何かを作れる状態」になることを目標にします。その後、需要があるかを確認してから収益化を考えます。</p>
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     RESOURCE 4
-======================================== -->
-
 <section id="resource4" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">RESOURCE 04</div>
-
 <h2>AI副業アイデアを考えるための質問集</h2>
-
-<p class="lead">
-「何をしたいか」だけでなく、「何ができるか」から考えるための質問集です。
-</p>
-
+<p class="lead">「何をしたいか」だけでなく、「何ができるか」から考えるための質問集です。</p>
 </div>
-
 
 <div class="grid">
 
-
 <div class="card">
-
 <h3>自分について</h3>
-
 <ul class="info-list">
 <li>今までやった仕事は？</li>
 <li>人より少し得意なことは？</li>
@@ -773,14 +737,10 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 <li>興味がある分野は？</li>
 <li>過去にお金を払ってでも解決したかったことは？</li>
 </ul>
-
 </div>
 
-
 <div class="card">
-
 <h3>AIについて</h3>
-
 <ul class="info-list">
 <li>文章を作るのに使えないか？</li>
 <li>画像作成に使えないか？</li>
@@ -789,14 +749,10 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 <li>アイデア出しに使えないか？</li>
 <li>今まで時間がかかっていた作業を短縮できないか？</li>
 </ul>
-
 </div>
 
-
 <div class="card">
-
 <h3>相手について</h3>
-
 <ul class="info-list">
 <li>誰が困っている？</li>
 <li>何に時間を使っている？</li>
@@ -805,14 +761,10 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 <li>AIを使えば楽にできることは？</li>
 <li>その人は今、どうやって解決している？</li>
 </ul>
-
 </div>
 
-
 <div class="card">
-
 <h3>お金につなげる</h3>
-
 <ul class="info-list">
 <li>その作業を代わりにやったら価値がある？</li>
 <li>成果物として販売できる？</li>
@@ -821,351 +773,180 @@ SNSやコミュニティなど、各サービスの規約に沿った場所で�
 <li>同じ作業を複数人に提供できる？</li>
 <li>AIを使っても人間の確認・編集に価値を付けられる？</li>
 </ul>
-
-</div>
-
-
 </div>
 
 </div>
-
+</div>
 </section>
-
-
-<!-- ========================================
-     HOW TO USE
-======================================== -->
 
 <section id="how-to-use" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">HOW TO USE</div>
-
 <h2>無料素材の使い方</h2>
-
 </div>
-
 
 <div class="grid">
-
-
 <div class="card">
-
 <h3>STEP 1</h3>
-
-<p>
-使いたい素材を選びます。
-</p>
-
+<p>使いたい素材を選びます。</p>
 </div>
-
-
 <div class="card">
-
 <h3>STEP 2</h3>
-
-<p>
-「プロンプトをコピーする」を押します。
-</p>
-
+<p>「プロンプトをコピーする」を押します。</p>
 </div>
-
-
 <div class="card">
-
 <h3>STEP 3</h3>
-
-<p>
-ChatGPTなどのAIを開いて貼り付けます。
-</p>
-
+<p>ChatGPTなどのAIを開いて貼り付けます。</p>
 </div>
-
-
 <div class="card">
-
 <h3>STEP 4</h3>
-
-<p>
-自分の状況に合わせて内容を変更して使います。
-</p>
-
+<p>自分の状況に合わせて内容を変更して使います。</p>
 </div>
-
 </div>
-
 
 <div class="notice">
-
 <strong>そのまま使うだけでなく、自分用に変えるのがおすすめです。</strong>
-
-<p>
-AIへの指示は、自分の目的・条件・経験などを具体的に入れるほど使いやすくなります。
-</p>
-
+<p>AIへの指示は、自分の目的・条件・経験などを具体的に入れるほど使いやすくなります。</p>
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     TOOLS CROSS LINK
-======================================== -->
 
 <section class="section">
-
 <div class="container">
-
 <div class="card">
-
 <div class="eyebrow">NEXT STEP</div>
-
 <h2>使うAIを決めたら、次はツールを選ぶ</h2>
-
-<p>
-無料素材を使ってみたら、次は実際に使えるAIツールを探してみましょう。
-</p>
-
+<p>無料素材を使ってみたら、次は実際に使えるAIツールを探してみましょう。</p>
 <div class="resource-actions">
-
-<a class="btn primary" href="tools.html">
-AIツールを見る →
-</a>
-
-<a class="btn secondary" href="services.html">
-AIを使った仕事を見る →
-</a>
-
+<a class="btn primary" href="tools.html">AIツールを見る →</a>
+<a class="btn secondary" href="services.html">AIを使った仕事を見る →</a>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     FUTURE
-======================================== -->
 
 <section id="future" class="section resource-anchor">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">COMING NEXT</div>
-
 <h2>今後追加する無料素材</h2>
-
-<p class="lead">
-今後も「実際に使えるもの」を優先して追加していきます。
-</p>
-
+<p class="lead">今後も「実際に使えるもの」を優先して追加していきます。</p>
 </div>
-
 
 <div class="grid">
-
-
 <div class="card future-card">
-
 <span class="future-label">追加予定</span>
-
 <h3>SNS投稿作成プロンプト</h3>
-
-<p>
-投稿テーマ、構成、文章作成などをAIに手伝ってもらうためのテンプレート。
-</p>
-
+<p>投稿テーマ、構成、文章作成などをAIに手伝ってもらうためのテンプレート。</p>
 </div>
 
-
 <div class="card future-card">
-
 <span class="future-label">追加予定</span>
-
 <h3>文章作成プロンプト</h3>
-
-<p>
-ブログ、メール、商品説明など、文章作成に使えるプロンプト。
-</p>
-
+<p>ブログ、メール、商品説明など、文章作成に使えるプロンプト。</p>
 </div>
 
-
 <div class="card future-card">
-
 <span class="future-label">追加予定</span>
-
 <h3>AI副業チェックシート</h3>
-
-<p>
-自分の経験や使える時間などから、AI副業の方向性を整理するチェックシート。
-</p>
-
+<p>自分の経験や使える時間などから、AI副業の方向性を整理するチェックシート。</p>
 </div>
-
 
 <div class="card future-card">
-
 <span class="future-label">追加予定</span>
-
 <h3>営業・提案文テンプレート</h3>
-
-<p>
-AIを使った仕事を提案するときに使える、初心者向けの文章テンプレート。
-</p>
-
+<p>AIを使った仕事を提案するときに使える、初心者向けの文章テンプレート。</p>
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     IMPORTANT
-======================================== -->
 
 <section class="section">
-
 <div class="container">
-
 <div class="notice">
-
 <div class="eyebrow">IMPORTANT</div>
-
 <h2>無料素材を使うときの注意</h2>
-
-<p>
-このページのプロンプトやテンプレートは、AIから必ず正しい回答が得られることを保証するものではありません。
-</p>
-
-<p>
-AIが生成した文章・情報・画像などを実際に使用する場合は、自分で内容を確認してください。
-特に仕事として納品する場合は、誤情報・著作権・個人情報・各サービスの利用規約などを確認することが重要です。
-</p>
-
-<p>
-また、外部AIサービスの料金・無料利用範囲・機能・利用規約は変更される場合があります。
-利用前に公式情報をご確認ください。
-</p>
-
+<p>このページのプロンプトやテンプレートは、AIから必ず正しい回答が得られることを保証するものではありません。</p>
+<p>AIが生成した文章・情報・画像などを実際に使用する場合は、自分で内容を確認してください。特に仕事として納品する場合は、誤情報・著作権・個人情報・各サービスの利用規約などを確認することが重要です。</p>
+<p>また、外部AIサービスの料金・無料利用範囲・機能・利用規約は変更される場合があります。利用前に公式情報をご確認ください。</p>
 </div>
-
 </div>
-
 </section>
-
 
 </main>
 
-
-<!-- ========================================
-     FOOTER
-======================================== -->
-
 <footer>
-
 <div class="container">
-
 <p>© 2026 ゼロからAI副業</p>
-
 <p>
 <a href="privacy.html">プライバシーポリシー</a> |
 <a href="disclaimer.html">免責事項</a> |
 <a href="contact.html">お問い合わせ</a>
 </p>
-
 </div>
-
 </footer>
 
-
-<!-- ========================================
-     COPY FUNCTION
-======================================== -->
-
 <script>
-
-function copyText(textareaId,messageId,resourceName){
-
+function copyText(textareaId, messageId, resourceName) {
   const textarea = document.getElementById(textareaId);
   const message = document.getElementById(messageId);
 
-  if(!textarea || !message){
+  if (!textarea || !message) {
     return;
   }
 
-  function successMessage(){
+  function successMessage() {
+    message.textContent = "コピーしました。AIに貼り付けて使えます。";
 
-    message.textContent =
-      "コピーしました。AIに貼り付けて使えます。";
-
-    if(typeof gtag === "function"){
-
-      gtag("event","free_resource_copy",{
-        event_category:"free_resource",
-        event_label:resourceName,
-        resource_name:resourceName
+    if (typeof gtag === "function") {
+      gtag("event", "free_resource_copy", {
+        event_category: "free_resource",
+        event_label: resourceName,
+        resource_name: resourceName
       });
-
     }
 
-    setTimeout(function(){
+    setTimeout(function() {
       message.textContent = "";
-    },3000);
-
+    }, 3000);
   }
 
-  if(navigator.clipboard && window.isSecureContext){
-
+  if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(textarea.value)
       .then(successMessage)
-      .catch(function(){
-
+      .catch(function() {
         textarea.focus();
         textarea.select();
 
-        try{
-          document.execCommand("copy");
-          successMessage();
-        }catch(e){
-          message.textContent =
-            "コピーできませんでした。長押ししてコピーしてください。";
+        try {
+          const copied = document.execCommand("copy");
+          if (copied) {
+            successMessage();
+          } else {
+            message.textContent = "コピーできませんでした。長押ししてコピーしてください。";
+          }
+        } catch (e) {
+          message.textContent = "コピーできませんでした。長押ししてコピーしてください。";
         }
-
       });
-
-  }else{
-
+  } else {
     textarea.focus();
     textarea.select();
 
-    try{
-      document.execCommand("copy");
-      successMessage();
-    }catch(e){
-      message.textContent =
-        "コピーできませんでした。長押ししてコピーしてください。";
+    try {
+      const copied = document.execCommand("copy");
+      if (copied) {
+        successMessage();
+      } else {
+        message.textContent = "コピーできませんでした。長押ししてコピーしてください。";
+      }
+    } catch (e) {
+      message.textContent = "コピーできませんでした。長押ししてコピーしてください。";
     }
-
   }
-
 }
-
 </script>
-
 
 </body>
 </html>
