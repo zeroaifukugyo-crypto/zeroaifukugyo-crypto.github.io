@@ -1,994 +1,288 @@
+
 <!doctype html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>AIを学ぶ｜AI初心者の勉強方法・学習サービス｜ゼロからAI副業</title>
-
 <meta name="description" content="AI初心者が生成AIを学ぶ方法を紹介。無料で実際に使いながら学ぶ方法から、体系的に学べるAI学習サービスまで、目的に合わせた選び方を解説します。">
 
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-782ZG589TK"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-782ZG589TK');
-
-  function trackAffiliateClick(name){
-    if(typeof gtag === 'function'){
-      gtag('event','affiliate_click',{
-        event_category:'affiliate',
-        event_label:name,
-        tool_name:name
-      });
-    }
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-782ZG589TK');
+function trackAffiliateClick(name){
+  if(typeof gtag==='function'){
+    gtag('event','affiliate_click',{
+      event_category:'affiliate',
+      event_label:name,
+      tool_name:name
+    });
   }
+}
 </script>
 
 <link rel="stylesheet" href="styles.css">
 
 <style>
-.learning-intro{
-  max-width:780px;
-}
-
+/* ダークテーマに合わせたカード表示 */
+.learning-intro{max-width:780px}
 .ad-disclosure{
-  margin-top:24px;
-  padding:14px 16px;
-  border:1px solid var(--line);
-  border-radius:10px;
-  background:#fff;
-  color:#4b5563;
-  font-size:13px;
-  line-height:1.7;
+  margin-top:24px;padding:14px 16px;
+  border:1px solid var(--line);border-radius:10px;
+  background:rgba(255,255,255,.04);color:var(--muted);
+  font-size:13px;line-height:1.7
 }
-
-.ad-disclosure strong{
-  color:#111827;
-}
-
+.ad-disclosure strong{color:var(--text)}
 .learning-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:28px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;margin-top:28px
 }
-
 .learning-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:22px;
+  background:rgba(255,255,255,.04);
+  color:var(--text);border:1px solid var(--line);
+  border-radius:14px;padding:22px
 }
-
-.learning-card h3{
-  margin-top:0;
-}
-
-.learning-card p{
-  color:var(--muted);
-}
-
+.learning-card h3{margin-top:0;color:var(--text)}
+.learning-card p{color:var(--muted)}
 .learning-card .number{
-  display:inline-flex;
-  width:32px;
-  height:32px;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:var(--gold);
-  color:#1a1300;
-  font-size:12px;
-  font-weight:900;
-  margin-bottom:12px;
+  display:inline-flex;width:32px;height:32px;
+  align-items:center;justify-content:center;border-radius:50%;
+  background:var(--gold);color:#1a1300;
+  font-size:12px;font-weight:900;margin-bottom:12px
 }
-
 .learning-ad{
-  max-width:760px;
-  margin:28px auto 0;
-  padding:26px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
+  max-width:760px;margin:28px auto 0;padding:26px;
+  background:rgba(255,255,255,.04);
+  color:var(--text);border:1px solid var(--line);
+  border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.18)
 }
-
 .learning-ad-label{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:5px 10px;
-  border-radius:5px;
-  background:#111827;
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
+  display:inline-block;margin-bottom:14px;padding:5px 10px;
+  border-radius:5px;background:#111827;color:#fff;
+  font-size:12px;font-weight:800
 }
-
-.learning-ad h3{
-  margin:0 0 10px;
-  font-size:23px;
-}
-
-.learning-ad p{
-  color:var(--muted);
-}
-
-.learning-ad-banner{
-  margin:22px auto 8px;
-  text-align:center;
-}
-
-.learning-ad-banner a{
-  display:inline-block;
-  padding:0;
-  background:none;
-  border:0;
-  box-shadow:none;
-}
-
+.learning-ad h3{margin:0 0 10px;font-size:23px;color:var(--text)}
+.learning-ad p{color:var(--muted)}
+.learning-ad-banner{margin:22px auto 8px;text-align:center}
+.learning-ad-banner a{display:inline-block;padding:0;background:none;border:0;box-shadow:none}
 .learning-ad-banner img{
-  display:block;
-  width:300px;
-  height:250px;
-  max-width:100%;
-  margin:0 auto;
-  border:0;
+  display:block;width:300px;height:250px;max-width:100%;
+  margin:0 auto;border:0;object-fit:contain
 }
-
 .learning-ad-cta{
-  display:block;
-  width:100%;
-  box-sizing:border-box;
-  margin-top:18px;
-  padding:14px 20px;
-  border-radius:10px;
-  background:var(--text);
-  color:#fff !important;
-  text-align:center;
-  font-weight:800;
+  display:block;width:100%;box-sizing:border-box;margin-top:18px;
+  padding:14px 20px;border-radius:10px;background:var(--text);
+  color:var(--ink)!important;text-align:center;font-weight:800
 }
-
-.learning-ad-cta:hover{
-  opacity:.85;
-}
-
-.learning-note{
-  margin-top:14px;
-  color:#6b7280;
-  font-size:12px;
-  line-height:1.7;
-}
-
-.learning-list{
-  margin:0;
-  padding-left:22px;
-}
-
-.learning-list li{
-  margin:10px 0;
-}
-
-.learning-flow{
-  counter-reset:flow;
-}
-
+.learning-ad-cta:hover{opacity:.85}
+.learning-note{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.7}
+.learning-list{margin:0;padding-left:22px}
+.learning-list li{margin:10px 0}
+.learning-flow{counter-reset:flow}
 .learning-flow-item{
-  position:relative;
-  padding:20px 20px 20px 62px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:12px;
-  margin-bottom:12px;
+  position:relative;padding:20px 20px 20px 62px;
+  background:rgba(255,255,255,.04);color:var(--text);
+  border:1px solid var(--line);border-radius:12px;margin-bottom:12px
 }
-
 .learning-flow-item::before{
-  counter-increment:flow;
-  content:counter(flow);
-  position:absolute;
-  left:18px;
-  top:18px;
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background:var(--gold);
-  color:#1a1300;
-  display:grid;
-  place-items:center;
-  font-weight:900;
+  counter-increment:flow;content:counter(flow);
+  position:absolute;left:18px;top:18px;width:30px;height:30px;
+  border-radius:50%;background:var(--gold);color:#1a1300;
+  display:grid;place-items:center;font-weight:900
 }
-
-.free-label{
-  display:inline-block;
-  padding:5px 10px;
-  border-radius:999px;
-  background:#e8f7ee;
-  color:#187a43;
-  font-size:11px;
-  font-weight:800;
+.free-label,.paid-label{
+  display:inline-block;padding:5px 10px;border-radius:999px;
+  font-size:11px;font-weight:800
 }
-
-.paid-label{
-  display:inline-block;
-  padding:5px 10px;
-  border-radius:999px;
-  background:#eef2f7;
-  color:#374151;
-  font-size:11px;
-  font-weight:800;
-}
-
+.free-label{background:#173d2a;color:#a7f3c4}
+.paid-label{background:#263246;color:#dbeafe}
 .learning-bottom{
-  margin-top:20px;
-  padding:26px;
-  background:var(--ink);
-  color:#fff;
-  border-radius:14px;
+  margin-top:20px;padding:26px;background:var(--ink);
+  color:#fff;border:1px solid var(--line);border-radius:14px
 }
-
-.learning-bottom p{
-  color:#d1d5db;
-}
-
+.learning-bottom h3{color:#fff}
+.learning-bottom p{color:#d1d5db}
 .learning-bottom a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  margin-top:10px;
-  padding:13px 20px;
-  border-radius:999px;
-  background:var(--gold);
-  color:#1a1300 !important;
-  font-weight:800;
-  text-decoration:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-top:10px;padding:13px 20px;border-radius:999px;
+  background:var(--gold);color:#1a1300!important;
+  font-weight:800;text-decoration:none
 }
-
-.resource-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-
-.resource-actions a{
-  text-decoration:none;
-}
-
+.resource-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.resource-actions a{text-decoration:none}
 @media(max-width:760px){
-
-  .learning-grid{
-    grid-template-columns:1fr;
-  }
-
-  .learning-ad{
-    padding:22px 18px;
-  }
-
-  .learning-ad h3{
-    font-size:21px;
-  }
-
-  .learning-ad-banner img{
-    width:300px;
-    height:250px;
-    max-width:100%;
-    object-fit:contain;
-  }
-
-  .learning-flow-item{
-    padding-left:58px;
-  }
-
+  .learning-grid{grid-template-columns:1fr}
+  .learning-ad{padding:22px 18px}
+  .learning-ad h3{font-size:21px}
+  .learning-ad-banner img{width:300px;height:250px;max-width:100%;object-fit:contain}
+  .learning-flow-item{padding-left:58px}
 }
 </style>
 </head>
 
-
 <body>
-
 <header>
-
 <div class="container nav">
-
 <a class="logo" href="index.html">ゼロからAI副業</a>
-
-<nav class="navlinks">
+<nav class="navlinks" aria-label="メインナビゲーション">
 <a href="products.html">無料AI素材</a>
 <a href="tools.html">AIツール</a>
 <a href="services.html">AIを使った仕事</a>
 <a href="ai-learning.html">AIを学ぶ</a>
 <a href="about.html">このサイトについて</a>
 </nav>
-
 </div>
-
 </header>
 
-
 <main>
-
-
-<!-- ========================================
-     HERO
-======================================== -->
-
 <section class="page-hero">
-
 <div class="container learning-intro">
-
 <div class="eyebrow">AI LEARNING</div>
-
 <h1>AIを学ぶ</h1>
-
-<p class="lead">
-AIを「知る」だけで終わらせず、実際の仕事や副業で使える状態を目指す。
-</p>
-
-<p>
-生成AIは、実際に触ってみることで分かることがたくさんあります。
-このページでは、AI初心者が何から学べばいいのか、
-無料で試す方法から体系的に学ぶ方法まで整理します。
-</p>
-
+<p class="lead">AIを「知る」だけで終わらせず、実際の仕事や副業で使える状態を目指す。</p>
+<p>生成AIは、実際に触ってみることで分かることがたくさんあります。このページでは、AI初心者が何から学べばいいのか、無料で試す方法から体系的に学ぶ方法まで整理します。</p>
 <div class="ad-disclosure">
-
 <strong>PR・広告について</strong><br>
-
-このページにはアフィリエイト広告が含まれています。
-広告・紹介リンクを通じて、当サイトが紹介料を受け取る場合があります。
-
+このページにはアフィリエイト広告が含まれています。広告・紹介リンクを通じて、当サイトが紹介料を受け取る場合があります。
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     LEARNING ROUTE
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="section-head">
-
 <div class="eyebrow">START HERE</div>
-
 <h2>AI初心者は、まずここから</h2>
-
-<p class="lead">
-いきなり高額な教材を購入する必要はありません。
-まず無料で使って、自分に必要なものを確認します。
-</p>
-
+<p class="lead">いきなり高額な教材を購入する必要はありません。まず無料で使って、自分に必要なものを確認します。</p>
 </div>
-
-
 <div class="learning-grid">
-
-
-<div class="learning-card">
-
-<span class="number">01</span>
-
-<span class="free-label">無料</span>
-
-<h3>まずAIを使う</h3>
-
-<p>
-ChatGPTなどのAIに質問したり、文章を作ったりして、基本的な使い方を体験します。
-</p>
-
-<a href="tools.html">
-AIツールを見る →
-</a>
-
+<div class="learning-card"><span class="number">01</span><br><span class="free-label">無料</span><h3>まずAIを使う</h3><p>ChatGPTなどのAIに質問したり、文章を作ったりして、基本的な使い方を体験します。</p><a href="tools.html">AIツールを見る →</a></div>
+<div class="learning-card"><span class="number">02</span><br><span class="free-label">無料</span><h3>実際の作業に使う</h3><p>文章作成、情報整理、アイデア出しなど、自分が普段している作業にAIを取り入れます。</p><a href="products.html">無料AI素材を見る →</a></div>
+<div class="learning-card"><span class="number">03</span><br><span class="paid-label">必要なら有料</span><h3>体系的に学ぶ</h3><p>独学だけでは難しいと感じた場合に、学習サービスなどを比較して検討します。</p><a href="#learning-service">学習サービスを見る →</a></div>
 </div>
-
-
-<div class="learning-card">
-
-<span class="number">02</span>
-
-<span class="free-label">無料</span>
-
-<h3>実際の作業に使う</h3>
-
-<p>
-文章作成、情報整理、アイデア出しなど、自分が普段している作業にAIを取り入れます。
-</p>
-
-<a href="products.html">
-無料AI素材を見る →
-</a>
-
 </div>
-
-
-<div class="learning-card">
-
-<span class="number">03</span>
-
-<span class="paid-label">必要なら有料</span>
-
-<h3>体系的に学ぶ</h3>
-
-<p>
-独学だけでは難しいと感じた場合に、学習サービスなどを比較して検討します。
-</p>
-
-<a href="#learning-service">
-学習サービスを見る →
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- ========================================
-     WHAT TO LEARN
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">WHAT TO LEARN</div>
-
-<h2>AIを学ぶときに重要な3つ</h2>
-
-</div>
-
-
+<div class="section-head"><div class="eyebrow">WHAT TO LEARN</div><h2>AIを学ぶときに重要な3つ</h2></div>
 <div class="learning-grid">
-
-
-<div class="learning-card">
-
-<span class="number">01</span>
-
-<h3>AIの特徴を知る</h3>
-
-<p>
-AIは便利ですが、間違った情報を生成することもあります。
-得意なことと苦手なことを知ることが重要です。
-</p>
-
+<div class="learning-card"><span class="number">01</span><h3>AIの特徴を知る</h3><p>AIは便利ですが、間違った情報を生成することもあります。得意なことと苦手なことを知ることが重要です。</p></div>
+<div class="learning-card"><span class="number">02</span><h3>指示の出し方を覚える</h3><p>目的、条件、欲しい形式などを具体的に伝えることで、AIからより使いやすい回答を得やすくなります。</p></div>
+<div class="learning-card"><span class="number">03</span><h3>仕事に落とし込む</h3><p>「AIについて詳しい」だけではなく、実際の作業を効率化できるようにすることが重要です。</p></div>
 </div>
-
-
-<div class="learning-card">
-
-<span class="number">02</span>
-
-<h3>指示の出し方を覚える</h3>
-
-<p>
-目的、条件、欲しい形式などを具体的に伝えることで、
-AIからより使いやすい回答を得やすくなります。
-</p>
-
 </div>
-
-
-<div class="learning-card">
-
-<span class="number">03</span>
-
-<h3>仕事に落とし込む</h3>
-
-<p>
-「AIについて詳しい」だけではなく、
-実際の作業を効率化できるようにすることが重要です。
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- ========================================
-     FREE LEARNING
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">FREE LEARNING</div>
-
-<h2>無料でAIを学ぶ方法</h2>
-
-<p class="lead">
-まずはお金をかけずに、実際にAIを使いながら覚える方法があります。
-</p>
-
-</div>
-
-
+<div class="section-head"><div class="eyebrow">FREE LEARNING</div><h2>無料でAIを学ぶ方法</h2><p class="lead">まずはお金をかけずに、実際にAIを使いながら覚える方法があります。</p></div>
 <div class="card">
-
 <ul class="learning-list">
-
-<li>
-<strong>AIに直接質問する</strong><br>
-分からない用語や使い方をAIに聞きながら覚える。
-</li>
-
-<li>
-<strong>無料AIツールを実際に使う</strong><br>
-文章、画像、動画など、自分が興味のある分野から試す。
-</li>
-
-<li>
-<strong>小さな成果物を作る</strong><br>
-文章、画像、テンプレートなどを1つ完成させる。
-</li>
-
-<li>
-<strong>作ったものを改善する</strong><br>
-AIに改善点を聞きながら、何度か修正する。
-</li>
-
-<li>
-<strong>実際の作業に使う</strong><br>
-勉強だけで終わらせず、自分の仕事や日常の作業に取り入れる。
-</li>
-
+<li><strong>AIに直接質問する</strong><br>分からない用語や使い方をAIに聞きながら覚える。</li>
+<li><strong>無料AIツールを実際に使う</strong><br>文章、画像、動画など、自分が興味のある分野から試す。</li>
+<li><strong>小さな成果物を作る</strong><br>文章、画像、テンプレートなどを1つ完成させる。</li>
+<li><strong>作ったものを改善する</strong><br>AIに改善点を聞きながら、何度か修正する。</li>
+<li><strong>実際の作業に使う</strong><br>勉強だけで終わらせず、自分の仕事や日常の作業に取り入れる。</li>
 </ul>
-
 </div>
-
-
-<div class="learning-bottom">
-
-<h3>無料AI素材も用意しています</h3>
-
-<p>
-プロンプトやチェックリストを実際に使って、
-AIを触りながら覚えてみてください。
-</p>
-
-<a href="products.html">
-無料AI素材を見る →
-</a>
-
+<div class="learning-bottom"><h3>無料AI素材も用意しています</h3><p>プロンプトやチェックリストを実際に使って、AIを触りながら覚えてみてください。</p><a href="products.html">無料AI素材を見る →</a></div>
 </div>
-
-</div>
-
 </section>
 
-
-<!-- ========================================
-     LEARNING FLOW
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">LEARNING FLOW</div>
-
-<h2>AIを仕事で使えるようになるまで</h2>
-
-</div>
-
-
+<div class="section-head"><div class="eyebrow">LEARNING FLOW</div><h2>AIを仕事で使えるようになるまで</h2></div>
 <div class="learning-flow">
-
-
-<div class="learning-flow-item">
-
-<strong>AIを触る</strong>
-
-<p>
-まずは質問、文章作成、要約など簡単な作業から試します。
-</p>
-
+<div class="learning-flow-item"><strong>AIを触る</strong><p>まずは質問、文章作成、要約など簡単な作業から試します。</p></div>
+<div class="learning-flow-item"><strong>得意・苦手を知る</strong><p>AIが得意な作業と、人間による確認が必要な作業を理解します。</p></div>
+<div class="learning-flow-item"><strong>自分の作業に使う</strong><p>普段の仕事や副業の作業にAIを取り入れます。</p></div>
+<div class="learning-flow-item"><strong>成果物を作る</strong><p>文章、画像、資料など、実際に人へ見せられるものを作ります。</p></div>
+<div class="learning-flow-item"><strong>仕事につなげる</strong><p>相手の困りごとを解決できる形にして、仕事として提供することを考えます。</p></div>
 </div>
-
-
-<div class="learning-flow-item">
-
-<strong>得意・苦手を知る</strong>
-
-<p>
-AIが得意な作業と、人間による確認が必要な作業を理解します。
-</p>
-
 </div>
-
-
-<div class="learning-flow-item">
-
-<strong>自分の作業に使う</strong>
-
-<p>
-普段の仕事や副業の作業にAIを取り入れます。
-</p>
-
-</div>
-
-
-<div class="learning-flow-item">
-
-<strong>成果物を作る</strong>
-
-<p>
-文章、画像、資料など、実際に人へ見せられるものを作ります。
-</p>
-
-</div>
-
-
-<div class="learning-flow-item">
-
-<strong>仕事につなげる</strong>
-
-<p>
-相手の困りごとを解決できる形にして、仕事として提供することを考えます。
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- ========================================
-     WHO NEEDS PAID LEARNING
-======================================== -->
 
 <section class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">DO YOU NEED A COURSE?</div>
-
-<h2>有料の学習サービスは必要？</h2>
-
-<p class="lead">
-全員に必要なわけではありません。
-</p>
-
-</div>
-
-
+<div class="section-head"><div class="eyebrow">DO YOU NEED A COURSE?</div><h2>有料の学習サービスは必要？</h2><p class="lead">全員に必要なわけではありません。</p></div>
 <div class="learning-grid">
-
-
-<div class="learning-card">
-
-<h3>独学でも十分な人</h3>
-
-<ul class="learning-list">
-
-<li>自分で調べながら進められる</li>
-<li>実際に触って覚えるのが好き</li>
-<li>まず無料で試したい</li>
-<li>特定のAIツールだけ覚えたい</li>
-
-</ul>
-
+<div class="learning-card"><h3>独学でも十分な人</h3><ul class="learning-list"><li>自分で調べながら進められる</li><li>実際に触って覚えるのが好き</li><li>まず無料で試したい</li><li>特定のAIツールだけ覚えたい</li></ul></div>
+<div class="learning-card"><h3>学習サービスが向いている人</h3><ul class="learning-list"><li>何から学ぶか決められない</li><li>体系的に学びたい</li><li>仕事で使うことを目的にしている</li><li>一人だと学習が続きにくい</li></ul></div>
+<div class="learning-card"><h3>選ぶ前に確認すること</h3><ul class="learning-list"><li>学びたい内容があるか</li><li>料金が予算に合うか</li><li>学習期間を確保できるか</li><li>公式サイトの最新情報を確認する</li></ul></div>
 </div>
-
-
-<div class="learning-card">
-
-<h3>学習サービスが向いている人</h3>
-
-<ul class="learning-list">
-
-<li>何から学ぶか決められない</li>
-<li>体系的に学びたい</li>
-<li>仕事で使うことを目的にしている</li>
-<li>一人だと学習が続きにくい</li>
-
-</ul>
-
 </div>
-
-
-<div class="learning-card">
-
-<h3>選ぶ前に確認すること</h3>
-
-<ul class="learning-list">
-
-<li>学びたい内容があるか</li>
-<li>料金が予算に合うか</li>
-<li>学習期間を確保できるか</li>
-<li>公式サイトの最新情報を確認する</li>
-
-</ul>
-
-</div>
-
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- ========================================
-     AFFILIATE LEARNING SERVICE
-======================================== -->
 
 <section id="learning-service" class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">PR｜LEARNING SERVICE</div>
-
-<h2>生成AIを体系的に学びたい人へ</h2>
-
-<p class="lead">
-ここでは、AI学習サービスの選択肢の一つとして紹介します。
-</p>
-
-</div>
-
-
+<div class="section-head"><div class="eyebrow">PR｜LEARNING SERVICE</div><h2>生成AIを体系的に学びたい人へ</h2><p class="lead">ここでは、AI学習サービスの選択肢の一つとして紹介します。</p></div>
 <div class="learning-ad">
-
-<div class="learning-ad-label">
-PR｜広告
-</div>
-
+<div class="learning-ad-label">PR｜広告</div>
 <h3>DMM 生成AI CAMP 学び放題</h3>
-
-<p>
-ChatGPTなどの生成AIを、仕事で活用するための学習サービスを探している人向けの選択肢です。
-</p>
-
-
+<p>ChatGPTなどの生成AIを、仕事で活用するための学習サービスを探している人向けの選択肢です。</p>
 <div class="learning-ad-banner">
-
-<!-- A8公式広告コード -->
-
-<a
-href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
-rel="nofollow"
-onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');"
->
-
-<img
-border="0"
-width="300"
-height="250"
-alt=""
-src="https://www29.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1"
->
-
+<a href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" rel="nofollow" onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">
+<img border="0" width="300" height="250" alt="" src="https://www29.a8.net/svt/bgt?aid=261007808078&wid=002&eno=01&mid=s00000027398001003000&mc=1">
 </a>
-
-<img
-border="0"
-width="1"
-height="1"
-src="https://www15.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75"
-alt=""
->
-
+<img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YZ75" alt="">
 </div>
-
-
-<a
-class="learning-ad-cta"
-href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM"
-rel="nofollow"
-onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');"
->
-月額16,280円で生成AIを好きなだけ学べる！「DMM 生成AI CAMP 学び放題」
-</a>
-
-<img
-border="0"
-width="1"
-height="1"
-src="https://www14.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM"
-alt=""
->
-
-<p class="learning-note">
-※サービス内容、料金、利用条件などは変更される場合があります。
-利用前に公式サイトで最新情報をご確認ください。
-</p>
-
+<a class="learning-ad-cta" href="https://px.a8.net/svt/ejp?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM" rel="nofollow" onclick="trackAffiliateClick('DMM 生成AI CAMP 学び放題');">月額16,280円で生成AIを好きなだけ学べる！「DMM 生成AI CAMP 学び放題」</a>
+<img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4BEAWW+1AFUQI+5VEK+5YJRM" alt="">
+<p class="learning-note">※サービス内容、料金、利用条件などは変更される場合があります。利用前に公式サイトで最新情報をご確認ください。</p>
 </div>
-
 </div>
-
 </section>
 
-
-<!-- ========================================
-     HOW TO CHOOSE
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">HOW TO CHOOSE</div>
-
-<h2>AI学習サービスを選ぶときの確認項目</h2>
-
+<div class="section-head"><div class="eyebrow">HOW TO CHOOSE</div><h2>AI学習サービスを選ぶときの確認項目</h2></div>
+<div class="card"><ul class="learning-list">
+<li><strong>何を学べるのか</strong><br>自分が必要としているAI・スキルが含まれているか確認する。</li>
+<li><strong>仕事で使える内容か</strong><br>実際の業務や副業に応用できる内容か確認する。</li>
+<li><strong>料金はいくらか</strong><br>月額・一括料金・キャンペーンなどを公式サイトで確認する。</li>
+<li><strong>学習期間はどれくらいか</strong><br>自分が継続して学習できるスケジュールか確認する。</li>
+<li><strong>利用条件・解約条件</strong><br>申し込み前に公式サイトの最新情報や利用規約を確認する。</li>
+</ul></div>
 </div>
-
-
-<div class="card">
-
-<ul class="learning-list">
-
-<li>
-<strong>何を学べるのか</strong><br>
-自分が必要としているAI・スキルが含まれているか確認する。
-</li>
-
-<li>
-<strong>仕事で使える内容か</strong><br>
-実際の業務や副業に応用できる内容か確認する。
-</li>
-
-<li>
-<strong>料金はいくらか</strong><br>
-月額・一括料金・キャンペーンなどを公式サイトで確認する。
-</li>
-
-<li>
-<strong>学習期間はどれくらいか</strong><br>
-自分が継続して学習できるスケジュールか確認する。
-</li>
-
-<li>
-<strong>利用条件・解約条件</strong><br>
-申し込み前に公式サイトの最新情報や利用規約を確認する。
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
 </section>
 
-
-<!-- ========================================
-     WORK LINK
-======================================== -->
-
 <section class="section">
-
 <div class="container">
-
 <div class="card">
-
 <div class="eyebrow">AFTER LEARNING</div>
-
 <h2>学んだら、実際に使ってみる</h2>
-
-<p>
-AIは知識だけ増やしても、実際に使わなければ身につきにくいものです。
-無料素材やAIツールを使って、小さな成果物を作ってみましょう。
-</p>
-
-
+<p>AIは知識だけ増やしても、実際に使わなければ身につきにくいものです。無料素材やAIツールを使って、小さな成果物を作ってみましょう。</p>
 <div class="resource-actions">
-
-<a class="btn primary" href="products.html">
-無料AI素材を見る →
-</a>
-
-<a class="btn secondary" href="tools.html">
-AIツールを見る →
-</a>
-
-<a class="btn secondary" href="services.html">
-AIを使った仕事を見る →
-</a>
-
+<a class="btn primary" href="products.html">無料AI素材を見る →</a>
+<a class="btn secondary" href="tools.html">AIツールを見る →</a>
+<a class="btn secondary" href="services.html">AIを使った仕事を見る →</a>
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- ========================================
-     AD DISCLOSURE
-======================================== -->
 
 <section class="section">
-
 <div class="container">
-
 <div class="notice">
-
 <div class="eyebrow">PR / AFFILIATE</div>
-
 <h2>広告・アフィリエイトについて</h2>
-
-<p>
-このページにはアフィリエイト広告が含まれています。
-当サイトでは、サービスや商品の紹介を通じて紹介料を受け取る場合があります。
-</p>
-
-<p>
-広告・紹介リンクを掲載する場合は、広告であることが分かるように表示しています。
-</p>
-
-<p>
-掲載しているサービスの料金、機能、提供内容、利用条件などは変更される場合があります。
-申し込みや利用を検討する場合は、必ず各サービスの公式サイトで最新情報をご確認ください。
-</p>
-
+<p>このページにはアフィリエイト広告が含まれています。当サイトでは、サービスや商品の紹介を通じて紹介料を受け取る場合があります。</p>
+<p>広告・紹介リンクを掲載する場合は、広告であることが分かるように表示しています。</p>
+<p>掲載しているサービスの料金、機能、提供内容、利用条件などは変更される場合があります。申し込みや利用を検討する場合は、必ず各サービスの公式サイトで最新情報をご確認ください。</p>
 </div>
-
 </div>
-
 </section>
-
-
 </main>
 
-
-<!-- ========================================
-     FOOTER
-======================================== -->
-
 <footer>
-
 <div class="container">
-
 <p>© 2026 ゼロからAI副業</p>
-
-<p>
-<a href="privacy.html">プライバシーポリシー</a> |
-<a href="disclaimer.html">免責事項</a> |
-<a href="contact.html">お問い合わせ</a>
-</p>
-
+<p><a href="privacy.html">プライバシーポリシー</a> | <a href="disclaimer.html">免責事項</a> | <a href="contact.html">お問い合わせ</a></p>
 </div>
-
 </footer>
-
-
 </body>
 </html>
