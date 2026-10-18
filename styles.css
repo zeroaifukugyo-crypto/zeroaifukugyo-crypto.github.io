@@ -2070,3 +2070,94 @@ hr {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===== 白飛び・枠内の文字の窮屈さを修正 ===== */
+
+/* カードを暗いデザインに統一 */
+.grid > .card,
+.card,
+.article-card,
+.service-card {
+background: linear-gradient(
+145deg,
+rgba(12, 28, 52, 0.96),
+rgba(5, 15, 31, 0.98)
+);
+color: #edf6ff;
+border: 1px solid rgba(87, 160, 224, 0.25);
+}
+
+/* カード内の文字が枠に近づきすぎないようにする */
+.grid > .card {
+box-sizing: border-box;
+min-width: 0;
+padding: 24px;
+overflow-wrap: anywhere;
+}
+
+/* カード内の見出し・本文 */
+.grid > .card h2,
+.grid > .card h3,
+.grid > .card h4,
+.card h2,
+.card h3,
+.card h4 {
+color: #edf6ff;
+line-height: 1.6;
+overflow-wrap: anywhere;
+}
+
+.grid > .card p,
+.card p,
+.article-card p,
+.service-card p {
+color: #c5d5e8;
+line-height: 1.85;
+overflow-wrap: anywhere;
+}
+
+/* 丸いラベル・ステータス枠の文字切れを防ぐ */
+.status,
+.eyebrow {
+box-sizing: border-box;
+max-width: 100%;
+min-height: 30px;
+padding: 7px 12px;
+line-height: 1.5;
+white-space: normal;
+overflow-wrap: anywhere;
+word-break: normal;
+}
+
+/* ボタン内の文字が枠に詰まらないようにする */
+.btn,
+.button,
+.cta {
+box-sizing: border-box;
+max-width: 100%;
+min-height: 44px;
+padding: 12px 18px;
+line-height: 1.5;
+white-space: normal;
+overflow-wrap: anywhere;
+}
+
+/* 小さい画面でカードの余白を調整 */
+@media (max-width: 760px) {
+.grid > .card {
+padding: 20px;
+}
+
+.status,
+.eyebrow {
+padding: 6px 10px;
+}
+
+.btn,
+.button,
+.cta {
+padding: 11px 14px;
+}
+}
+
+/* ===== 修正ここまで ===== */
