@@ -1473,7 +1473,7 @@ padding: 11px 14px;
   inset: 0;
   content: "";
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(6, 19, 21, .95), rgba(6, 19, 21, .83) 34%, rgba(6, 19, 21, .15) 72%),
+  background: linear-gradient(90deg, rgba(6, 19, 21, .94), rgba(6, 19, 21, .78) 35%, rgba(6, 19, 21, .06) 68%, transparent),
               linear-gradient(0deg, rgba(6, 19, 21, .55), transparent 34%);
 }
 
@@ -1548,15 +1548,17 @@ padding: 11px 14px;
 
 @media (max-width: 760px) {
   .home-hero {
-    padding-top: clamp(145px, 36vw, 250px);
+    padding-top: clamp(220px, 62vw, 390px);
   }
 
   .home-hero::after {
-    background: linear-gradient(180deg, rgba(6, 19, 21, .08), rgba(6, 19, 21, .88) 38%, rgba(6, 19, 21, .98));
+    height: clamp(405px, 110vw, 650px);
+    background: linear-gradient(180deg, transparent 28%, rgba(6, 19, 21, .26) 46%, rgba(6, 19, 21, .9) 76%, var(--bg-deep));
   }
 
   .hero-landscape {
-    object-position: 65% center;
+    height: clamp(405px, 110vw, 650px);
+    object-position: 66% center;
   }
 
   .home-hero h1 {
@@ -1592,11 +1594,6 @@ padding: 11px 14px;
 .learning-illustration {
   aspect-ratio: 2 / 1;
   margin-bottom: 18px;
-}
-
-.featured-section,
-.steps-section {
-  background: #0d2427;
 }
 
 .feature-card,
@@ -1654,5 +1651,70 @@ padding: 11px 14px;
 
   .intro-illustration {
     aspect-ratio: 2 / 1;
+  }
+}
+
+/* Full-width scenes continue from the hero to the footer. */
+.home-hero ~ .section,
+body:has(> main > .home-hero) > .site-footer {
+  position: relative;
+  isolation: isolate;
+  background: var(--bg-deep);
+}
+
+.home-hero ~ .section::before,
+body:has(> main > .home-hero) > .site-footer::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: min(100%, clamp(340px, 46vw, 650px));
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, var(--bg-deep), rgba(6, 19, 21, .14) 28%, rgba(6, 19, 21, .5) 65%, var(--bg-deep)),
+    linear-gradient(90deg, rgba(6, 19, 21, .8), rgba(6, 19, 21, .66) 48%, rgba(6, 19, 21, .42)),
+    var(--section-scene) center / cover no-repeat;
+}
+
+.start-section { --section-scene: url("pixel-riverside.webp"); }
+.featured-section { --section-scene: url("pixel-tools.webp"); }
+.services-section { --section-scene: url("pixel-free.webp"); }
+.principle-section { --section-scene: url("pixel-work.webp"); }
+.steps-section { --section-scene: url("pixel-book.webp"); }
+.about-section { --section-scene: url("pixel-riverside.webp"); }
+
+body:has(> main > .home-hero) > .site-footer {
+  --section-scene: url("pixel-work.webp");
+  margin-top: 0;
+}
+
+.home-hero ~ .section .panel-illustration {
+  border: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .navlinks {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 4px;
+    white-space: nowrap;
+    padding-block: 4px 6px;
+  }
+
+  .navlinks a {
+    flex-shrink: 0;
+    font-size: clamp(10px, 2.8vw, 13px);
+    overflow-wrap: normal;
+  }
+
+  .home-hero ~ .section {
+    padding-top: clamp(106px, 28vw, 170px);
+  }
+
+  .home-hero ~ .section::before {
+    background:
+      linear-gradient(180deg, var(--bg-deep), rgba(6, 19, 21, .17) 17%, rgba(6, 19, 21, .78) 42%, var(--bg-deep)),
+      var(--section-scene) center / cover no-repeat;
   }
 }
