@@ -3,7 +3,7 @@
 <head><meta property="og:site_name" content="ゼロからAI副業">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#030817">
+<meta name="theme-color" content="#091b1d">
 <title>ゼロからAI副業｜初心者向けAIツール・仕事・無料素材</title>
 <meta name="description" content="AI副業をこれから始めたい人へ。初心者向けAIツール比較、無料プロンプト、AIを使った仕事の始め方、学習方法を紹介します。">
 <link rel="stylesheet" href="styles.css">
@@ -15,449 +15,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-782ZG589TK');
 </script>
-
-<style>
-/* ==================================================
-   HOME HERO — MOVING GRID FLOOR
-   床面グリッドを主役にした背景演出
-   ================================================== */
-
-.home-hero{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  background:#020612;
-  min-height:700px;
-  min-height:min(900px,100svh);
-}
-
-/* 背景の青い光。文字の読みやすさを優先 */
-.home-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 50% 38%,rgba(0,153,255,.20),transparent 48%),
-    radial-gradient(ellipse at 15% 55%,rgba(0,225,255,.10),transparent 42%),
-    linear-gradient(180deg,#020612 0%,#061630 65%,#030817 100%);
-}
-
-/* 背景演出はコンテンツの背後に固定 */
-.home-hero > .future-world{
-  position:absolute;
-  inset:0;
-  z-index:0;
-  overflow:hidden;
-  pointer-events:none;
-  contain:paint;
-}
-
-/* 奥から手前へ流れる遠近グリッド床面 */
-.future-floor{
-  display:block !important;
-  position:absolute;
-  left:-65%;
-  bottom:-30%;
-  width:230%;
-  height:100%;
-  transform:perspective(420px) rotateX(62deg);
-  transform-origin:center bottom;
-  background-image:
-    linear-gradient(rgba(0,220,255,.55) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,190,255,.46) 1px,transparent 1px);
-  background-size:52px 38px;
-  background-position:0 0,0 0;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 8%,#000 28%,#000 78%,transparent 100%);
-  mask-image:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.18) 8%,#000 28%,#000 78%,transparent 100%);
-  animation:futureFloorMove 1.8s linear infinite;
-}
-
-/* 床面を流れるシアンのエネルギー */
-.future-floor::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0,210,255,.02) 20%,
-    rgba(0,220,255,.48) 48%,
-    rgba(0,140,255,.12) 58%,
-    transparent 76%
-  );
-  background-size:100% 200%;
-  animation:floorEnergy 3s linear infinite;
-}
-
-/* グリッドの上を走る縦方向の光 */
-.future-floor::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:repeating-linear-gradient(
-    90deg,
-    transparent 0,
-    transparent 100px,
-    rgba(0,225,255,.3) 101px,
-    rgba(0,225,255,.05) 103px,
-    transparent 106px
-  );
-  animation:floorColumns 4s linear infinite;
-}
-
-/* タイトル背景を邪魔しない控えめな粒子 */
-.future-particles{
-  position:absolute;
-  inset:0;
-  opacity:.55;
-}
-
-.future-particles i{
-  position:absolute;
-  display:block;
-  left:var(--x);
-  top:var(--y);
-  width:var(--s);
-  height:var(--s);
-  border-radius:50%;
-  background:#b8ffff;
-  box-shadow:0 0 6px #00eaff,0 0 15px #00cfff;
-  animation:particleTravel var(--d) ease-in-out infinite alternate;
-  animation-delay:var(--delay);
-}
-
-.future-particles i:nth-child(1){--x:7%;--y:18%;--s:4px;--d:4s;--delay:-1s}
-.future-particles i:nth-child(2){--x:18%;--y:43%;--s:7px;--d:5s;--delay:-3s}
-.future-particles i:nth-child(3){--x:29%;--y:24%;--s:3px;--d:3.7s;--delay:-2s}
-.future-particles i:nth-child(4){--x:38%;--y:70%;--s:5px;--d:4.8s;--delay:-1.5s}
-.future-particles i:nth-child(5){--x:48%;--y:14%;--s:4px;--d:3.5s;--delay:-2.5s}
-.future-particles i:nth-child(6){--x:58%;--y:34%;--s:7px;--d:5.5s;--delay:-4s}
-.future-particles i:nth-child(7){--x:68%;--y:66%;--s:4px;--d:4.2s;--delay:-.8s}
-.future-particles i:nth-child(8){--x:78%;--y:20%;--s:5px;--d:4.5s;--delay:-3.2s}
-.future-particles i:nth-child(9){--x:90%;--y:42%;--s:6px;--d:5.2s;--delay:-2.2s}
-.future-particles i:nth-child(10){--x:95%;--y:78%;--s:3px;--d:3.8s;--delay:-1.2s}
-.future-particles i:nth-child(11){--x:12%;--y:79%;--s:4px;--d:5.4s;--delay:-4.2s}
-.future-particles i:nth-child(12){--x:32%;--y:89%;--s:6px;--d:4.4s;--delay:-2.6s}
-.future-particles i:nth-child(13){--x:54%;--y:84%;--s:3px;--d:3.9s;--delay:-1.8s}
-.future-particles i:nth-child(14){--x:72%;--y:91%;--s:5px;--d:5.6s;--delay:-3.8s}
-.future-particles i:nth-child(15){--x:85%;--y:72%;--s:4px;--d:4.1s;--delay:-2.1s}
-.future-particles i:nth-child(16){--x:43%;--y:43%;--s:3px;--d:3.4s;--delay:-.7s}
-.future-particles i:nth-child(17){--x:23%;--y:59%;--s:4px;--d:4.6s;--delay:-3.4s}
-.future-particles i:nth-child(18){--x:63%;--y:10%;--s:3px;--d:5s;--delay:-1.1s}
-.future-particles i:nth-child(19){--x:4%;--y:58%;--s:5px;--d:4.3s;--delay:-2.8s}
-.future-particles i:nth-child(20){--x:97%;--y:13%;--s:4px;--d:5.1s;--delay:-3.7s}
-.future-particles i:nth-child(21){--x:44%;--y:28%;--s:6px;--d:4.8s;--delay:-1.4s}
-.future-particles i:nth-child(22){--x:81%;--y:54%;--s:3px;--d:3.6s;--delay:-2.4s}
-.future-particles i:nth-child(23){--x:15%;--y:31%;--s:3px;--d:4.9s;--delay:-3.1s}
-.future-particles i:nth-child(24){--x:59%;--y:76%;--s:5px;--d:4.2s;--delay:-.9s}
-
-/* 床面の上を時々走る光。リング状演出は使用しない */
-.future-laser{
-  position:absolute;
-  left:-35%;
-  width:170%;
-  height:2px;
-  opacity:0;
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(0,226,255,.15),
-    #00eaff,
-    #fff,
-    #00bfff,
-    rgba(125,69,255,.55),
-    transparent
-  );
-  box-shadow:0 0 8px #00dfff,0 0 22px rgba(0,190,255,.5);
-  transform:rotate(-13deg);
-  animation:laserSweep 6s linear infinite;
-}
-
-.future-laser.laser-two,
-.future-laser.laser-three{
-  display:none;
-}
-
-/* スキャンラインは薄く */
-.future-scan{
-  position:absolute;
-  inset:-100% 0;
-  opacity:.22;
-  background:linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0,195,255,.02) 43%,
-    rgba(0,230,255,.14) 49%,
-    rgba(255,255,255,.08) 50%,
-    transparent 56%
-  );
-  animation:scanTravel 7s linear infinite;
-}
-
-/* 旧巨大リング・円形エネルギーを背景から除外 */
-.future-reactor,
-.future-energy,
-.future-flash,
-.home-hero > .hero-orb,
-.home-hero > .hero-network,
-.home-hero > .hero-grid{
-  display:none !important;
-}
-
-/* コンテンツを背景より手前に */
-.home-hero > .container{
-  position:relative;
-  z-index:3;
-}
-
-/* 既存のAIビジュアルは残すが、動きを控えめにする */
-.home-hero .visual-ring{
-  animation:reactorSpin 24s linear infinite;
-  box-shadow:0 0 12px rgba(0,205,255,.12);
-}
-
-.home-hero .ring-two{
-  animation-direction:reverse;
-  animation-duration:30s;
-}
-
-.home-hero .visual-orbit{
-  animation:reactorSpin 18s linear infinite;
-}
-
-.home-hero .orbit-two{
-  animation-direction:reverse;
-  animation-duration:24s;
-}
-
-.home-hero .visual-core{
-  animation:corePower 3s ease-in-out infinite alternate;
-}
-
-.home-hero .floating-panel{
-  animation:panelHover 4.5s ease-in-out infinite alternate;
-}
-
-/* ==================================================
-   広告6案件：ホログラム商品パネル
-   ================================================== */
-
-.services-section .service-card{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  transform:translateZ(0);
-  border:1px solid rgba(0,207,255,.42);
-  background:linear-gradient(
-    135deg,
-    rgba(9,31,62,.96),
-    rgba(6,14,34,.96) 58%,
-    rgba(26,15,66,.93)
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.06),
-    inset 0 0 32px rgba(0,138,255,.07),
-    0 0 18px rgba(0,142,255,.09);
-  transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
-}
-
-.services-section .service-card::before{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  top:-60%;
-  left:-90%;
-  width:55%;
-  height:230%;
-  transform:rotate(25deg);
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(0,217,255,.025),
-    rgba(0,217,255,.23),
-    rgba(255,255,255,.32),
-    rgba(130,85,255,.16),
-    transparent
-  );
-  animation:cardLightSweep 6s ease-in-out infinite;
-  pointer-events:none;
-}
-
-.services-section .service-card::after{
-  content:"";
-  position:absolute;
-  z-index:-1;
-  inset:0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent 0,
-      transparent 8px,
-      rgba(0,211,255,.035) 9px,
-      transparent 10px
-    ),
-    radial-gradient(ellipse at 100% 0%,rgba(0,209,255,.13),transparent 48%),
-    radial-gradient(ellipse at 0% 100%,rgba(112,60,255,.13),transparent 45%);
-  opacity:.8;
-  pointer-events:none;
-}
-
-.services-section .service-card:nth-child(2)::before{animation-delay:-1s}
-.services-section .service-card:nth-child(3)::before{animation-delay:-2s}
-.services-section .service-card:nth-child(4)::before{animation-delay:-3s}
-.services-section .service-card:nth-child(5)::before{animation-delay:-4s}
-.services-section .service-card:nth-child(6)::before{animation-delay:-5s}
-
-.services-section .service-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(0,235,255,.95);
-  box-shadow:
-    inset 0 0 30px rgba(0,185,255,.1),
-    0 0 15px rgba(0,213,255,.24),
-    0 0 38px rgba(0,128,255,.17);
-}
-
-.services-section .service-icon{
-  position:relative;
-  z-index:1;
-  border:1px solid rgba(0,226,255,.48);
-  box-shadow:0 0 20px rgba(0,186,255,.14),inset 0 0 16px rgba(0,180,255,.1);
-  animation:iconHologram 3s ease-in-out infinite alternate;
-}
-
-.services-section .service-card:nth-child(even) .service-icon{
-  animation-delay:-1.5s;
-}
-
-.services-section .service-info{
-  position:relative;
-  z-index:1;
-}
-
-.services-section .home-card-label{
-  text-shadow:0 0 12px rgba(0,213,255,.32);
-}
-
-.services-section .card-link{
-  position:relative;
-  z-index:2;
-}
-
-/* アニメーション */
-@keyframes futureFloorMove{
-  from{background-position:0 0,0 0}
-  to{background-position:0 38px,52px 0}
-}
-
-@keyframes floorEnergy{
-  from{background-position:0 -200%}
-  to{background-position:0 200%}
-}
-
-@keyframes floorColumns{
-  from{background-position:0 0}
-  to{background-position:206px 0}
-}
-
-@keyframes laserSweep{
-  0%{top:110%;opacity:0}
-  12%{opacity:.8}
-  44%{opacity:.65}
-  57%{opacity:0}
-  100%{top:-15%;opacity:0}
-}
-
-@keyframes reactorSpin{
-  from{rotate:0deg}
-  to{rotate:360deg}
-}
-
-@keyframes corePower{
-  from{filter:brightness(.85);box-shadow:0 0 24px rgba(0,185,255,.28)}
-  to{filter:brightness(1.2);box-shadow:0 0 35px rgba(0,215,255,.48)}
-}
-
-@keyframes panelHover{
-  from{translate:0 4px}
-  to{translate:0 -8px}
-}
-
-@keyframes particleTravel{
-  0%{translate:-10px 16px;scale:.65;opacity:.2}
-  50%{opacity:.8}
-  100%{translate:14px -20px;scale:1.25;opacity:.7}
-}
-
-@keyframes scanTravel{
-  from{transform:translateY(-10%)}
-  to{transform:translateY(210%)}
-}
-
-@keyframes cardLightSweep{
-  0%,15%{left:-90%;opacity:0}
-  28%{opacity:1}
-  62%{left:150%;opacity:.7}
-  63%,100%{left:150%;opacity:0}
-}
-
-@keyframes iconHologram{
-  from{filter:brightness(.88);box-shadow:0 0 10px rgba(0,186,255,.1)}
-  to{filter:brightness(1.22);box-shadow:0 0 24px rgba(0,205,255,.32)}
-}
-
-/* スマートフォン表示 */
-@media(max-width:700px){
-  .home-hero{
-    min-height:0;
-  }
-
-  .future-floor{
-    left:-90%;
-    bottom:-18%;
-    width:280%;
-    height:78%;
-    transform:perspective(330px) rotateX(60deg);
-    background-size:38px 30px;
-    animation:futureFloorMove 1.6s linear infinite;
-  }
-
-  .future-particles{
-    opacity:.42;
-  }
-
-  .future-reactor,
-  .future-energy,
-  .future-flash,
-  .home-hero > .hero-orb,
-  .home-hero > .hero-network,
-  .home-hero > .hero-grid{
-    display:none !important;
-  }
-
-  .services-section .service-card{
-    box-shadow:inset 0 0 22px rgba(0,138,255,.07),0 0 13px rgba(0,142,255,.08);
-  }
-}
-
-@media(prefers-reduced-motion:reduce){
-  .future-world *,
-  .home-hero .visual-ring,
-  .home-hero .visual-orbit,
-  .home-hero .visual-core,
-  .home-hero .floating-panel,
-  .services-section .service-card::before,
-  .services-section .service-icon{
-    animation:none !important;
-  }
-}
-</style>
 </head>
 
 <body>
-<div class="ambient ambient-one" aria-hidden="true"></div>
-<div class="ambient ambient-two" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="container nav">
@@ -478,37 +38,9 @@ gtag('config', 'G-782ZG589TK');
 
 <main>
 <section class="home-hero">
-
-  <div class="future-world" aria-hidden="true">
-    <div class="future-floor"></div>
-    <div class="future-reactor"></div>
-    <div class="future-reactor reactor-two"></div>
-    <div class="future-energy"></div>
-    <div class="future-flash"></div>
-    <div class="future-laser"></div>
-    <div class="future-laser laser-two"></div>
-    <div class="future-laser laser-three"></div>
-    <div class="future-scan"></div>
-    <div class="future-particles">
-      <i></i><i></i><i></i><i></i><i></i><i></i>
-      <i></i><i></i><i></i><i></i><i></i><i></i>
-      <i></i><i></i><i></i><i></i><i></i><i></i>
-      <i></i><i></i><i></i><i></i><i></i><i></i>
-    </div>
-  </div>
-
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-orb orb-a" aria-hidden="true"></div>
-  <div class="hero-orb orb-b" aria-hidden="true"></div>
-  <div class="hero-network" aria-hidden="true">
-    <span class="node node-1"></span><span class="node node-2"></span>
-    <span class="node node-3"></span><span class="node node-4"></span>
-    <span class="node node-5"></span><span class="node node-6"></span>
-  </div>
-
   <div class="container hero-layout">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="eyebrow-pulse"></span> AI × SIDE BUSINESS</p>
+      <p class="eyebrow"><span class="eyebrow-pulse" aria-hidden="true"></span> AI × SIDE BUSINESS</p>
       <h1>AIで、<br><span class="gradient-text">自分の稼ぎを作れ。</span></h1>
       <p class="lead">特別な才能も、大きな資金も必要ない。<br>必要なのは「AIをどう使うか」だけだ。</p>
       <p class="hero-description">AIを使って小さく始められる仕事、実際に使えるAIツール、無料AI素材、AIを学ぶための選択肢を紹介します。</p>
@@ -523,51 +55,34 @@ gtag('config', 'G-782ZG589TK');
       </div>
     </div>
 
-    <div class="hero-visual" aria-label="AIとデジタルネットワークを表現した装飾">
-      <div class="visual-ring ring-one"></div>
-      <div class="visual-ring ring-two"></div>
-      <div class="visual-core"><span>AI</span></div>
-      <div class="visual-orbit orbit-one"><span class="orbit-dot"></span></div>
-      <div class="visual-orbit orbit-two"><span class="orbit-dot"></span></div>
-      <div class="floating-panel panel-chat">
-        <span class="panel-icon">✳</span><span><b>AI TOOLS</b><small>文章・アイデア・分析</small></span>
-      </div>
-      <div class="floating-panel panel-image">
-        <span class="panel-icon">▧</span><span><b>AI CREATION</b><small>画像・動画・デザイン</small></span>
-      </div>
-      <div class="floating-panel panel-work">
-        <span class="panel-icon">⌘</span><span><b>AI WORKFLOW</b><small>作業を効率化する</small></span>
-      </div>
-      <div class="visual-caption"><span class="caption-line"></span> CREATE · TEST · IMPROVE</div>
-    </div>
+    <img class="hero-landscape" src="pixel-riverside.webp" width="900" height="600" alt="">
   </div>
-  <div class="hero-bottom-line" aria-hidden="true"></div>
 </section>
 
 <section class="section start-section">
   <div class="container">
     <div class="section-heading">
-      <div><p class="eyebrow">START HERE / 01</p><h2>初めての方は、ここから</h2></div>
+      <div><h2>初めての方は、ここから</h2></div>
       <p class="section-intro">何から始めればいいか分からない人向けに、次の行動を4つに整理しました。気になるところから読み進めてください。</p>
     </div>
     <div class="cards start-cards">
       <article class="card feature-card">
-        <div class="card-topline"><span class="step-number">01</span><span class="card-symbol" aria-hidden="true">⌘</span></div>
+        <span class="pixel-icon icon-monitor" aria-hidden="true"></span>
         <h3>まずAIを使ってみる</h3><p>文章・画像・動画など、目的に合うAIツールを探します。</p>
         <a class="card-link" href="tools.html">AIツールを比較する <span>→</span></a>
       </article>
       <article class="card feature-card">
-        <div class="card-topline"><span class="step-number">02</span><span class="card-symbol" aria-hidden="true">↗</span></div>
+        <span class="pixel-icon icon-cabin" aria-hidden="true"></span>
         <h3>AIでできる仕事を知る</h3><p>どんな仕事に活用できるか、必要な作業や始め方を確認します。</p>
         <a class="card-link" href="services.html">仕事の例を見る <span>→</span></a>
       </article>
       <article class="card feature-card">
-        <div class="card-topline"><span class="step-number">03</span><span class="card-symbol" aria-hidden="true">▧</span></div>
+        <span class="pixel-icon icon-chest" aria-hidden="true"></span>
         <h3>無料素材で試す</h3><p>プロンプトやチェックリストを使って、実際にAIを動かしてみます。</p>
         <a class="card-link" href="products.html">無料素材を使う <span>→</span></a>
       </article>
       <article class="card feature-card">
-        <div class="card-topline"><span class="step-number">04</span><span class="card-symbol" aria-hidden="true">⌁</span></div>
+        <span class="pixel-icon icon-book" aria-hidden="true"></span>
         <h3>必要な知識を学ぶ</h3><p>AIを仕事で使うための学び方や、学習サービスを確認します。</p>
         <a class="card-link" href="ai-learning.html">学び方を確認する <span>→</span></a>
       </article>
@@ -578,20 +93,20 @@ gtag('config', 'G-782ZG589TK');
 <section class="section featured-section">
   <div class="container">
     <div class="section-heading">
-      <div><p class="eyebrow">PICK UP / 02</p><h2>目的から記事を探す</h2></div>
+      <div><h2>目的から記事を探す</h2></div>
       <p class="section-intro">カテゴリー一覧だけでなく、目的に合うページへ直接進めるようにしました。</p>
     </div>
     <div class="cards article-cards">
       <article class="card article-card">
-        <div class="article-art art-tools" aria-hidden="true"><span class="art-orbit"></span><span class="art-window">AI<br><b>TOOLS</b></span><span class="art-chip">COMPARE</span></div>
+        <img class="article-illustration" src="pixel-tools.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
         <div class="article-content"><span class="home-card-label">AI TOOL GUIDE</span><h3>どのAIツールを使えばいい？</h3><p>ChatGPT、Claude、Geminiなど、作業の目的に合うツールを探したい人向け。</p><a class="card-link" href="tools.html">AIツールの比較を見る <span>→</span></a></div>
       </article>
       <article class="card article-card">
-        <div class="article-art art-free" aria-hidden="true"><span class="art-cube">✳</span><span class="art-sheet"></span><span class="art-chip">FREE MATERIALS</span></div>
+        <img class="article-illustration" src="pixel-free.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
         <div class="article-content"><span class="home-card-label">FREE MATERIALS</span><h3>すぐ使える無料AI素材</h3><p>アイデア整理や作業の効率化に使えるプロンプト、チェックリストを探せます。</p><a class="card-link" href="products.html">無料素材を見る <span>→</span></a></div>
       </article>
       <article class="card article-card">
-        <div class="article-art art-work" aria-hidden="true"><span class="art-screen"><i></i><i></i><i></i><b>WORKFLOW</b></span><span class="art-glow"></span><span class="art-chip">WORK IDEAS</span></div>
+        <img class="article-illustration" src="pixel-work.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
         <div class="article-content"><span class="home-card-label">WORK IDEAS</span><h3>AIを使ってできる仕事</h3><p>文章、画像、動画、SNSなど、AIを活用した仕事の例と始め方を確認できます。</p><a class="card-link" href="services.html">仕事の例を確認する <span>→</span></a></div>
       </article>
     </div>
@@ -601,13 +116,13 @@ gtag('config', 'G-782ZG589TK');
 <section class="section services-section">
   <div class="container">
     <div class="section-heading">
-      <div><p class="eyebrow">SERVICE GUIDES / 03</p><h2>気になるサービスを詳しく調べる</h2></div>
+      <div><h2>気になるサービスを詳しく調べる</h2></div>
       <p class="section-intro">特徴だけでなく、料金・利用条件・注意点も確認しましょう。各ページで詳しい情報を確認できます。</p>
     </div>
 
     <div class="cards service-cards">
       <article class="card service-card">
-        <div class="service-icon icon-image" aria-hidden="true">✧</div>
+        <span class="pixel-icon icon-picture" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">AI IMAGE</span>
           <h3>Aiarty Image Enhancer</h3>
@@ -617,7 +132,7 @@ gtag('config', 'G-782ZG589TK');
       </article>
 
       <article class="card service-card">
-        <div class="service-icon icon-writing" aria-hidden="true">⌁</div>
+        <span class="pixel-icon icon-book" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">AI WRITING</span>
           <h3>Value AI Writer</h3>
@@ -627,7 +142,7 @@ gtag('config', 'G-782ZG589TK');
       </article>
 
       <article class="card service-card">
-        <div class="service-icon icon-vpn" aria-hidden="true">◇</div>
+        <span class="pixel-icon icon-shield" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">VPN GUIDE</span>
           <h3>ExpressVPNの特徴と注意点</h3>
@@ -637,7 +152,7 @@ gtag('config', 'G-782ZG589TK');
       </article>
 
       <article class="card service-card">
-        <div class="service-icon icon-writing" aria-hidden="true">✎</div>
+        <span class="pixel-icon icon-book" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">WRITING SUPPORT</span>
           <h3>文賢</h3>
@@ -647,7 +162,7 @@ gtag('config', 'G-782ZG589TK');
       </article>
 
       <article class="card service-card">
-        <div class="service-icon icon-image" aria-hidden="true">▧</div>
+        <span class="pixel-icon icon-picture" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">AI IMAGE GENERATION</span>
           <h3>ConoHa AI Canvas</h3>
@@ -657,7 +172,7 @@ gtag('config', 'G-782ZG589TK');
       </article>
 
       <article class="card service-card">
-        <div class="service-icon icon-writing" aria-hidden="true">⌘</div>
+        <span class="pixel-icon icon-book" aria-hidden="true"></span>
         <div class="service-info">
           <span class="home-card-label">AI LEARNING</span>
           <h3>DMM 生成AI CAMP 学び放題</h3>
@@ -673,7 +188,7 @@ gtag('config', 'G-782ZG589TK');
 <section class="section principle-section">
   <div class="container">
     <div class="principle-panel">
-      <div class="principle-visual" aria-hidden="true"><div class="brain-orbit"></div><div class="brain-core">AI</div><span class="brain-node n1"></span><span class="brain-node n2"></span><span class="brain-node n3"></span></div>
+      <img class="panel-illustration" src="pixel-work.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
       <div class="principle-copy">
         <p class="eyebrow">REALISTIC APPROACH</p>
         <h2>「AI＝自動で稼げる」ではない</h2>
@@ -701,7 +216,7 @@ gtag('config', 'G-782ZG589TK');
       <a class="card-link" href="services.html">AIを使った仕事の例を見る <span>→</span></a>
     </div>
     <div class="learning-panel">
-      <div class="learning-symbol" aria-hidden="true">⌁</div>
+      <img class="learning-illustration" src="pixel-book.webp" width="480" height="320" loading="lazy" decoding="async" alt="">
       <p class="eyebrow">AI LEARNING</p>
       <h2>AIを仕事で使えるようになりたいなら</h2>
       <p>ツールを試すだけでなく、目的に合う使い方や学習方法を知ることも大切です。自分の経験や目標に合った学び方を探してみましょう。</p>
@@ -713,7 +228,7 @@ gtag('config', 'G-782ZG589TK');
 <section class="section about-section">
   <div class="container">
     <div class="ad-box">
-      <div class="ad-city" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <img class="panel-illustration" src="pixel-riverside.webp" width="900" height="600" loading="lazy" decoding="async" alt="">
       <div class="ad-content">
         <span class="ad-label">広告・アフィリエイトについて</span>
         <h2>広告掲載について</h2>
