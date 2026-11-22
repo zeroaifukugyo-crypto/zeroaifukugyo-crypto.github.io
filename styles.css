@@ -1458,18 +1458,32 @@ padding: 11px 14px;
 }
 
 .home-hero {
-  padding: clamp(38px, 6vw, 84px) 0;
-  border-bottom: 2px solid var(--border);
-  background: linear-gradient(125deg, var(--bg-deep), #103036);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: clamp(510px, 48vw, 690px);
+  padding: clamp(42px, 7vw, 96px) 0;
+  background: var(--bg-deep);
 }
 
-.hero-layout {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
-  gap: clamp(22px, 4vw, 56px);
+.home-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(6, 19, 21, .95), rgba(6, 19, 21, .83) 34%, rgba(6, 19, 21, .15) 72%),
+              linear-gradient(0deg, rgba(6, 19, 21, .55), transparent 34%);
 }
 
-.hero-copy {
+.home-hero .hero-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.home-hero .hero-copy {
   min-width: 0;
+  max-width: 565px;
 }
 
 .home-hero h1 {
@@ -1518,11 +1532,13 @@ padding: 11px 14px;
 }
 
 .hero-landscape {
-  display: block;
+  position: absolute;
+  z-index: -2;
+  inset: 0;
   width: 100%;
-  height: auto;
-  border: 2px solid var(--border-bright);
-  box-shadow: 6px 6px 0 #061315;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 54%;
 }
 
 :focus-visible {
@@ -1531,15 +1547,16 @@ padding: 11px 14px;
 }
 
 @media (max-width: 760px) {
-  .hero-layout {
-    grid-template-columns: minmax(0, 1fr);
+  .home-hero {
+    padding-top: clamp(145px, 36vw, 250px);
+  }
+
+  .home-hero::after {
+    background: linear-gradient(180deg, rgba(6, 19, 21, .08), rgba(6, 19, 21, .88) 38%, rgba(6, 19, 21, .98));
   }
 
   .hero-landscape {
-    grid-row: 1;
-    aspect-ratio: 2 / 1;
-    object-fit: cover;
-    object-position: center 57%;
+    object-position: 65% center;
   }
 
   .home-hero h1 {
